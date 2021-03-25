@@ -58,7 +58,6 @@ as a an admin, I can mange and see all reservation and product details.
 
 - ReactJS (Hooks).
 - Material UI
-- UnDraw
 
 #### Back-end Technology:
 

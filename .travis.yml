@@ -1,0 +1,16 @@
+ 
+language: node_js
+node_js:
+  - lts/*
+services:
+  - postgresql
+before_script:
+  - psql -c "CREATE DATABASE beautySalon;" -U postgres
+  - psql -c "CREATE USER yaki WITH PASSWORD '1234';" -U postgres
+  - 'npm run build:db'
+env:
+  global:
+    - PGPORT=9697
+test:
+  adapter: postgresql
+  database: beautySalon

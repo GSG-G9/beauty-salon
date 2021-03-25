@@ -4,7 +4,13 @@
   "description": "beauty salon app that facilitates reserving and selling cosmetics",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": " NODE_ENV=development nodemon server/index.js",
+    "kill": "fuser -k 5000/tcp",
+    "client": "cd client && npm start",
+    "test": "NODE_ENV=test jest --runInBand --detectOpenHandles --coverage",
+    "kill-run": "npm run kill && npm run dev",
+    "start": "NODE_ENV=production node ./server/index.js",
+    "heroku-postbuild": "NODE_ENV=production cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,6 +28,7 @@
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jest": "26.6.0",
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",

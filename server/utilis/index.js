@@ -1,3 +1,3 @@
-const boomify = require("./boomify");
+const boomify = require('./boomify');
 
 module.exports = { boomify };

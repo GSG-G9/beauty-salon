@@ -29,7 +29,8 @@ CREATE TABLE products(
 
 CREATE TABLE services (
   "id" SERIAL PRIMARY KEY,
-  "name" VARCHAR NOT NULL
+  "name" VARCHAR NOT NULL,
+  "category" VARCHAR NOT Null
 );
 
 CREATE TABLE orders (
@@ -51,7 +52,7 @@ CREATE TABLE stylists (
 
 CREATE TABLE apponitments (
   "id" SERIAL PRIMARY KEY,
- " user_id" INT REFERENCES users(id),
+ "user_id" INT REFERENCES users(id),
   "stylist_id" INT REFERENCES stylists(id),
   "service_id" INT REFERENCES services(id),
   "time" timestamp
@@ -67,7 +68,7 @@ CREATE TABLE blogs (
 
 CREATE TABLE contacts (
   "id" SERIAL PRIMARY KEY,
-  " user_id" INT REFERENCES users(id),
+  "user_id" INT REFERENCES users(id),
   "name" VARCHAR(100) NOT NULL,
   "mobile" int,
   "message" TEXT,

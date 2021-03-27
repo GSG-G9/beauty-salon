@@ -1,7 +1,9 @@
-const {pool} = require('pg');
+const { Pool } = require('pg');
 
 let dbUrl = '';
-const { NODE_ENV, DEV_DB_URL, DATABASE_URL, TEST_DB_URL } = process.env;
+const {
+  NODE_ENV, DEV_DB_URL, DATABASE_URL, TEST_DB_URL,
+} = process.env;
 switch (NODE_ENV) {
   case 'production':
     dbUrl = DATABASE_URL;
@@ -16,9 +18,9 @@ switch (NODE_ENV) {
     throw new Error('Three is No Database Found ... ');
 }
 const options = {
-    connectionString: dbUrl,
-    ssl: false,
-  };
+  connectionString: dbUrl,
+  ssl: false,
+};
 
-  const pool = new Pool(options);
-    module.exports = pool; 
+const pool = new Pool(options);
+module.exports = pool;

@@ -1,7 +1,7 @@
 {
   "name": "beauty-salon",
   "version": "1.0.0",
-  "description": "beauty salon app that facilitates reserving and selling cosmetics",
+  "description": "Beauty salon app that facilitates reserving and selling cosmetics",
   "main": "index.js",
   "scripts": {
     "dev": " NODE_ENV=development nodemon server/index.js",
@@ -28,13 +28,17 @@
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jest": "26.6.0",
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "pg": "^8.5.1"
   },
   "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "jest": "26.6.0",
     "nodemon": "^2.0.7",
     "prettier": "^2.2.1",
     "supertest": "^6.1.3"

@@ -1,9 +1,9 @@
 const express = require('express');
 
+const { servicesHandler } = require('../controller');
+
 const router = express.Router();
 
-router.get('/hi', (req, res) => {
-  res.send('hi');
-});
+router.get('/services', servicesHandler);
 
 module.exports = router;

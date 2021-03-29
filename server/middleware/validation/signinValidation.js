@@ -20,7 +20,6 @@ const signinValidation = async (req, res, next) => {
     next();
   } catch (error) {
     next(boomify(400, error.details.map((e) => e.message).join('\n')));
-    console.log(error,254);
   }
 };
 module.exports = signinValidation;

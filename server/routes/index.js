@@ -1,9 +1,7 @@
-const express = require('express');
+const router = require('express').Router();
 
-const { servicesHandler } = require('../controller');
+const commonRouter = require('./common');
 
-const router = express.Router();
-
-router.get('/services', servicesHandler);
+router.use(commonRouter);
 
 module.exports = router;

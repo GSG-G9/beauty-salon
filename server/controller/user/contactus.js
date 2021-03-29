@@ -12,7 +12,7 @@ const contactusHandler = async (req, res, next) => {
         mobile,
       });
     } catch (err) {
-      throw boomify(404, err.details[0].message);
+      throw boomify(400, err.details[0].message);
     }
 
     await postMessage(name, email, message, mobile);

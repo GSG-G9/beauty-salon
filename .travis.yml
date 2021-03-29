@@ -12,4 +12,3 @@ env:
 test:
   adapter: postgresql
   database: beautySalon
-  

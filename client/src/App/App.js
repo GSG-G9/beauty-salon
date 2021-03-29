@@ -7,16 +7,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-     
-        <Card>
-        <Button color='primary' variant='contained' >
-          I'm a button
-        </Button><Button color='secondary' variant='contained' >
-          I'm a button
-        </Button>
-        <Typography> Hello wold</Typography>
-        </Card>
-        <TextField label="Hello"></TextField>
+        Hello From Beauty Salon
       </div>
     </ThemeProvider>
   );

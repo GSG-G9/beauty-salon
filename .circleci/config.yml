@@ -42,7 +42,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD
         environment:
           POSTGRES_USER: team2
-          POSTGRES_DB: circleci
+          POSTGRES_DB: beautysalontest
     steps:
       - checkout
       - restore_cache:

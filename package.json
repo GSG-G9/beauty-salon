@@ -13,11 +13,13 @@
     "heroku-postbuild": "NODE_ENV=production cd client && npm install && npm run build",
     "lint-fix": "eslint server/ --fix",
     "lint": "eslint server/",
-    "lint-react": "cd client && npm run lint"
+    "lint-react": "cd client && npm run lint",
+    "lint-react-fix": "cd client && npm run lint-fix"
   },
   "pre-commit": [
     "test",
-    "lint-fix"
+    "lint-fix",
+    "lint-react-fix"
   ],
   "repository": {
     "type": "git",

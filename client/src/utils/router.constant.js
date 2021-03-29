@@ -7,4 +7,4 @@ export const CONTACTS = '/contact';
 export const BOOK = '/book';
 export const SERVICES = '/services';
 export const DASHBOARD = '/dashboard';
-export const DASHBOARD_APPOINTMENT = 'dashboard/appointment	';
+export const DASHBOARD_APPOINTMENT = '/appointment';

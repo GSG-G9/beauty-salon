@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-expressions
-require('dotenv').config;
+require('dotenv').config();
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
@@ -18,7 +18,9 @@ const middlewares = [
   express.json(),
   cookieParser(),
   compression(),
-  express.urlencoded({ extended: false }),
+  express.urlencoded({
+    extended: false,
+  }),
 ];
 
 app.use(middlewares);

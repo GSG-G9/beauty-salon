@@ -1,3 +1,3 @@
-const { servicesHandler } = require('./user/index');
+const { servicesHandler } = require('./common/index');
 
 module.exports = { servicesHandler };

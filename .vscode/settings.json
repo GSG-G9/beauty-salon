@@ -1,0 +1,14 @@
+{
+  "eslint.workingDirectories": ["client", "server"],
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "cSpell.words": [
+    "Signin"
+  ]
+}

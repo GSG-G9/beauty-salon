@@ -1,11 +1,20 @@
+const { checkUserByEmail } = require('../../database/queries');
+const boomify = require('../../utilis/boomify');
+
 const signin = async (req, res, next) => {
+  const { email } = req.body;
   try {
-    await res.status(200).json({
+    const { rowCount } = await checkUserByEmail({ email });
+    if (rowCount === 0) {
+      throw boomify(404, 'user not found');
+    }
+
+    res.status(200).json({
       status: 200,
-      data: 'Hello from sign in page',
+      message: 'login successfully',
     });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 

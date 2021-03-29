@@ -10,6 +10,4 @@ import Signin from './Signin';
 import Signup from './Signup';
 import NotFound from './NotFound';
 
-
-
 export  {Blogs,Book,Contacts,Dashboard,Appointment,Home,Profile,Services,Signin,Signup,NotFound}

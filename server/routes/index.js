@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/hi', (req, res) => {
-  res.send('hi');
-});
+const { logOut } = require('../controller');
+
+router.post('/logout', logOut);
 
 module.exports = router;

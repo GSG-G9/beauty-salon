@@ -1,3 +1,7 @@
 const boomify = require('./boomify');
+const contactusValidation = require('./contactusValidation');
 
-module.exports = { boomify };
+module.exports = {
+  boomify,
+  contactusValidation,
+};

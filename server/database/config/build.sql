@@ -55,8 +55,8 @@ CREATE TABLE appointments (
  "user_id" INT REFERENCES users(id),
   "stylist_id" INT REFERENCES stylists(id),
   "service_id" INT REFERENCES services(id),
-  "appointment_date" DATE NOT NULL,
-  "appointment_time" TIME NOT NULL
+  "appointment_date" VARCHAR(100) NOT NULL,
+  "appointment_time" VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE blogs (

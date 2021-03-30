@@ -1,0 +1,10 @@
+export const HOME_PAGE = '/';
+export const BLOGS = '/blog';
+export const SIGNIN_PAGE = '/signin';
+export const SIGNUP_PAGE = '/signup';
+export const PROFILE = '/profile';
+export const CONTACTS = '/contact';
+export const BOOK = '/book';
+export const SERVICES = '/services';
+export const DASHBOARD = '/dashboard';
+export const DASHBOARD_APPOINTMENT = '/appointment';

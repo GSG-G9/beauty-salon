@@ -1,3 +1,8 @@
 const checkUserByEmail = require('./checkUserByEmail');
 
-module.exports = { checkUserByEmail };
+const signupUser = require('./signup');
+
+module.exports = {
+  signupUser,
+  checkUserByEmail,
+};

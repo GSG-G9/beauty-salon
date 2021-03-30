@@ -4,7 +4,7 @@ const app = require('../server/app');
 const { runBuild } = require('../server/database/config/build');
 const connection = require('../server/database/config/connection');
 
-describe('POST /api/v1/login', () => {
+describe('POST /api/v1/signin', () => {
   beforeEach(() => runBuild());
   afterAll(() => connection.end());
   test('router returns 400 if there is no password', async () => {
@@ -22,7 +22,7 @@ describe('POST /api/v1/login', () => {
   });
   test('router returns 400 if password is incorrect', async () => {
     const {
-      body: { Message },
+      body: { message },
       statusCode,
     } = await request(app)
       .post('/api/v1/signin')
@@ -33,7 +33,7 @@ describe('POST /api/v1/login', () => {
         JSON.stringify({ email: 'yatt@gmail.com', password: '1234567888yas' }),
       );
     expect(statusCode).toBe(400);
-    return expect(Message).toBe('Invalid username/password');
+    return expect(message).toBe('Invalid username/password');
   });
 
   test('router returns 404 if email is incorrect', async () => {

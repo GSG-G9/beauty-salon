@@ -1,3 +1,6 @@
-const { signin } = require('./common');
+const { signUp, signin } = require('./common');
 
-module.exports = { signin };
+module.exports = {
+  signUp,
+  signin,
+};

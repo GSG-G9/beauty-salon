@@ -1,4 +1,5 @@
 const boomify = require('./boomify');
-const { signToken } = require('./jwt');
+const { signupValidation } = require('./validation');
+const signToken = require('./jwt');
 
-module.exports = { boomify, signToken };
+module.exports = { boomify, signupValidation, signToken };

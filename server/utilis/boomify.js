@@ -1,5 +1,5 @@
-const boomify = (statusCode, Message) => ({
+const boomify = (statusCode, message) => ({
   statusCode,
-  Message,
+  message,
 });
 module.exports = boomify;

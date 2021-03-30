@@ -7,7 +7,7 @@ const getAllBlogs = async (req, res, next) => {
     if (!rows) {
       throw boomify(500, 'Internal Server Error');
     }
-    res.json(rows);
+    res.json({ status: 200, data: rows });
   } catch (error) {
     next(error);
   }

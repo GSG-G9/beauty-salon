@@ -5,11 +5,14 @@
       "source.fixAll": true
     }
   },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "files.eol": "\n",
+<<<<<<< HEAD
   "prettier.singleQuote": true
+=======
+  "cSpell.words": [
+    "Signin"
+  ]
+>>>>>>> 0e55685c1095f020caece477fbca798f73abbc64
 }

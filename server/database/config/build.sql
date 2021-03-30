@@ -55,7 +55,7 @@ CREATE TABLE appointments (
  "user_id" INT REFERENCES users(id),
   "stylist_id" INT REFERENCES stylists(id),
   "service_id" INT REFERENCES services(id),
-  "appointment_date" TIMESTAMP NOT NULL,
+  "appointment_date" DATE NOT NULL,
   "appointment_time" TIME NOT NULL
 );
 

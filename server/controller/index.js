@@ -1,3 +1,3 @@
-const { servicesHandler } = require('./common/index');
+const { servicesHandler, signUp } = require('./common');
 
-module.exports = { servicesHandler };
+module.exports = { servicesHandler, signUp };

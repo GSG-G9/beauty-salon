@@ -8,4 +8,5 @@ const bookingsQuery = (date) => {
   };
   return connection.query(sql);
 };
+
 module.exports = bookingsQuery;

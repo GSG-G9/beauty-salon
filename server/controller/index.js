@@ -1,7 +1,6 @@
-const { signUp } = require('./common');
-const { getBooking } = require('./user');
+const { signUp, getBookingsByDate } = require('./common');
 
 module.exports = {
   signUp,
-  getBooking,
+  getBookingsByDate,
 };

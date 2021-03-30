@@ -1,3 +1,3 @@
-const { signin } = require('./user');
+const { signin } = require('./common');
 
 module.exports = { signin };

@@ -20,16 +20,6 @@ describe('POST /api/v1/login', () => {
       .send({ email: '', password: '123456789yas' });
     return expect(statusCode).toBe(400);
   });
-
-  test('router returns 200 if user logged in successfully', async () => {
-    const {
-      statusCode,
-    } = await request(app).post('/api/v1/signin').send({
-      email: 'yatt@gmail.com',
-      password: '123456789yas',
-    });
-    return expect(statusCode).toBe(200);
-  });
   test('router returns 400 if password is incorrect', async () => {
     const {
       body: { Message },

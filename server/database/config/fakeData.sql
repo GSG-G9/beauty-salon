@@ -62,8 +62,8 @@ INSERT INTO stylists(name,service_id) VALUES
 
 INSERT INTO appointments(user_id,service_id,stylist_id,appointment_date,appointment_time) VALUES
 (1,11,3,'2021-03-30 19:10:25-07','10:00'),
-(2,6,2,'2021-03-30 19:10:25-07','11:00'),
-(3,5,1,'2021-03-30 19:10:25-07','12:00');
+(2,6,2,'2021-03-29 17:10:25-07','11:00'),
+(3,5,1,'2021-03-28 15:10:25-07','12:00');
 
 INSERT INTO blogs(name,description,image) VALUES
 ('why to Add Vitamin E to Your Skin (and Hair) Routine Now','Next to flashier ingredients like retinol and vitamin C, vitamin E is something of an unsung hero. You’ve probably spotted it in at least one of your products, given that it’s one of the most widely used ingredients in beauty (it’s typically listed as “tocopherol” on ingredients lists), but you might not know it does far more than moisturize. From powering your other actives to working its wide-ranging benefits from the inside out, vitamin E does it all—and truly deserves a front-row spot in your skin care lineup. Below, six reasons why this hardworking ingredient is one of our favorite antioxidants (and should be yours, too).','https://cdn.discordapp.com/attachments/778557600017940501/825477578386571274/woman-in-the-sun-feature.png'),

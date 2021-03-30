@@ -7,6 +7,7 @@ const clientError = (req, res) => {
 
 // eslint-disable-next-line no-unused-vars
 const serverError = (err, req, res, next) => {
+  console.log(err);
   const error = err.statusCode ? err : boomify(500, 'internal server error');
   res.status(err.statusCode || 500).json(error);
 };

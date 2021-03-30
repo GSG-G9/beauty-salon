@@ -5,17 +5,16 @@ const { boomify, signupValidation, signToken } = require('../../utilis');
 
 const signUp = async (req, res, next) => {
   try {
-    const {
-      value: { password, email },
-    } = await signupValidation.validate(req.body, {
+    const { email, password } = await signupValidation.validateAsync(req.body, {
       abortEarly: false,
     });
 
     const { rows: user } = await checkEmail({ email });
 
     if (user[0]) {
-      throw boomify(409, 'user already exists ');
+      next(boomify(409, 'user already exists '));
     }
+
     const hashedPassword = await hash(password, 10);
     const { rows: data } = await signupUser({
       ...req.body,
@@ -37,7 +36,11 @@ const signUp = async (req, res, next) => {
       data: { id, role },
     });
   } catch (err) {
-    next(err);
+    next(
+      err.name === 'ValidationError'
+        ? boomify(400, err.details[0].message)
+        : err
+    );
   }
 };
 

@@ -1,12 +1,9 @@
-const express = require('express');
+const router = require('express').Router();
 
-const { contactusHandler } = require('../controller');
+const commonRouter = require('./common');
+const userRouter = require('./user');
 
-const router = express.Router();
-
-router.get('/hi', (req, res) => {
-  res.send('hi');
-});
-router.post('/contact-us', contactusHandler);
+router.use(commonRouter);
+router.use(userRouter);
 
 module.exports = router;

@@ -1,5 +1,4 @@
 const { contactusHandler } = require('./user');
+const { servicesHandler, signUp } = require('./common');
 
-module.exports = {
-  contactusHandler,
-};
+module.exports = { servicesHandler, signUp, contactusHandler };

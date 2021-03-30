@@ -6,6 +6,9 @@ const connection = require('../server/database/config/connection');
 describe('Test routes', () => {
   beforeEach(() => runBuild());
   afterAll(() => connection.end());
+  afterAll(async () => {
+    await new Promise((resolve) => setTimeout(() => resolve(), 3000));
+  });
 
   test('POST /api/v1/contact-us, should return status 200 and successfull message when user send correct data', async () => {
     const {

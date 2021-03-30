@@ -59,7 +59,7 @@ describe('Test getBlogs DB queries and route', () => {
         ],
       };
       const actual = res.body;
-      return expect(actual).toEqual(expect.objectContaining(expected));
+      return expect(actual).toEqual(expected);
     });
   });
 });

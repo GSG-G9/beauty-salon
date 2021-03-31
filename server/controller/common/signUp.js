@@ -25,7 +25,7 @@ const signUp = async (req, res, next) => {
       firstName: data[0].first_name,
       lastName: data[0].last_name,
       email: data[0].email,
-      id: data[0].id,
+      userId: data[0].id,
     });
 
     const { id, role } = data[0];

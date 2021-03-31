@@ -1,3 +1,13 @@
-const { getAllBlogs } = require('./common');
+const {
+  signUp, signin, servicesHandler, getBookingsByDate, getAllBlogs
+} = require('./common');
+const { logOut } = require('./user');
 
-module.exports = { getAllBlogs };
+module.exports = {
+  signUp,
+  signin,
+  servicesHandler,
+  getBookingsByDate,
+  getAllBlogs,
+  logOut,
+};

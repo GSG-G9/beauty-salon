@@ -1,5 +1,8 @@
 const router = require('express').Router();
 
+router.get('/hi', (req, res) => {
+  res.send('hi');
+});
 const commonRouter = require('./common');
 const userRouter = require('./user');
 

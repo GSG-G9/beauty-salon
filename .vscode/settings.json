@@ -6,8 +6,8 @@
     }
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "files.eol": "\n",
   "prettier.singleQuote": true,
-  "cSpell.words": ["Signin"]
+  "cSpell.words": ["Signin", "utilis"]
 }

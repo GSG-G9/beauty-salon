@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const boomify = require('../../utilis/boomify');
+const boomify = require('../boomify');
 
 const signinValidation = async (req, res, next) => {
   const { email, password } = req.body;

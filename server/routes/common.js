@@ -1,9 +1,12 @@
 const commonRouter = require('express').Router();
-const { signinValidation } = require('../middleware/validation');
-const { signUp, signin, servicesHandler } = require('../controller');
+const { signinValidation } = require('../utilis/validation');
+const {
+  signUp, signin, servicesHandler, getBookingsByDate,
+} = require('../controller');
 
-commonRouter.get('/services', servicesHandler);
-commonRouter.post('/signup', signUp);
 commonRouter.post('/signin', signinValidation, signin);
+commonRouter.post('/signup', signUp);
+commonRouter.get('/bookings/:date', getBookingsByDate);
+commonRouter.get('/services', servicesHandler);
 
 module.exports = commonRouter;

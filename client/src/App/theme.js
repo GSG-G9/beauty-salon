@@ -37,7 +37,7 @@ const theme = createMuiTheme({
       color: 'primary',
     },
     MuiTextField: {
-      variant: 'filled',
+      variant: 'outlined',
     },
   },
 });

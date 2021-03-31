@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   input: {
-    backgroundColor: theme.palette.secondary.main,
+    outlineColor: theme.palette.primary.main,
   },
 }));
 

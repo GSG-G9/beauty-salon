@@ -4,12 +4,11 @@ import TextField from '@material-ui/core/TextField';
 
 import useStyles from './style';
 
-function InputField({ variant, onChange, ...rest }) {
+function InputField({ onChange, ...rest }) {
   const classes = useStyles();
   return (
     <TextField
       className={classes.input}
-      variant={variant}
       type="text"
       onChange={onChange}
       {...rest}
@@ -18,7 +17,6 @@ function InputField({ variant, onChange, ...rest }) {
 }
 
 InputField.propTypes = {
-  variant: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

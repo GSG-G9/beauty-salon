@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
-
+import InputField from '../component/inputText';
 import {
   HOME_PAGE,
   BLOGS,
@@ -35,6 +35,7 @@ const App = () => (
       <Switch>
         <Route exact path={HOME_PAGE}>
           <Home />
+          <InputField />
         </Route>
         <Route path={BLOGS}>
           <Blogs />

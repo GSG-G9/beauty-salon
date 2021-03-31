@@ -1,6 +1,6 @@
 
 BEGIN;
-DROP TABLE IF EXISTS users, products, services, orders, stylists, apponitments, blogs, contacts CASCADE;
+DROP TABLE IF EXISTS users, products, services, orders, stylists, appointments, blogs, contacts CASCADE;
 CREATE TABLE users (
   "id" SERIAL PRIMARY KEY,
   "first_name" VARCHAR(100) NOT NULL,
@@ -50,13 +50,15 @@ CREATE TABLE stylists (
   "service_id" INT REFERENCES services(id)
 );
 
-CREATE TABLE apponitments (
+CREATE TABLE appointments (
   "id" SERIAL PRIMARY KEY,
  "user_id" INT REFERENCES users(id),
   "stylist_id" INT REFERENCES stylists(id),
   "service_id" INT REFERENCES services(id),
-  "time" timestamp
+  "appointment_date" VARCHAR(100) NOT NULL,
+  "appointment_time" VARCHAR(100) NOT NULL
 );
+
 
 CREATE TABLE blogs (
   "id" SERIAL PRIMARY KEY,

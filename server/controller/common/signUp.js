@@ -39,7 +39,7 @@ const signUp = async (req, res, next) => {
     next(
       err.name === 'ValidationError'
         ? boomify(400, err.details[0].message)
-        : err
+        : err,
     );
   }
 };

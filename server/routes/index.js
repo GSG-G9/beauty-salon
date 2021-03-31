@@ -1,9 +1,12 @@
-const express = require('express');
+const router = require('express').Router();
 
-const router = express.Router();
+router.get('/hi', (req, res) => {
+  res.send('hi');
+});
+const commonRouter = require('./common');
+const userRouter = require('./user');
 
-const user = require('./user');
-
-router.use(user);
+router.use(commonRouter);
+router.use(userRouter);
 
 module.exports = router;

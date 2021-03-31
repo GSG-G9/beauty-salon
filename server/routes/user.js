@@ -1,7 +1,8 @@
-const router = require('express').Router();
+const userRouter = require('express').Router();
 
-const { addNewBook } = require('../controller');
+const { addNewBook, logOut } = require('../controller');
 
-router.post('/booking', addNewBook);
+userRouter.post('/booking', addNewBook);
+userRouter.post('/logout', logOut);
 
-module.exports = router;
+module.exports = userRouter;

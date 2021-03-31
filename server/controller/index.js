@@ -1,3 +1,14 @@
-const { addNewBook } = require('./user');
+const {
+  signUp, signin, servicesHandler, getBookingsByDate,
+} = require('./common');
 
-module.exports = { addNewBook };
+const { addNewBook, logOut } = require('./user');
+
+module.exports = {
+  signUp,
+  signin,
+  servicesHandler,
+  getBookingsByDate,
+  addNewBook,
+  logOut,
+};

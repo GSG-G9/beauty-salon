@@ -1,3 +1,5 @@
 const addNewBook = require('./addBook');
 
-module.exports = { addNewBook };
+const logOut = require('./logout');
+
+module.exports = { addNewBook, logOut };

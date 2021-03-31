@@ -20,13 +20,12 @@ const addNewBook = async (req, res, next) => {
         appoinmtmentDate,
         appointmentTime,
       });
-      res.json({
+      return res.json({
         status: 201,
         message: 'appointment has been added successfully',
       });
-    } else {
-      res.json(boomify(400, 'choosen time in not available'));
     }
+    return res.json(boomify(400, 'choosen time in not available'));
   } catch (error) {
     return next(error);
   }

@@ -1,6 +1,6 @@
 const { hash } = require('bcrypt');
 
-const { signupUser, checkEmail } = require('../../database/queries');
+const { signupUser, checkUserByEmail } = require('../../database/queries');
 const { boomify, signupValidation, signToken } = require('../../utilis');
 
 const signUp = async (req, res, next) => {
@@ -9,7 +9,7 @@ const signUp = async (req, res, next) => {
       abortEarly: false,
     });
 
-    const { rows: user } = await checkEmail({ email });
+    const { rows: user } = await checkUserByEmail({ email });
 
     if (user[0]) {
       next(boomify(409, 'user already exists '));

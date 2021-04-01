@@ -1,8 +1,8 @@
 INSERT INTO users(first_name,last_name,email,password,role) VALUES
-('yasmeen','attallah','yatt@gmail.com','123456789yas','user'),
-('iman','sedky','iman@gmail.com','123456789emy','user'),
-('noor','sedky','noor@gmail.com','123456789noor','user'),
-('beauty','salon','admin@gmail.com','123456789','admin');
+('yasmeen','attallah','yatt@gmail.com','$2b$10$.HABPjtsd.qSMUNbNjNMueXgQ/jqYDr9i0kubJlQi61F9l9y9d6NG','user'),
+('iman','sedky','iman@gmail.com','$2b$10$nlnDNBPGl0uOmfV.RLB4cufWueWKxJi67q9/7lQ3ZTjoAqiw5kkZu','user'),
+('noor','sedky','noor@gmail.com','$2b$10$rk4DsjamEYvStvd6SG7pWOiZnYdTL8c757Y85Qb5eGn1vsmoqrjeS','user'),
+('beauty','salon','admin@gmail.com','$2b$10$FpYb9OypRus6ElAG9iEztO0c9IMGXn1g3QGDtukFWYMiffJFKKO4a','admin');
 
 INSERT INTO products(title,brand,price,quantity,description,image) VALUES
 ('lipstick','Max factor',20,5,'To make your lips look fuller, always use a lip liner as a base. Etch over the lip line and your cupid bow to instantly define, plump and perfect.','https://cdn.discordapp.com/attachments/778557600017940501/825463225260572682/xs_colour-elixir-lipsti_colour-elixir-lipsti_blt0e82151a1c3a7129_ar-ae_1.png'),

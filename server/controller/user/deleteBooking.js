@@ -1,15 +1,17 @@
-const deleteBooking = require('../../database/queries');
+const deleteBooking = require('../../database/queries/deleteBook');
+const bommify = require('../../utilis/boomify');
 
 const deleteBookingController = async (req, res, next) => {
   const { bookingId } = req.params;
-  const {id } = req;
-  console.log(11,bookingId,222,id);
+  const { userId } = req;
   try {
     const { rows } = await deleteBooking({ userId, bookingId });
-    console.log(33, rows);
+    if (!rows.length) {
+      throw bommify(404, 'there is no booking ');
+    }
     res.json({
       status: 200,
-      message: 'hi from delete booking ',
+      message: 'Deleted successfully ',
     });
   } catch (error) {
     next(error);

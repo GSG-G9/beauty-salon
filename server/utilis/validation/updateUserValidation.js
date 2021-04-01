@@ -5,7 +5,6 @@ const updateUserValidation = joi.object({
   lastName: joi.string().alphanum().min(3).required(),
   mobile: joi.number().min(9),
   address: joi.string(),
-  userId: joi.number(),
 });
 
 module.exports = updateUserValidation;

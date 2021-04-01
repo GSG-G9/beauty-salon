@@ -3,23 +3,16 @@ const { boomify, updateUserValidation } = require('../../utilis');
 
 const updateUserController = async (req, res, next) => {
   try {
+    const { userId } = req;
     const {
-      firstName, lastName, mobile, address, userId,
+      firstName, lastName, mobile, address,
     } = await updateUserValidation.validateAsync(req.body, {
       abortEarly: false,
     });
 
-    // const { userId } = req;
-    console.log(req.body, 88);
-    // console.log(userId, 77);
-    // console.log(req.user, 66);
-
     const { rows } = await updateUserQuery({
       firstName, lastName, mobile, address, userId,
     });
-    console.log(await updateUserQuery({
-      firstName, lastName, mobile, address, userId,
-    }), 22);
 
     if (!rows.length) {
       throw boomify(400, 'update failed');

@@ -2,7 +2,8 @@ INSERT INTO users(first_name,last_name,email,password,role) VALUES
 ('yasmeen','attallah','yatt@gmail.com','123456789yas','user'),
 ('iman','sedky','iman@gmail.com','123456789emy','user'),
 ('noor','sedky','noor@gmail.com','123456789noor','user'),
-('beauty','salon','admin@gmail.com','123456789','admin');
+('beauty','salon','admin@gmail.com','123456789','admin'),
+('hgggggg','ccdddddd','asidhadajm@gmail.com','$2b$10$cfhRjgQKk9Gs88Plh10HweH2eBihkmPenK4UFvO/Ip1ygTIugcgGC','user');
 
 INSERT INTO products(title,brand,price,quantity,description,image) VALUES
 ('lipstick','Max factor',20,5,'To make your lips look fuller, always use a lip liner as a base. Etch over the lip line and your cupid bow to instantly define, plump and perfect.','https://cdn.discordapp.com/attachments/778557600017940501/825463225260572682/xs_colour-elixir-lipsti_colour-elixir-lipsti_blt0e82151a1c3a7129_ar-ae_1.png'),

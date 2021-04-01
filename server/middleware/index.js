@@ -1,3 +1,4 @@
 const isAuth = require('./isAuth');
+const isAdmin = require('./isAdmin');
 
-module.exports = { isAuth };
+module.exports = { isAuth, isAdmin };

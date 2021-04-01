@@ -6,7 +6,7 @@ const isAuth = async (req, res, next) => {
     const decodedUserData = await verifyToken(token);
     const { id, role } = decodedUserData;
     if (!decodedUserData) {
-      throw boomify(401, "you're unautherized");
+      throw boomify(401, "you're unauthorized");
     } else {
       req.userId = id;
       req.role = role;

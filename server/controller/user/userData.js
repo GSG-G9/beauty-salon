@@ -6,7 +6,6 @@ const userData = async (req, res, next) => {
     res.json({
       statusCode: 200,
       data: rows[0],
-
     });
   } catch (err) {
     next(err);

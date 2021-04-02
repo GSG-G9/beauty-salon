@@ -10,7 +10,7 @@ describe('Test routes', () => {
     await new Promise((resolve) => setTimeout(() => resolve(), 3000));
   });
 
-  test('POST /api/v1/contact-us, should return status 200 and successfull message when user send correct data', async () => {
+  test('POST /api/v1/contact-us, should return status 200 and successful message when user send correct data', async () => {
     const {
       body: { status, message },
     } = await request(app).post('/api/v1/contact-us').send({
@@ -21,7 +21,7 @@ describe('Test routes', () => {
     });
 
     expect(status).toBe(200);
-    expect(message).toBe('message sent succesfully');
+    expect(message).toBe('message sent successfully');
   });
 
   test('POST /api/v1/contact-us, should return status 400 and validation message when user send invalid data', async () => {

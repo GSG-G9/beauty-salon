@@ -12,7 +12,7 @@ const contactusHandler = async (req, res, next) => {
 
     res.json({
       status: 200,
-      message: 'message sent succesfully',
+      message: 'message sent successfully',
     });
   } catch (err) {
     next(

@@ -7,6 +7,7 @@ const signin = async (req, res, next) => {
   const { email, password } = req.body;
   try {
     const { rowCount, rows } = await checkUserByEmail({ email });
+
     if (rowCount === 0) {
       throw boomify(404, 'user not found');
     }
@@ -15,6 +16,7 @@ const signin = async (req, res, next) => {
     if (!match) { throw boomify(400, 'Invalid username/password'); }
 
     const token = await signToken({
+      role: rows[0].role,
       email: rows[0].email,
       password: rows[0].image,
       userId: rows[0].id,

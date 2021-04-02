@@ -73,8 +73,7 @@ CREATE TABLE contacts (
   "name" VARCHAR(100) NOT NULL,
   "mobile" int,
   "message" TEXT,
-  "created_at" timestamp,
+  "created_at" timestamp DEFAULT CURRENT_TIMESTAMP,
   "email" VARCHAR
- 
 );
 COMMIT;

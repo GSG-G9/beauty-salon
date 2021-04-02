@@ -1,7 +1,10 @@
 const commonRouter = require('express').Router();
 const { signinValidation } = require('../utilis/validation');
 const {
-  signUp, signin, servicesHandler, getBookingsByDate,
+  signUp,
+  signin,
+  servicesHandler,
+  getBookingsByDate,
 } = require('../controller');
 
 commonRouter.post('/signin', signinValidation, signin);

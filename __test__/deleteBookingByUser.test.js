@@ -7,6 +7,7 @@ const { deleteBooking } = require('../server/database/queries');
 
 describe('test delete booking query and /api/v1/booking/:bookingId route', () => {
   beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
   afterAll(() => connection.end());
 
   test('deleteAppointments query', async () => {
@@ -31,6 +32,17 @@ describe('test delete booking query and /api/v1/booking/:bookingId route', () =>
       .set('Cookie', [`token=${token}`])
       .expect('Content-Type', /json/);
     expect(statusCode).toBe(404);
+    expect(message).toEqual(ExpectedMessage);
+  });
+  test('delete api/v1/booking/:bookingId route when there deleted successfully', async () => {
+    const ExpectedMessage = 'Deleted successfully ';
+    const {
+      body: { status, message },
+    } = await request(app)
+      .delete('/api/v1/booking/4')
+      .set('Cookie', [`token=${token}`])
+      .expect('Content-Type', /json/);
+    expect(status).toBe(200);
     expect(message).toEqual(ExpectedMessage);
   });
 });

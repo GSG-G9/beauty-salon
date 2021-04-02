@@ -2,8 +2,13 @@
 const request = require('supertest');
 const cookie = require('cookie');
 const app = require('../server/app');
+const { runBuild } = require('../server/database/config/build');
+const connection = require('../server/database/config/connection');
 
 describe('Test Post /logout', () => {
+  beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
+  afterAll(() => connection.end());
   let token;
   // eslint-disable-next-line jest/expect-expect
   test('login user to utilize it\'s token in unprotected routes tests', async () => {

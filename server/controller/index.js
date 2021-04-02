@@ -2,6 +2,7 @@ const {
   signUp, signin, servicesHandler, getBookingsByDate,
 } = require('./common');
 const { logOut } = require('./user');
+const { deleteBooking } = require('./admin');
 
 module.exports = {
   signUp,
@@ -9,4 +10,5 @@ module.exports = {
   servicesHandler,
   getBookingsByDate,
   logOut,
+  deleteBooking,
 };

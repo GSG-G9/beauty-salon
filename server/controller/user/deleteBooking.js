@@ -1,4 +1,4 @@
-const deleteBooking = require('../../database/queries/deleteBook');
+const { deleteBooking } = require('../../database/queries');
 const bommify = require('../../utilis/boomify');
 
 const deleteBookingController = async (req, res, next) => {
@@ -6,6 +6,7 @@ const deleteBookingController = async (req, res, next) => {
   const { userId } = req;
   try {
     const { rows } = await deleteBooking({ userId, bookingId });
+
     if (!rows.length) {
       throw bommify(404, 'there is no booking ');
     }

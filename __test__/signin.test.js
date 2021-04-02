@@ -6,6 +6,7 @@ const connection = require('../server/database/config/connection');
 
 describe('POST /api/v1/signin', () => {
   beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
   afterAll(() => connection.end());
   test('router returns 400 if there is no password', async () => {
     const { statusCode } = await request(app)

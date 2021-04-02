@@ -6,6 +6,7 @@ const { getServices } = require('../server/database/queries');
 
 describe('test getServices query and /api/v1/services route', () => {
   beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
   afterAll(() => connection.end());
 
   test(`getServices query, expected the third service to be object with name 

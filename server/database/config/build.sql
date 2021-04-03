@@ -29,7 +29,7 @@ CREATE TABLE products(
 
 CREATE TABLE services (
   "id" SERIAL PRIMARY KEY,
-  "name" VARCHAR NOT NULL,
+  "service_name" VARCHAR NOT NULL,
   "category" VARCHAR NOT Null
 );
 
@@ -46,7 +46,7 @@ CREATE TABLE orders (
 
 CREATE TABLE stylists (
   "id" SERIAL PRIMARY KEY,
-  "name" VARCHAR NOT NULL,
+  "stylist_name" VARCHAR NOT NULL,
   "service_id" INT REFERENCES services(id)
 );
 

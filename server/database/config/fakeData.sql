@@ -1,8 +1,10 @@
 INSERT INTO users(first_name,last_name,email,password,role) VALUES
-('yasmeen','attallah','yatt@gmail.com','123456789yas','user'),
-('iman','sedky','iman@gmail.com','123456789emy','user'),
-('noor','sedky','noor@gmail.com','123456789noor','user'),
-('beauty','salon','admin@gmail.com','123456789','admin');
+('yasmeen','attallah','yatt@gmail.com','$2b$10$.HABPjtsd.qSMUNbNjNMueXgQ/jqYDr9i0kubJlQi61F9l9y9d6NG','user'),
+('iman','sedky','iman@gmail.com','$2b$10$nlnDNBPGl0uOmfV.RLB4cufWueWKxJi67q9/7lQ3ZTjoAqiw5kkZu','user'),
+('noor','sedky','noor@gmail.com','$2b$10$rk4DsjamEYvStvd6SG7pWOiZnYdTL8c757Y85Qb5eGn1vsmoqrjeS','user'),
+('beauty','salon','admin@gmail.com','$2b$10$FpYb9OypRus6ElAG9iEztO0c9IMGXn1g3QGDtukFWYMiffJFKKO4a','admin'),
+('abood','hjwer','abood@gmail.com','$2b$10$fjpGHZdEtOWCQYGj/roX2eHonN//udNdkuutwaK.ozNanIWDATLoe','user');
+
 
 INSERT INTO products(title,brand,price,quantity,description,image) VALUES
 ('lipstick','Max factor',20,5,'To make your lips look fuller, always use a lip liner as a base. Etch over the lip line and your cupid bow to instantly define, plump and perfect.','https://cdn.discordapp.com/attachments/778557600017940501/825463225260572682/xs_colour-elixir-lipsti_colour-elixir-lipsti_blt0e82151a1c3a7129_ar-ae_1.png'),
@@ -16,7 +18,7 @@ INSERT INTO products(title,brand,price,quantity,description,image) VALUES
 ('highlighter','Topface',50,8,'Morphes Highlighters truly live up to their name. These daringly creamy, zero-gravity highlighters create explosive, prismatic effects','https://cdn.discordapp.com/attachments/778557600017940501/825468089960497213/2511232.png'),
 ('Powder','Dior',70,9,'An artistry essential used to set makeup, control oil, and smooth the texture of the skin, all while creating a soft-focus finish','https://cdn.discordapp.com/attachments/778557600017940501/825468934178340934/0607845014218.png');
 
-INSERT INTO services(name,category) VALUES
+INSERT INTO services(service_name,category) VALUES
 ('JUNIOR WOMENS HAIRCUT','Hair cuts'),
 ('Childreen HAIRCUT','Hair cuts'),
 ('Mens HAIRCUT','Hair cuts'),
@@ -42,7 +44,7 @@ INSERT INTO orders(price,quantity,user_id,product_id) VALUES
 (180,2,2,8),
 (90,1,1,10);
 
-INSERT INTO stylists(name,service_id) VALUES
+INSERT INTO stylists(stylist_name,service_id) VALUES
 ('jacob',5),
 ('jacob',10),
 ('jacob',7),

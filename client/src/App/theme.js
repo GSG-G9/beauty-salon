@@ -30,14 +30,20 @@ const theme = createMuiTheme({
         backgroundColor: '#000000',
       },
     },
+    MuiTextField: {
+      root: {
+        '& .MuiOutlinedInput-notchedOutline': {
+          '& fieldset': {
+            BorderColor: '#CFAB7A',
+          },
+        },
+      },
+    },
   },
   props: {
     MuiButton: {
       variant: 'outlined',
       color: 'primary',
-    },
-    MuiTextField: {
-      variant: 'outlined',
     },
   },
 });

@@ -1,8 +1,12 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   input: {
-    outlineColor: theme.palette.primary.main,
+    '& .MuiOutlinedInput-notchedOutline': {
+      '& fieldset': {
+        BorderColor: '#CFAB7A',
+      },
+    },
   },
 }));
 

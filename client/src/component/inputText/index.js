@@ -11,6 +11,7 @@ function InputField({ onChange, ...rest }) {
       className={classes.input}
       type="text"
       onChange={onChange}
+      variant="outlined"
       {...rest}
     />
   );

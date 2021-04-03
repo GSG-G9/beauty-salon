@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-const { getAllBlogs } = require('../controller');
 const commonRouter = require('./common');
 const userRouter = require('./user');
+const { getAllBlogs } = require('../controller');
 
 router.use(commonRouter);
 router.use(userRouter);

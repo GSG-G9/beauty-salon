@@ -40,12 +40,12 @@ describe('test delete booking query and /api/v1/booking/:bookingId route', () =>
   test('delete api/v1/booking/:bookingId route when there deleted successfully', async () => {
     const ExpectedMessage = 'Deleted successfully ';
     const {
-      body: { status, message },
+      body,
     } = await request(app)
       .delete('/api/v1/booking/4')
       .set('Cookie', [`token=${token}`])
       .expect('Content-Type', /json/);
-    expect(status).toBe(200);
-    expect(message).toEqual(ExpectedMessage);
+    expect(body.status).toBe(200);
+    expect(body.message).toEqual(ExpectedMessage);
   });
 });

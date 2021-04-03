@@ -6,8 +6,7 @@ const {
   getAllBlogs,
   contactusHandler,
 } = require('./common');
-
-const { logOut } = require('./user');
+const { logOut, deleteBookingController } = require('./user');
 
 module.exports = {
   signUp,
@@ -16,5 +15,6 @@ module.exports = {
   getBookingsByDate,
   getAllBlogs,
   logOut,
+  deleteBookingController,
   contactusHandler,
 };

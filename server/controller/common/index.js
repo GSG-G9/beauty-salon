@@ -11,5 +11,5 @@ module.exports = {
   signUp,
   signin,
   getBookingsByDate,
-  getAllBlogs
+  getAllBlogs,
 };

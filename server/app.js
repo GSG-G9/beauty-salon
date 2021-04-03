@@ -18,7 +18,9 @@ const middlewares = [
   express.json(),
   cookieParser(),
   compression(),
-  express.urlencoded({ extended: false }),
+  express.urlencoded({
+    extended: false,
+  }),
 ];
 
 app.use(middlewares);

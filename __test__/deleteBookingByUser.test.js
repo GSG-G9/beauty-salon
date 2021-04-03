@@ -15,6 +15,7 @@ describe('test delete booking query and /api/v1/booking/:bookingId route', () =>
     const expected = [];
     return expect(expected).toEqual(rows);
   });
+
   let token;
   // eslint-disable-next-line jest/expect-expect
   test('login user to utilize it\'s token in unprotected routes tests', async () => {
@@ -23,6 +24,7 @@ describe('test delete booking query and /api/v1/booking/:bookingId route', () =>
       .send({ email: 'admin@gmail.com', password: '123456789' });
     token = cookie.parse(cookies[0]).token;
   });
+
   test('delete api/v1/booking/:bookingId route when there is no booking to delete', async () => {
     const ExpectedMessage = 'there is no booking ';
     const {
@@ -34,6 +36,7 @@ describe('test delete booking query and /api/v1/booking/:bookingId route', () =>
     expect(statusCode).toBe(404);
     expect(message).toEqual(ExpectedMessage);
   });
+
   test('delete api/v1/booking/:bookingId route when there deleted successfully', async () => {
     const ExpectedMessage = 'Deleted successfully ';
     const {

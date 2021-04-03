@@ -6,7 +6,6 @@ const deleteBookingController = async (req, res, next) => {
   const { userId } = req;
   try {
     const { rows } = await deleteBooking({ userId, bookingId });
-
     if (!rows.length) {
       throw bommify(404, 'there is no booking ');
     }
@@ -18,4 +17,5 @@ const deleteBookingController = async (req, res, next) => {
     next(error);
   }
 };
+
 module.exports = deleteBookingController;

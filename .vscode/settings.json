@@ -9,5 +9,10 @@
   "editor.formatOnSave": false,
   "files.eol": "\n",
   "prettier.singleQuote": true,
-  "cSpell.words": ["Signin", "utilis"]
+  "cSpell.words": [
+    "Signin",
+    "contactus",
+    "iman",
+    "utilis"
+  ]
 }

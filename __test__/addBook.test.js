@@ -61,7 +61,7 @@ describe('Test addBook and checkAvailability queries and addBook route', () => {
     const { headers: { 'set-cookie': [resCookies] } } = res;
     // eslint-disable-next-line prefer-destructuring
     token = resCookies.split(';')[0].split('=')[1];
-    return expect(1).toBe(1);
+    return expect(res.body).toEqual({ statusCode: 200, message: 'Login successfully' });
   });
   test('Expect to return object with status 201, and success message', async () => {
     const {

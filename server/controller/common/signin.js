@@ -18,6 +18,8 @@ const signin = async (req, res, next) => {
       email: rows[0].email,
       password: rows[0].image,
       userId: rows[0].id,
+      role: rows[0].role,
+
     });
 
     res.cookie('token', token).json({

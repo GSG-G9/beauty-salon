@@ -2,6 +2,7 @@ INSERT INTO users(first_name,last_name,email,password,role) VALUES
 ('yasmeen','attallah','yatt@gmail.com','123456789yas','user'),
 ('iman','sedky','iman@gmail.com','123456789emy','user'),
 ('noor','sedky','noor@gmail.com','123456789noor','user'),
+('adham', 'Hai','adham@hi.com', '$2b$10$7hOMiaf/b49Km4dZOp9oMevyYE50fjCXH23BKkhkdl70iy.ELpMMu', 'user'),
 ('beauty','salon','admin@gmail.com','123456789','admin');
 
 INSERT INTO products(title,brand,price,quantity,description,image) VALUES

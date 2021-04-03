@@ -8,16 +8,16 @@ const addNewBook = async (req, res, next) => {
       userId,
       serviceId,
       stylistId,
-      appoinmtmentDate,
+      appointmentDate,
       appointmentTime,
     } = req.body;
-    const { rows } = await checkAvailability(appoinmtmentDate, appointmentTime);
+    const { rows } = await checkAvailability(appointmentDate, appointmentTime);
     if (rows.length === 0) {
       await addBook({
         userId,
         serviceId,
         stylistId,
-        appoinmtmentDate,
+        appointmentDate,
         appointmentTime,
       });
       return res.json({
@@ -25,7 +25,7 @@ const addNewBook = async (req, res, next) => {
         message: 'appointment has been added successfully',
       });
     }
-    return res.json(boomify(400, 'choosen time in not available'));
+    return res.json(boomify(400, 'chosen time in not available'));
   } catch (error) {
     return next(error);
   }

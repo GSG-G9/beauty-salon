@@ -5,7 +5,7 @@ const getAllBlogs = async (req, res, next) => {
   try {
     const { rows } = await getBlogs();
     if (!rows) {
-      throw boomify(500, 'Internal Server Error');
+      throw boomify(203, 'There is no blogs');
     }
     res.json({ status: 200, data: rows });
   } catch (error) {

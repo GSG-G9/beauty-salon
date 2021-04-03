@@ -8,9 +8,7 @@ const { getBlogs } = require('../server/database/queries');
 describe('Test getBlogs DB queries and route', () => {
   beforeEach(() => runBuild());
   afterAll(() => connection.end());
-  afterAll(async () => {
-    await new Promise((resolve) => setTimeout(() => resolve(), 3000));
-  });
+  
   describe('Test DB query', () => {
     test('Expect the query to return array of objects', async () => {
       const { rows } = await getBlogs();
@@ -21,7 +19,7 @@ describe('Test getBlogs DB queries and route', () => {
         })
       );
     });
-    test('Expect to return object with statusCode 200 and array of blogs ojects', async () => {
+    test('Expect to return object with statusCode 200 and array of blogs objects', async () => {
       const res = await request(app)
         .get('/api/v1/blog')
         .expect('Content-Type', /json/)

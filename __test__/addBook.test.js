@@ -19,8 +19,8 @@ describe('Test addBook and checkAvailability queries and addBook route', () => {
     };
     test('Expect to return object', async () => {
       const { rowCount } = await checkAvailability(
-        availabilityData.appoinmtmentDate,
-        availabilityData.appointmentTime
+        availabilityData.appointmentDate,
+        availabilityData.appointmentTime,
       );
       expect(rowCount).toBe(0);
     });
@@ -30,12 +30,11 @@ describe('Test addBook and checkAvailability queries and addBook route', () => {
       userId: 2,
       serviceId: 2,
       stylistId: 2,
-      appoinmtmentDate: '2030-03-28',
+      appointmentDate: '2030-03-28',
       appointmentTime: '12:00',
     };
     test('Expect to returning appointment_date, appointment_time', async () => {
       const { rowCount, rows } = await addBook({ ...bookingData });
-      // console.log(rows);
       expect(rows[0]).toEqual({
         appointment_date: '2030-03-28',
         appointment_time: '12:00',
@@ -48,7 +47,7 @@ describe('Test addBook and checkAvailability queries and addBook route', () => {
       userId: 2,
       serviceId: 2,
       stylistId: 2,
-      appoinmtmentDate: '2030-03-28',
+      appointmentDate: '2030-03-28',
       appointmentTime: '12:00',
     };
     test('Expect to return object with status 201, and success message', async () => {
@@ -63,12 +62,12 @@ describe('Test addBook and checkAvailability queries and addBook route', () => {
       expect(message).toBe('appointment has been added successfully');
     });
   });
-  describe('Test addBook route in failur case', () => {
-    const failerBookingData = {
+  describe('Test addBook route in failure case', () => {
+    const failedBookingData = {
       userId: 2,
       serviceId: 2,
       stylistId: 2,
-      appoinmtmentDate: '2021-03-28',
+      appointmentDate: '2021-03-28',
       appointmentTime: '12:00',
     };
     test('Expect to return object with status 400, and success message', async () => {
@@ -77,10 +76,10 @@ describe('Test addBook and checkAvailability queries and addBook route', () => {
       } = await request(app)
         .post('/api/v1/booking')
         .set({ 'Content-Type': 'application/json' })
-        .send({ ...failerBookingData });
+        .send({ ...failedBookingData });
 
       expect(statusCode).toBe(400);
-      expect(errorMessage).toBe('choosen time in not available');
+      expect(errorMessage).toBe('chosen time in not available');
     });
   });
 });

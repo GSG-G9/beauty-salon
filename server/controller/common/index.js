@@ -1,3 +1,4 @@
+const getAllBlogs = require('./getBlogs');
 const servicesHandler = require('./services');
 const contactusHandler = require('./contactus');
 const signin = require('./signin');
@@ -10,4 +11,5 @@ module.exports = {
   signUp,
   signin,
   getBookingsByDate,
+  getAllBlogs
 };

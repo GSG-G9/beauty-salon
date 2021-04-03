@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
-router.get('/hi', (req, res) => {
-  res.send('hi');
-});
 const commonRouter = require('./common');
 const userRouter = require('./user');
+const { getAllBlogs } = require('../controller');
 
 router.use(commonRouter);
 router.use(userRouter);
+
+router.get('/blog', getAllBlogs);
 
 module.exports = router;

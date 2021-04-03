@@ -1,3 +1,4 @@
+const getBlogs = require('./getBlogs');
 const postMessage = require('./contactus');
 const checkUserByEmail = require('./checkUserByEmail');
 const getServices = require('./services');
@@ -10,4 +11,5 @@ module.exports = {
   postMessage,
   checkUserByEmail,
   bookingsQuery,
+  getBlogs
 };

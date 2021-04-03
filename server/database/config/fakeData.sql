@@ -18,7 +18,7 @@ INSERT INTO products(title,brand,price,quantity,description,image) VALUES
 ('highlighter','Topface',50,8,'Morphes Highlighters truly live up to their name. These daringly creamy, zero-gravity highlighters create explosive, prismatic effects','https://cdn.discordapp.com/attachments/778557600017940501/825468089960497213/2511232.png'),
 ('Powder','Dior',70,9,'An artistry essential used to set makeup, control oil, and smooth the texture of the skin, all while creating a soft-focus finish','https://cdn.discordapp.com/attachments/778557600017940501/825468934178340934/0607845014218.png');
 
-INSERT INTO services(service_name,category) VALUES
+INSERT INTO services(name,category) VALUES
 ('JUNIOR WOMENS HAIRCUT','Hair cuts'),
 ('Childreen HAIRCUT','Hair cuts'),
 ('Mens HAIRCUT','Hair cuts'),
@@ -44,7 +44,7 @@ INSERT INTO orders(price,quantity,user_id,product_id) VALUES
 (180,2,2,8),
 (90,1,1,10);
 
-INSERT INTO stylists(stylist_name,service_id) VALUES
+INSERT INTO stylists(name,service_id) VALUES
 ('jacob',5),
 ('jacob',10),
 ('jacob',7),

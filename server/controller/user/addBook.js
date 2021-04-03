@@ -1,9 +1,12 @@
 const { addBook, checkAvailability } = require('../../database/queries');
-
 const boomify = require('../../utilis/boomify');
+const addBookingValidation = require('../../utilis/validation/addBookingValidation');
 
 const addNewBook = async (req, res, next) => {
   try {
+    await addBookingValidation.validateAsync(req.body, {
+      abortEarly: false,
+    });
     const {
       userId,
       serviceId,
@@ -20,14 +23,17 @@ const addNewBook = async (req, res, next) => {
         appointmentDate,
         appointmentTime,
       });
-      return res.json({
+      res.json({
         status: 201,
         message: 'appointment has been added successfully',
       });
     }
-    return res.json(boomify(400, 'chosen time in not available'));
-  } catch (error) {
-    return next(error);
+    next(boomify(400, 'chosen time in not available'));
+  } catch (err) {
+    if (err.name === 'ValidationError') {
+      next(boomify(400, err.details[0].message));
+    }
+    next(err);
   }
 };
 

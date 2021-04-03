@@ -1,5 +1,10 @@
 const addNewBook = require('./addBook');
 
 const logOut = require('./logout');
+const deleteBookingController = require('./deleteBooking');
 
-module.exports = { addNewBook, logOut };
+module.exports = {
+  logOut,
+  addNewBook,
+  deleteBookingController,
+};

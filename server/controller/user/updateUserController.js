@@ -17,15 +17,11 @@ const updateUserController = async (req, res, next) => {
     if (!rows.length) {
       throw boomify(400, 'update failed');
     }
-    const {
-      id, first_name, last_name, email, alt_mobile, created_at,
-    } = rows[0];
+
     res.status(200).json({
       statusCode: 200,
       message: 'user updated Successfully',
-      data: {
-        id, first_name, last_name, email, country, city, address, mobile, alt_mobile, created_at,
-      },
+      data: rows[0],
     });
   } catch (err) {
     next(

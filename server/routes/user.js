@@ -1,7 +1,8 @@
 const userRouter = require('express').Router();
 
-const { logOut } = require('../controller');
+const { logOut, getBookingsForGivenUser } = require('../controller');
 
 userRouter.post('/logout', logOut);
+userRouter.get('/bookings', getBookingsForGivenUser);
 
 module.exports = userRouter;

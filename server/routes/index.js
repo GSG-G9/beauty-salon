@@ -1,10 +1,6 @@
 const router = require('express').Router();
 
 const { getAllBlogs } = require('../controller');
-
-router.get('/', (req, res) => {
-  res.send('hi');
-});
 const commonRouter = require('./common');
 const userRouter = require('./user');
 

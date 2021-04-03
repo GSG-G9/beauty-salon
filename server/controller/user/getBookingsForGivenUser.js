@@ -1,4 +1,3 @@
-const { boomify } = require('../../utilis/index');
 const { getBookingsByUserId } = require('../../database/queries');
 
 const getBookingsForGivenUser = async (req, res, next) => {
@@ -7,7 +6,10 @@ const getBookingsForGivenUser = async (req, res, next) => {
   const { rows, rowCount } = await getBookingsByUserId(userId);
 
   if (rowCount === 0) {
-    next(boomify(400, "you don't have appointments!"));
+    res.json({
+      statusCode: 200,
+      message: "you don't have appointments!",
+    });
   } else {
     res.json({
       statusCode: 200,

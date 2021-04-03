@@ -29,20 +29,20 @@ describe('sign up routes tests', () => {
     expect(statusCode).toBe(409);
   });
 
-  // test('check successful sign-up status should be 200 and (signed up successfully) message', async () => {
-  //   const {
-  //     body: { message },
-  //     statusCode,
-  //   } = await request(app)
-  //     .post('/api/v1/signup')
-  //     .set({
-  //       'Content-Type': 'application/json',
-  //     })
-  //     .send({
-  //       ...userData,
-  //       email: 'khamis@gmail.com',
-  //     });
-  //   expect(statusCode).toBe(201);
-  //   expect(message).toBe('SingUp Successfully');
-  // });
+  test('check successful sign-up status should be 200 and (signed up successfully) message', async () => {
+    const {
+      body: { message },
+      statusCode,
+    } = await request(app)
+      .post('/api/v1/signup')
+      .set({
+        'Content-Type': 'application/json',
+      })
+      .send({
+        ...userData,
+        email: 'khamis@gmail.com',
+      });
+    expect(statusCode).toBe(201);
+    expect(message).toBe('SingUp Successfully');
+  });
 });

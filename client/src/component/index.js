@@ -1,3 +1,4 @@
 import InputDate from './InputDate';
+import InputTime from './InputTime';
 
-export default InputDate;
+export { InputDate, InputTime };

@@ -10,6 +10,8 @@ router.use(commonRouter);
 router.use(isAuth);
 router.use(userRouter);
 router.use(isAdmin);
+router.use(clientError);
+router.use(serverError);
 
 router.use(clientError);
 router.use(serverError);

@@ -28,8 +28,7 @@ describe('sign up routes tests', () => {
     expect(message).toBe('user already exists ');
     expect(statusCode).toBe(409);
   });
-
-  test('check successful sign-up status should be 200 and (signed up successfully) message', async () => {
+  test('check successful sign-up, status should be 200 and (signed up successfully) message', async () => {
     const {
       body: { message },
       statusCode,

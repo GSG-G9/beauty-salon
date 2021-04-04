@@ -13,6 +13,7 @@ const {
   deleteBookingController,
   addNewBook,
   userData,
+  getBookingsForGivenUser,
 } = require('./user');
 
 const { deleteBooking } = require('./admin');
@@ -26,6 +27,7 @@ module.exports = {
   addNewBook,
   getAllBlogs,
   logOut,
+  getBookingsForGivenUser,
   deleteBooking,
   deleteBookingController,
   contactusHandler,

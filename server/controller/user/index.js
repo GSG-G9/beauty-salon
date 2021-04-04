@@ -3,6 +3,7 @@ const logOut = require('./logout');
 const userData = require('./userData');
 const getUserProfile = require('./getProfile');
 const deleteBookingController = require('./deleteBooking');
+const getBookingsForGivenUser = require('./getBookingsForGivenUser');
 
 module.exports = {
   logOut,
@@ -10,4 +11,5 @@ module.exports = {
   addNewBook,
   deleteBookingController,
   userData,
+  getBookingsForGivenUser,
 };

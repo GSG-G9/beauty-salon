@@ -12,7 +12,10 @@ const {
   logOut,
   deleteBookingController,
   addNewBook,
+  userData,
 } = require('./user');
+
+const { deleteBooking } = require('./admin');
 
 module.exports = {
   signUp,
@@ -23,6 +26,8 @@ module.exports = {
   addNewBook,
   getAllBlogs,
   logOut,
+  deleteBooking,
   deleteBookingController,
   contactusHandler,
+  userData,
 };

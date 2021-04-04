@@ -1,4 +1,4 @@
-const { addBook, checkAvailability } = require('./user');
+const { addBook, checkAvailability, getProfile } = require('./user');
 const getBlogs = require('./getBlogs');
 const postMessage = require('./contactus');
 const checkUserByEmail = require('./checkUserByEmail');
@@ -13,6 +13,7 @@ module.exports = {
   postMessage,
   checkUserByEmail,
   bookingsQuery,
+  getProfile,
   addBook,
   checkAvailability,
   deleteBooking,

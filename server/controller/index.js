@@ -7,11 +7,17 @@ const {
   contactusHandler,
 } = require('./common');
 
-const { logOut, deleteBookingController, addNewBook } = require('./user');
+const {
+  getUserProfile,
+  logOut,
+  deleteBookingController,
+  addNewBook,
+} = require('./user');
 
 module.exports = {
   signUp,
   signin,
+  getUserProfile,
   servicesHandler,
   getBookingsByDate,
   addNewBook,

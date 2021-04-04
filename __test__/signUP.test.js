@@ -6,6 +6,7 @@ const connection = require('../server/database/config/connection');
 
 describe('sign up routes tests', () => {
   beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
   afterAll(() => connection.end());
   const userData = {
     firstName: 'khamis',
@@ -27,21 +28,20 @@ describe('sign up routes tests', () => {
     expect(message).toBe('user already exists ');
     expect(statusCode).toBe(409);
   });
-
-  // test('check successful sign-up, status should be 200 and (signed up successfully) message', async () => {
-  //   const {
-  //     body: { message },
-  //     statusCode,
-  //   } = await request(app)
-  //     .post('/api/v1/signup')
-  //     .set({
-  //       'Content-Type': 'application/json',
-  //     })
-  //     .send({
-  //       ...userData,
-  //       email: 'khamis@gmail.com',
-  //     });
-  //   expect(statusCode).toBe(201);
-  //   expect(message).toBe('SingUp Successfully');
-  // });
+  test('check successful sign-up, status should be 200 and (signed up successfully) message', async () => {
+    const {
+      body: { message },
+      statusCode,
+    } = await request(app)
+      .post('/api/v1/signup')
+      .set({
+        'Content-Type': 'application/json',
+      })
+      .send({
+        ...userData,
+        email: 'khamis@gmail.com',
+      });
+    expect(statusCode).toBe(201);
+    expect(message).toBe('SingUp Successfully');
+  });
 });

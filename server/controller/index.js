@@ -1,14 +1,33 @@
 const {
-  signUp, signin, servicesHandler, getBookingsByDate,
+  signUp,
+  signin,
+  servicesHandler,
+  getBookingsByDate,
+  getAllBlogs,
+  contactusHandler,
 } = require('./common');
-const { logOut } = require('./user');
+
+const {
+  getUserProfile,
+  logOut,
+  deleteBookingController,
+  addNewBook,
+  userData,
+} = require('./user');
+
 const { deleteBooking } = require('./admin');
 
 module.exports = {
   signUp,
   signin,
+  getUserProfile,
   servicesHandler,
   getBookingsByDate,
+  addNewBook,
+  getAllBlogs,
   logOut,
   deleteBooking,
+  deleteBookingController,
+  contactusHandler,
+  userData,
 };

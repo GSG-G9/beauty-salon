@@ -16,8 +16,9 @@ const isAuth = async (req, res, next) => {
   } catch (err) {
     if (err.message === 'jwt must be provided') {
       next(boomify(401, "you're unauthorized"));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 

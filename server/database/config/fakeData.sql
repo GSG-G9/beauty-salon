@@ -1,9 +1,9 @@
 INSERT INTO users(first_name,last_name,email,password,role) VALUES
-('yasmeen','attallah','yatt@gmail.com','123456789yas','user'),
-('iman','sedky','iman@gmail.com','123456789emy','user'),
-('noor','sedky','noor@gmail.com','123456789noor','user'),
-('adham', 'Hai','adham@hi.com', '$2b$10$7hOMiaf/b49Km4dZOp9oMevyYE50fjCXH23BKkhkdl70iy.ELpMMu', 'user'),
-('beauty','salon','admin@gmail.com','123456789','admin');
+('yasmeen','attallah','yatt@gmail.com','$2b$10$.HABPjtsd.qSMUNbNjNMueXgQ/jqYDr9i0kubJlQi61F9l9y9d6NG','user'),
+('iman','sedky','iman@gmail.com','$2b$10$nlnDNBPGl0uOmfV.RLB4cufWueWKxJi67q9/7lQ3ZTjoAqiw5kkZu','user'),
+('noor','sedky','noor@gmail.com','$2b$10$rk4DsjamEYvStvd6SG7pWOiZnYdTL8c757Y85Qb5eGn1vsmoqrjeS','user'),
+('beauty','salon','admin@gmail.com','$2b$10$FpYb9OypRus6ElAG9iEztO0c9IMGXn1g3QGDtukFWYMiffJFKKO4a','admin'),
+('adham', 'Hai','adham@hi.com', '$2b$10$7hOMiaf/b49Km4dZOp9oMevyYE50fjCXH23BKkhkdl70iy.ELpMMu', 'user');
 
 
 INSERT INTO products(title,brand,price,quantity,description,image) VALUES
@@ -66,7 +66,7 @@ INSERT INTO appointments(user_id,service_id,stylist_id,appointment_date,appointm
 (1,11,3,'2021-03-30','10:00'),
 (2,6,2,'2021-03-29','11:00'),
 (3,5,1,'2021-03-29','12:00'),
-(3,5,1,'2021-03-28','12:00');
+(4,5,1,'2021-03-28','12:00');
 
 INSERT INTO blogs(name,description,image) VALUES
 ('why to Add Vitamin E to Your Skin (and Hair) Routine Now','Next to flashier ingredients like retinol and vitamin C, vitamin E is something of an unsung hero. You’ve probably spotted it in at least one of your products, given that it’s one of the most widely used ingredients in beauty (it’s typically listed as “tocopherol” on ingredients lists), but you might not know it does far more than moisturize. From powering your other actives to working its wide-ranging benefits from the inside out, vitamin E does it all—and truly deserves a front-row spot in your skin care lineup. Below, six reasons why this hardworking ingredient is one of our favorite antioxidants (and should be yours, too).','https://cdn.discordapp.com/attachments/778557600017940501/825477578386571274/woman-in-the-sun-feature.png'),

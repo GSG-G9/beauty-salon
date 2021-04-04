@@ -12,8 +12,9 @@ describe('Test getUser DB query and route', () => {
   afterAll(async () => {
     await new Promise((resolve) => setTimeout(() => resolve(), 3000));
   });
+
   test('should return user object', async () => {
-    const userId = 4;
+    const userId = 5;
     const { rows } = await getProfile(userId);
     return expect(rows[0]).toEqual(
       expect.objectContaining({
@@ -22,20 +23,26 @@ describe('Test getUser DB query and route', () => {
       }),
     );
   });
+
   test('Login', async () => {
-    const res = await request(app)
-      .post('/api/v1/signin')
-      .send({
-        email: 'adham@hi.com',
-        password: '123456789',
-      });
-    const { headers: { 'set-cookie': [resCookies] } } = res;
+    const res = await request(app).post('/api/v1/signin').send({
+      email: 'adham@hi.com',
+      password: '123456789',
+    });
+
+    const {
+      headers: {
+        'set-cookie': [resCookies],
+      },
+    } = res;
+    // eslint-disable-next-line prefer-destructuring
     token = resCookies.split(';')[0].split('=')[1];
     return expect(res.body).toEqual({
       statusCode: 200,
       message: 'Login successfully',
     });
   });
+
   test('should return Object contains status code and data', async () => {
     const res = await request(app)
       .get('/api/v1/profile')
@@ -45,6 +52,7 @@ describe('Test getUser DB query and route', () => {
     const expected = { statusCode: 401, message: "you're unauthorized" };
     expect(actual).toEqual(expected);
   });
+
   test('Success Case', async () => {
     const res = await request(app)
       .get('/api/v1/profile')

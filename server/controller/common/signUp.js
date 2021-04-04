@@ -28,7 +28,6 @@ const signUp = async (req, res, next) => {
       userId: data[0].id,
       role: data[0].role,
     });
-
     const { id, role } = data[0];
     res.cookie('token', token, { httpOnly: true });
     res.status(201).json({

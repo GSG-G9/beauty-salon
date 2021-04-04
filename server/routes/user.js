@@ -4,12 +4,14 @@ const {
   logOut,
   deleteBookingController,
   addNewBook,
+  userData,
+  getUserProfile,
 } = require('../controller');
-const { userData } = require('../controller/user');
 
 userRouter.get('/isAuth', userData);
 userRouter.post('/booking', addNewBook);
 userRouter.post('/logout', logOut);
+userRouter.get('/profile', getUserProfile);
 userRouter.delete('/booking/:bookingId', deleteBookingController);
 
 module.exports = userRouter;

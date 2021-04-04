@@ -15,7 +15,7 @@ describe('test getUserData query and /api/v1/isAuth route', () => {
   test('login user to utilize it\'s token in unprotected routes tests', async () => {
     const { header: { 'set-cookie': cookies } } = await request(app)
       .post('/api/v1/signin')
-      .send({ email: 'abood@gmail.com', password: 'abood123' });
+      .send({ email: 'iman@gmail.com', password: '123456789emy' });
     token = cookie.parse(cookies[0]).token;
   });
 
@@ -25,10 +25,9 @@ describe('test getUserData query and /api/v1/isAuth route', () => {
       .set('Cookie', [`token=${token}`])
       .expect('Content-Type', /json/);
     expect(data).toEqual(expect.objectContaining({
-      id: 5,
-      first_name: 'abood',
-      email: 'abood@gmail.com',
-      role: 'user',
+      first_name: 'iman',
+      last_name: 'sedky',
+      email: 'iman@gmail.com',
     }));
   });
 

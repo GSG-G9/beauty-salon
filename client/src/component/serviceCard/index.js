@@ -17,9 +17,9 @@ const ServiceCard = ({ service }) => {
     'https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg';
   return (
     <Card>
-      <CardActionArea>
-        <CardMedia className={classes.image}>
-          <img src={img || fakeImage} alt="service" />
+      <CardActionArea className={classes.root}>
+        <CardMedia>
+          <img className={classes.image} src={img || fakeImage} alt="service" />
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -29,12 +29,12 @@ const ServiceCard = ({ service }) => {
             {description}
           </Typography>
         </CardContent>
+        <CardActions className={classes.action}>
+          <Button className={classes.button} size="medium" color="primary">
+            Book Now !
+          </Button>
+        </CardActions>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Book Now !
-        </Button>
-      </CardActions>
     </Card>
   );
 };

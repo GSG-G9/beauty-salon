@@ -5,14 +5,11 @@ const { clientError, serverError } = require('../controller/error');
 
 const commonRouter = require('./common');
 const userRouter = require('./user');
+const adminRouter = require('./admin');
 
 router.use(commonRouter);
-router.use(isAuth);
-router.use(userRouter);
-router.use(isAdmin);
-router.use(clientError);
-router.use(serverError);
-
+router.use(isAuth, userRouter);
+router.use(isAdmin, adminRouter);
 router.use(clientError);
 router.use(serverError);
 

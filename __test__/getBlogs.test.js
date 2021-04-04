@@ -7,6 +7,7 @@ const { getBlogs } = require('../server/database/queries');
 
 describe('Test getBlogs DB queries and route', () => {
   beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
   afterAll(() => connection.end());
 
   test('Expect the query to return array of objects', async () => {
@@ -15,7 +16,7 @@ describe('Test getBlogs DB queries and route', () => {
       expect.objectContaining({
         id: 1,
         name: 'why to Add Vitamin E to Your Skin (and Hair) Routine Now',
-      })
+      }),
     );
   });
 

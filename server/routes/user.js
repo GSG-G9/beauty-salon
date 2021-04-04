@@ -1,9 +1,14 @@
 const userRouter = require('express').Router();
 
 const {
-  getUserProfile, logOut, deleteBookingController, addNewBook,
+  logOut,
+  deleteBookingController,
+  addNewBook,
+  userData,
+  getUserProfile,
 } = require('../controller');
 
+userRouter.get('/isAuth', userData);
 userRouter.post('/booking', addNewBook);
 userRouter.post('/logout', logOut);
 userRouter.get('/profile', getUserProfile);

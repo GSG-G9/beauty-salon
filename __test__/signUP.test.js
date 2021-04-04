@@ -6,6 +6,7 @@ const connection = require('../server/database/config/connection');
 
 describe('sign up routes tests', () => {
   beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
   afterAll(() => connection.end());
   const userData = {
     firstName: 'khamis',

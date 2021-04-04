@@ -5,6 +5,7 @@ const checkUserByEmail = require('./checkUserByEmail');
 const getServices = require('./services');
 const signupUser = require('./signup');
 const bookingsQuery = require('./bookingsQuery');
+const getUserData = require('./getUserData');
 const deleteBooking = require('./deleteBook');
 
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
   postMessage,
   checkUserByEmail,
   bookingsQuery,
+  getUserData,
   getProfile,
   addBook,
   checkAvailability,

@@ -28,9 +28,12 @@ import {
   NotFound,
 } from '../pages';
 
+import Header from '../components/header';
+
 const App = () => (
   <ThemeProvider theme={theme}>
     <Router>
+      <Header />
       <Switch>
         <Route exact path={HOME_PAGE}>
           <Home />

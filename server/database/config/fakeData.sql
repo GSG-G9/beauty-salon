@@ -5,6 +5,7 @@ INSERT INTO users(first_name,last_name,email,password,role) VALUES
 ('beauty','salon','admin@gmail.com','$2b$10$FpYb9OypRus6ElAG9iEztO0c9IMGXn1g3QGDtukFWYMiffJFKKO4a','admin'),
 ('adham', 'Hai','adham@hi.com', '$2b$10$7hOMiaf/b49Km4dZOp9oMevyYE50fjCXH23BKkhkdl70iy.ELpMMu', 'user');
 
+
 INSERT INTO products(title,brand,price,quantity,description,image) VALUES
 ('lipstick','Max factor',20,5,'To make your lips look fuller, always use a lip liner as a base. Etch over the lip line and your cupid bow to instantly define, plump and perfect.','https://cdn.discordapp.com/attachments/778557600017940501/825463225260572682/xs_colour-elixir-lipsti_colour-elixir-lipsti_blt0e82151a1c3a7129_ar-ae_1.png'),
 ('foundation','Dior',80,7,'The Dior Backstage Face & Body Foundation is the Dior makeup artists secret weapon to create an instantly flawless complexion with ultra-buildable coverage,','https://cdn.discordapp.com/attachments/778557600017940501/825463495687929860/23704380102.png'),

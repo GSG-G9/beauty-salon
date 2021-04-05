@@ -2,7 +2,6 @@ import React from 'react';
 import { shape, string } from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
@@ -16,8 +15,8 @@ const ServiceCard = ({ service }) => {
   const fakeImage =
     'https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg';
   return (
-    <Card>
-      <CardActionArea className={classes.root}>
+    <Card className={classes.root}>
+      <CardActionArea>
         <CardMedia>
           <img className={classes.image} src={img || fakeImage} alt="service" />
         </CardMedia>
@@ -25,15 +24,18 @@ const ServiceCard = ({ service }) => {
           <Typography gutterBottom variant="h5" component="h2">
             {name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {description}
+          <Typography
+            className={classes.description}
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
+            {description.split(' ').splice(0, 11).join(' ')}
           </Typography>
         </CardContent>
-        <CardActions className={classes.action}>
-          <Button className={classes.button} size="medium" color="primary">
-            Book Now !
-          </Button>
-        </CardActions>
+        <Button className={classes.button} size="medium" color="primary">
+          Book Now !
+        </Button>
       </CardActionArea>
     </Card>
   );

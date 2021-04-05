@@ -2,18 +2,20 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
-    height: 450,
-    border: '2px solid #CFAB7A',
+    height: 400,
+    borderBottom: '1px solid #CFAB7A',
     width: 240,
     textAlign: 'center',
+    display: 'flex',
+    flexFlow: 'column wrap',
+    justifyContent: 'flex-start',
   },
   image: {
     height: 220,
-    width: 220,
+    width: 240,
   },
-  action: {
-    display: 'flex',
-    justifyContent: 'center',
+  description: {
+    // textAlign: 'left',
   },
   button: {
     backgroundColor: '#131212',

@@ -11,7 +11,7 @@ import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import useStyles from './style';
 
@@ -122,7 +122,7 @@ const Header = (props) => {
               color="inherit"
             >
               <Typography variant="h5" className={classes.title}>
-                Beauty Salon
+                Beauty
               </Typography>
             </IconButton>
 

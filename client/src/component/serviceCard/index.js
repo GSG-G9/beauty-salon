@@ -24,12 +24,7 @@ const ServiceCard = ({ service }) => {
           <Typography gutterBottom variant="h5" component="h2">
             {name}
           </Typography>
-          <Typography
-            className={classes.description}
-            variant="body2"
-            color="textSecondary"
-            component="p"
-          >
+          <Typography variant="body2" color="textSecondary" component="p">
             {description.split(' ').splice(0, 11).join(' ')}
           </Typography>
         </CardContent>

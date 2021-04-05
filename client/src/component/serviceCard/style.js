@@ -7,18 +7,18 @@ const useStyles = makeStyles({
     width: 240,
     textAlign: 'center',
     display: 'flex',
-    flexFlow: 'column wrap',
+    flexDirection: 'column',
     justifyContent: 'flex-start',
   },
   image: {
     height: 220,
     width: 240,
+    opacity: 0.6,
   },
-  description: {
-    // textAlign: 'left',
-  },
+
   button: {
     backgroundColor: '#131212',
+    justifyItems: 'flex-end',
   },
 });
 export default useStyles;

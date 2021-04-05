@@ -59,6 +59,7 @@ CREATE TABLE appointments (
   "appointment_time" VARCHAR(100) NOT NULL
 );
 
+
 CREATE TABLE blogs (
   "id" SERIAL PRIMARY KEY,
   "name" VARCHAR(100) NOT NULL,

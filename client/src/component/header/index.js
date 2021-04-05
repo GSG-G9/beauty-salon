@@ -1,7 +1,6 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-// import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -23,7 +22,6 @@ const Header = (props) => {
   const open = Boolean(anchorEl);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-  console.log(isMobile);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -34,6 +32,7 @@ const Header = (props) => {
     history.push(pageURL);
     setAnchorEl(null);
   };
+  const logOutClick = () => {};
 
   return (
     <div className={classes.root}>
@@ -46,7 +45,7 @@ const Header = (props) => {
                   <IconButton
                     edge="start"
                     className={classes.menuButton}
-                    color="inherit"
+                    color="secondary"
                     aria-label="menu"
                     onClick={handleMenu}
                   >
@@ -54,6 +53,7 @@ const Header = (props) => {
                   </IconButton>
                   <Menu
                     id="menu-appbar"
+                    classes={{ paper: classes.menuPaper }}
                     anchorEl={anchorEl}
                     anchorOrigin={{
                       vertical: 'top',
@@ -79,6 +79,16 @@ const Header = (props) => {
                     <MenuItem onClick={() => handleMenuClick('/contact')}>
                       Contact
                     </MenuItem>
+                    <MenuItem onClick={() => handleMenuClick('/Cart')}>
+                      Cart
+                    </MenuItem>
+                    <MenuItem
+                      classes={{ root: 'logoutMobile' }}
+                      className={classes.logoutMobile}
+                      onClick={() => logOutClick()}
+                    >
+                      Logout
+                    </MenuItem>
                   </Menu>
                 </>
               ) : (
@@ -103,15 +113,19 @@ const Header = (props) => {
             </Link>
 
             <div className={classes.headerRightSide}>
+              {!isMobile ? (
+                <IconButton
+                  className={classes.icons}
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  color="secondary"
+                >
+                  <ShoppingCartIcon />
+                </IconButton>
+              ) : null}
               <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="secondary"
-              >
-                <ShoppingCartIcon />
-              </IconButton>
-              <IconButton
+                className={classes.icons}
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
@@ -119,9 +133,12 @@ const Header = (props) => {
               >
                 <AccountCircle />
               </IconButton>
-              <Button className={classes.logout} variant="outlined">
-                Login
-              </Button>
+
+              {!isMobile ? (
+                <Button className={classes.logout} variant="outlined">
+                  Login
+                </Button>
+              ) : null}
             </div>
           </div>
         </Toolbar>

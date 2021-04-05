@@ -1,7 +1,7 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -35,14 +35,9 @@ const Header = (props) => {
     setAnchorEl(null);
   };
 
-  const handleButtonClick = (pageURL) => {
-    // eslint-disable-next-line react/prop-types
-    history.push(pageURL);
-  };
-
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="transparent">
         <Toolbar>
           <div className={classes.header}>
             <div className={classes.headerLeftSide}>
@@ -88,50 +83,31 @@ const Header = (props) => {
                 </>
               ) : (
                 <div>
-                  <Button
-                    variant="contained"
-                    onClick={() => handleButtonClick('/services')}
-                  >
+                  <Link className={classes.options} to="/services">
                     Services
-                  </Button>
-                  <Button
-                    variant="contained"
-                    onClick={() => handleButtonClick('/products')}
-                  >
+                  </Link>
+                  <Link className={classes.options} to="/products">
                     Products
-                  </Button>
-                  <Button
-                    variant="contained"
-                    onClick={() => handleButtonClick('/blogs')}
-                  >
+                  </Link>
+                  <Link className={classes.options} to="/blogs">
                     Blogs
-                  </Button>
-                  <Button
-                    variant="contained"
-                    onClick={() => handleButtonClick('/contact')}
-                  >
+                  </Link>
+                  <Link className={classes.options} to="/contact">
                     Contact
-                  </Button>
+                  </Link>
                 </div>
               )}
             </div>
-            <IconButton
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              color="inherit"
-            >
-              <Typography variant="h5" className={classes.title}>
-                Beauty
-              </Typography>
-            </IconButton>
+            <Link className={classes.title} to="/">
+              Beauty
+            </Link>
 
             <div className={classes.headerRightSide}>
               <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                color="inherit"
+                color="secondary"
               >
                 <ShoppingCartIcon />
               </IconButton>
@@ -139,11 +115,13 @@ const Header = (props) => {
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                color="inherit"
+                color="secondary"
               >
                 <AccountCircle />
               </IconButton>
-              <Button variant="contained">Login</Button>
+              <Button className={classes.logout} variant="outlined">
+                Login
+              </Button>
             </div>
           </div>
         </Toolbar>

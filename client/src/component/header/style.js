@@ -15,13 +15,23 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   title: {
-    // flexGrow: 1,
+    fontSize: '2em',
+    color: '#fff',
+    textDecoration: 'none',
   },
   headerLeftSide: {
     // display: 'flex',
     justifyContent: 'space-between',
   },
   headerRightSide: {},
+  options: {
+    padding: '1em',
+    color: '#fff',
+    textDecoration: 'none',
+  },
+  logout: {
+    marginLeft: '1em',
+  },
 }));
 
 export default useStyles;

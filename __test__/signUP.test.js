@@ -6,6 +6,7 @@ const connection = require('../server/database/config/connection');
 
 describe('sign up routes tests', () => {
   beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
   afterAll(() => connection.end());
   const userData = {
     firstName: 'khamis',
@@ -27,7 +28,6 @@ describe('sign up routes tests', () => {
     expect(message).toBe('user already exists ');
     expect(statusCode).toBe(409);
   });
-
   test('check successful sign-up, status should be 200 and (signed up successfully) message', async () => {
     const {
       body: { message },

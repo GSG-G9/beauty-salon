@@ -6,7 +6,9 @@ const { bookingsQuery } = require('../server/database/queries');
 
 describe('getBookingsByDate Tests', () => {
   beforeEach(() => runBuild());
+  afterAll(async () => { await new Promise((resolve) => setTimeout(() => resolve(), 3000)); });
   afterAll(() => connection.end());
+
   test('getBookingsByDate query', async () => {
     const expected = [
       {

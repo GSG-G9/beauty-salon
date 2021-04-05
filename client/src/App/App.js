@@ -28,7 +28,7 @@ import {
   NotFound,
 } from '../pages';
 
-import Header from '../components/header';
+import Header from '../component/header';
 
 const App = () => (
   <ThemeProvider theme={theme}>

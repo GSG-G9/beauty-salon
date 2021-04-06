@@ -11,7 +11,7 @@ const InputDate = ({ label }) => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
 
   const handleDateChange = (date) => {
-    setSelectedDate(date);
+    setSelectedDate(date.toString());
   };
 
   return (
@@ -19,7 +19,7 @@ const InputDate = ({ label }) => {
       <KeyboardDatePicker
         disableToolbar
         variant="inline"
-        format="MM/dd/yyyy"
+        format="yyyy/MM/dd"
         margin="normal"
         id="date-picker-inline"
         label={label}

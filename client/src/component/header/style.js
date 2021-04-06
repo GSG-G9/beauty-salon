@@ -4,13 +4,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     [theme.breakpoints.up('sm')]: {
-      margin: '20px',
+      marginTop: '5px',
     },
   },
   header: {
     [theme.breakpoints.up('sm')]: {
       flexGrow: 1,
-      margin: '20px',
     },
     display: 'flex',
     flexDirection: 'row',
@@ -28,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
       color: 'f8f8ff',
       transform: 'scale(1.1)',
       boxShadow: '#888888',
+    },
+    '&::first-letter': {
+      fontSize: '130%',
+      color: theme.palette.primary.main,
     },
   },
   headerLeftSide: {

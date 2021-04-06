@@ -1,4 +1,6 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,7 +17,6 @@ import { Link, withRouter } from 'react-router-dom';
 import useStyles from './style';
 
 const Header = (props) => {
-  // eslint-disable-next-line react/prop-types
   const { history } = props;
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -28,7 +29,6 @@ const Header = (props) => {
   };
 
   const handleMenuClick = (pageURL) => {
-    // eslint-disable-next-line react/prop-types
     history.push(pageURL);
     setAnchorEl(null);
   };
@@ -120,6 +120,7 @@ const Header = (props) => {
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
                   color="secondary"
+                  onClick={() => handleMenuClick('/cart')}
                 >
                   <ShoppingCartIcon />
                 </IconButton>
@@ -130,12 +131,17 @@ const Header = (props) => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="secondary"
+                onClick={() => handleMenuClick('/profile')}
               >
                 <AccountCircle />
               </IconButton>
 
               {!isMobile ? (
-                <Button className={classes.logout} variant="outlined">
+                <Button
+                  className={classes.logout}
+                  variant="outlined"
+                  onClick={() => handleMenuClick('/signin')}
+                >
                   Login
                 </Button>
               ) : null}
@@ -145,6 +151,10 @@ const Header = (props) => {
       </AppBar>
     </div>
   );
+};
+
+Header.propTypes = {
+  history: PropTypes.shape.isRequired,
 };
 
 export default withRouter(Header);

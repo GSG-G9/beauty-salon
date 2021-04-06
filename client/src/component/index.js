@@ -1,4 +1,6 @@
+import InputDate from './InputDate';
+import InputTime from './InputTime';
 import ButtonComponent from './Button';
 import Loading from './Loading';
 
-export { ButtonComponent, Loading };
+export { InputDate, InputTime, ButtonComponent, Loading };

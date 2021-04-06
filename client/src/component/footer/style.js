@@ -1,19 +1,20 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
-  root: {
+  footer: {
     width: '100%',
-    alignContent: 'center',
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'space-around',
-    marginTop: '90vh',
-    height: '10vh',
+    height: '6.3vh',
     borderTop: '0.5px solid #111010',
     color: 'white',
-  },
-  MuiBottomNavigationRoot: {
-    height: '6vh',
+    '@media (min-device-width: 600px) and (max-device-width: 1000px)': {
+      height: '3.8vh',
+    },
+    '@media (max-device-width:  599px)': {
+      height: '3.8vh',
+    },
   },
   iconsGrid: {
     width: '30%',
@@ -28,15 +29,14 @@ const useStyles = makeStyles(() => ({
     },
   },
   img: {
-    width: 50,
-    height: 45,
+    width: 'auto',
+    height: 33,
     '@media (max-device-width: 600px)': {
-      width: 35,
-      height: 30,
+      height: 23,
     },
   },
   MuiSvgIconRoot: {
-    width: '3em',
+    width: '2.5em',
     '@media (min-device-width: 599px) and (max-device-width: 1000px)': {
       width: '2.3em',
     },

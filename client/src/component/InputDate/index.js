@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
@@ -8,10 +8,11 @@ import {
 } from '@material-ui/pickers';
 
 const InputDate = ({ label }) => {
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleDateChange = (date) => {
-    setSelectedDate(date.toString());
+    const datePicker = date.toISOString().substr(0, 10);
+    setSelectedDate(datePicker);
   };
 
   return (

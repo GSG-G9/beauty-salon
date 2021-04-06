@@ -6,6 +6,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import { CardActions } from '@material-ui/core';
 import useStyles from './style';
 import { BOOK } from '../../utils/router.constant';
 
@@ -15,8 +16,8 @@ const ServiceCard = ({ service }) => {
   const fakeImage =
     'https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg';
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
+    <Card className={classes.card}>
+      <CardActionArea className={classes.root}>
         <CardMedia>
           <img className={classes.image} src={img || fakeImage} alt="service" />
         </CardMedia>
@@ -28,9 +29,11 @@ const ServiceCard = ({ service }) => {
             {description.split(' ').splice(0, 11).join(' ')}
           </Typography>
         </CardContent>
-        <Link to={`${BOOK}`} className={classes.link}>
-          Book Now !
-        </Link>
+        <CardActions>
+          <Link to={`${BOOK}`} className={classes.link}>
+            Book Now !
+          </Link>
+        </CardActions>
       </CardActionArea>
     </Card>
   );

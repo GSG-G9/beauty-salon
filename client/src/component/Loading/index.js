@@ -10,7 +10,9 @@ const Loading = ({ size, message }) => {
   return (
     <div className={classes.root}>
       <CircularProgress size={size} thickness={4} />
-      <Typography className={classes.message}>{message}</Typography>
+      {message && (
+        <Typography className={classes.message}>{message}</Typography>
+      )}
     </div>
   );
 };

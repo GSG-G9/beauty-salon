@@ -1,3 +1,5 @@
 import Header from './header';
+import ButtonComponent from './Button';
+import Loading from './Loading';
 
-export default Header;
+export { ButtonComponent, Loading, Header };

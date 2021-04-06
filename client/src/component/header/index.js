@@ -12,7 +12,7 @@ import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import useStyles from './style';
 
@@ -157,4 +157,4 @@ Header.propTypes = {
   history: PropTypes.shape.isRequired,
 };
 
-export default withRouter(Header);
+export default Header;

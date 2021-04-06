@@ -30,7 +30,9 @@ CREATE TABLE products(
 CREATE TABLE services (
   "id" SERIAL PRIMARY KEY,
   "name" VARCHAR NOT NULL,
-  "category" VARCHAR NOT Null
+  "category" VARCHAR NOT Null,
+  "description" TEXT NOT NULL,
+  "image" TEXT
 );
 
 CREATE TABLE orders (
@@ -40,8 +42,8 @@ CREATE TABLE orders (
   "price" float NOT NULL,
   "quantity" int NOT NULL,
   "payment_type" VARCHAR,
-   "user_id" INT REFERENCES users(id),
-   "product_id" INT REFERENCES products(id)
+  "user_id" INT REFERENCES users(id),
+  "product_id" INT REFERENCES products(id)
 );
 
 CREATE TABLE stylists (
@@ -52,7 +54,7 @@ CREATE TABLE stylists (
 
 CREATE TABLE appointments (
   "id" SERIAL PRIMARY KEY,
- "user_id" INT REFERENCES users(id),
+  "user_id" INT REFERENCES users(id),
   "stylist_id" INT REFERENCES stylists(id),
   "service_id" INT REFERENCES services(id),
   "appointment_date" VARCHAR(100) NOT NULL,

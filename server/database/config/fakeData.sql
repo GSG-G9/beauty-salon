@@ -18,23 +18,23 @@ INSERT INTO products(title,brand,price,quantity,description,image) VALUES
 ('highlighter','Topface',50,8,'Morphes Highlighters truly live up to their name. These daringly creamy, zero-gravity highlighters create explosive, prismatic effects','https://cdn.discordapp.com/attachments/778557600017940501/825468089960497213/2511232.png'),
 ('Powder','Dior',70,9,'An artistry essential used to set makeup, control oil, and smooth the texture of the skin, all while creating a soft-focus finish','https://cdn.discordapp.com/attachments/778557600017940501/825468934178340934/0607845014218.png');
 
-INSERT INTO services(name,category) VALUES
-('JUNIOR WOMENS HAIRCUT','Hair cuts'),
-('Childreen HAIRCUT','Hair cuts'),
-('Mens HAIRCUT','Hair cuts'),
-('Master WOMENS HAIRCUT','Hair cuts'),
-('Classic Manicure','nails'),
-('Dazzle Dry Vegan Manicure','nails'),
-('Gel Manicure','nails'),
-('Pedicure','nails'),
-('Vitamin C Facial Brighten, Illuminate, Refresh ','Skin care'),
-('Oxygen Facial Deep Cleanse, Clarifying','Skin care'),
-('Ultimate Diamond Facial Lift, Firm, Anti-aging','Skin care'),
-('Ultimate Diamond Facial Lift, Firm, Anti-aging','Skin care'),
-('Wedding','Make up'),
-('Simple','Make up'),
-('Smokey','Make up'),
-('gliter','Make up');
+INSERT INTO services(name,category,description,image) VALUES
+('JUNIOR WOMENS HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
+('Childreen HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
+('Mens HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
+('Master WOMENS HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
+('Classic Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/710362c84343.jpg'),
+('Dazzle Dry Vegan Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/710362c84343.jpg'),
+('Gel Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/d4a4860763ef.jpg'),
+('Pedicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/d4a4860763ef.jpg'),
+('Vitamin C Facial Brighten, Illuminate, Refresh ','Skin care','Treatment revitalizes the eye contour,targeting puffiness,dark circles','https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013'),
+('Oxygen Facial Deep Cleanse, Clarifying','Skin care','Treatment revitalizes the eye contour,targeting puffiness,dark circles','https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013'),
+('Ultimate Diamond Facial Lift, Firm, Anti-aging','Skin care','Treatment revitalizes the eye contour,targeting puffiness,dark circles','https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013'),
+('Ultimate Diamond Facial Lift, Firm, Anti-aging','Skin care','Treatment revitalizes the eye contour,targeting puffiness,dark circles','https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013'),
+('Wedding','Make up','help you find the perfect look to encompass your unique personality','https://www.almarasimsalon.com/ressources/images/5bb5a556bb25.jpg'),
+('Simple','Make up','help you find the perfect look to encompass your unique personality','https://www.almarasimsalon.com/ressources/images/5bb5a556bb25.jpg'),
+('Smokey','Make up','help you find the perfect look to encompass your unique personality','https://www.almarasimsalon.com/ressources/images/5bb5a556bb25.jpg'),
+('gliter','Make up','help you find the perfect look to encompass your unique personality','https://www.almarasimsalon.com/ressources/images/5bb5a556bb25.jpg');
 
 INSERT INTO orders(price,quantity,user_id,product_id) VALUES
 (20,1,1,1),

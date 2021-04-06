@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     height: 400,
     borderBottom: '1px solid #CFAB7A',
@@ -16,9 +16,13 @@ const useStyles = makeStyles({
     opacity: 0.6,
   },
 
-  button: {
+  link: {
     backgroundColor: '#131212',
     justifyItems: 'flex-end',
+    border: '1px solid  #CFAB7A',
+    padding: 7,
+    textDecoration: 'none',
+    color: theme.palette.primary.main,
   },
-});
+}));
 export default useStyles;

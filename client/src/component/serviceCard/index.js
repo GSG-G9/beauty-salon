@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { shape, string } from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
 import useStyles from './style';
+import { BOOK } from '../../utils/router.constant';
 
 const ServiceCard = ({ service }) => {
   const { img, name, description } = service;
@@ -28,9 +28,9 @@ const ServiceCard = ({ service }) => {
             {description.split(' ').splice(0, 11).join(' ')}
           </Typography>
         </CardContent>
-        <Button className={classes.button} size="medium" color="primary">
+        <Link to={`${BOOK}`} className={classes.link}>
           Book Now !
-        </Button>
+        </Link>
       </CardActionArea>
     </Card>
   );

@@ -11,8 +11,11 @@
   "prettier.singleQuote": true,
   "cSpell.words": [
     "Signin",
+    "challo",
     "contactus",
     "iman",
+    "noor",
+    "postbuild",
     "utilis"
   ]
 }

@@ -5,6 +5,7 @@ const checkUserByEmail = require('./checkUserByEmail');
 const getServices = require('./services');
 const signupUser = require('./signup');
 const bookingsQuery = require('./bookingsQuery');
+const updateUserQuery = require('./updateUserQuery');
 const getBookingsByUserId = require('./getBookingsByUserId');
 const deleteBookingByAdmin = require('./deleteBookingByAdmin');
 const getUserData = require('./getUserData');
@@ -16,6 +17,7 @@ module.exports = {
   postMessage,
   checkUserByEmail,
   bookingsQuery,
+  updateUserQuery,
   getBookingsByUserId,
   deleteBookingByAdmin,
   getUserData,

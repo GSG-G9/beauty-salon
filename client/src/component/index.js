@@ -1,3 +1,4 @@
 import ButtonComponent from './Button';
+import Loading from './Loading';
 
-export default ButtonComponent;
+export { ButtonComponent, Loading };

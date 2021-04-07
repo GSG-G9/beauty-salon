@@ -3,9 +3,10 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   input: {
     '& .MuiOutlinedInput-notchedOutline': {
-      '& fieldset': {
-        BorderColor: theme.palette.primary,
-      },
+      border: `1px solid ${theme.palette.primary.main}`,
+    },
+    '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline ': {
+      borderColor: theme.palette.primary.main,
     },
   },
 }));

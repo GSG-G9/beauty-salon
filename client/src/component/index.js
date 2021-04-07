@@ -6,4 +6,11 @@ import InputTime from './InputTime';
 import ButtonComponent from './Button';
 import Loading from './Loading';
 
-export { InputDate, InputTime, ButtonComponent, Loading, ServiceCard, InputField };
+export {
+  InputDate,
+  InputTime,
+  ButtonComponent,
+  Loading,
+  ServiceCard,
+  InputField,
+};

@@ -46,6 +46,8 @@ SelectInput.propTypes = {
     })
   ).isRequired,
 };
-SelectInput.defaultProps = ' ';
+SelectInput.defaultProps = {
+  textHelper: '',
+};
 
 export default SelectInput;

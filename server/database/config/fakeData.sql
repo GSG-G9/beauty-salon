@@ -25,7 +25,7 @@ INSERT INTO services(name,category,description,image) VALUES
 ('Master WOMEN HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
 ('Classic Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/710362c84343.jpg'),
 ('Dazzle Dry Vegan Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/710362c84343.jpg'),
-('Gel Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/d4a4860763ef.jpg'),
+('Gel Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/710362c84343.jpg'),
 ('Pedicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/d4a4860763ef.jpg'),
 ('Vitamin C Facial Brighten, Illuminate, Refresh ','Skin care','Treatment revitalizes the eye contour,targeting puffiness,dark circles','https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013'),
 ('Oxygen Facial Deep Cleanse, Clarifying','Skin care','Treatment revitalizes the eye contour,targeting puffiness,dark circles','https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013'),

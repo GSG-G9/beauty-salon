@@ -96,7 +96,7 @@ describe('test getServices query and /api/v1/services route', () => {
          description:
             'nail lacquer invites you to flaunt a most sophisticated holiday manicure',
          image:
-            'https://www.almarasimsalon.com/ressources/images/d4a4860763ef.jpg',
+            'https://www.almarasimsalon.com/ressources/images/710362c84343.jpg',
        },
        {
          id: 8,

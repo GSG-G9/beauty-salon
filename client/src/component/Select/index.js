@@ -1,46 +1,50 @@
-import React, { useState } from 'react';
-
-import Select from '@material-ui/core/Select';
-import FormControl from '@material-ui/core/FormControl';
+import React from 'react';
 import InputLabel from '@material-ui/core/InputLabel';
-import { FormHelperText, MenuItem } from '@material-ui/core';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import PropTypes from 'prop-types';
 
 import useStyles from './style';
 
-function SelectInput() {
+const SelectInput = ({ label, textHelper, menu }) => {
   const classes = useStyles();
-  const [value, setValue] = useState();
+  const [value, setValue] = React.useState('');
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
+  const handleChange = (event) => {
+    setValue(event.target.value);
   };
 
   return (
     <div>
-      <FormControl
-        className={classes.formControl}
-        variant="outlined"
-        classes={{ form: classes.form }}
-        // focused
-      >
-        <InputLabel>choose</InputLabel>
-        <Select
-          labelId="SelectLabel"
-          id="select"
-          value={value}
-          onChange={() => handleChange()}
-          className={classes.root}
-        >
-          <MenuItem value="Hi">Hi</MenuItem>
-          <MenuItem value="Hello">Hello</MenuItem>
-          <MenuItem value="Hey">Hey</MenuItem>
-          <MenuItem value="sup">sup</MenuItem>
-          <MenuItem value="yoo yoo">Yoo Yoo</MenuItem>
+      <FormControl variant="outlined" className={classes.formControl}>
+        <InputLabel id="demo-simple-select-outlined-label">{label}</InputLabel>
+        <Select value={value} onChange={handleChange} label={label}>
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          {menu.map(({ name, val }) => (
+            <MenuItem key={name} value={val}>
+              {name}
+            </MenuItem>
+          ))}
         </Select>
-        <FormHelperText>Select Greeting style</FormHelperText>
+        <FormHelperText>{textHelper}</FormHelperText>
       </FormControl>
     </div>
   );
-}
+};
+
+SelectInput.propTypes = {
+  label: PropTypes.string.isRequired,
+  textHelper: PropTypes.string.isRequired,
+  menu: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      val: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default SelectInput;

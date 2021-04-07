@@ -3,25 +3,22 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 200,
-    '&:before': {
-      borderColor: theme.palette.primary.main,
-    },
-    '&:after': {
-      borderColor: theme.palette.primary.main,
-    },
+    minWidth: 150,
     '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: '#cfab7a',
+      border: `1px solid ${theme.palette.primary.main}`,
     },
     '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline ': {
-      borderColor: '#fdabab',
+      borderColor: theme.palette.primary.main,
     },
     '& .MuiFormLabel-root': {
-      color: '#cfab7a',
+      color: theme.palette.primary.main,
     },
     '& .MuiSelect-icon': {
-      color: '#cfab7a',
+      color: theme.palette.primary.main,
     },
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
   },
 }));
 

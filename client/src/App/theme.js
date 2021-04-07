@@ -11,7 +11,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: 'Syne Mono',
+    fontFamily: 'Kiwi Maru',
     button: {
       color: '#CFAB7A',
     },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,6 +12,16 @@ import Button from '@material-ui/core/Button';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import { Link, useHistory } from 'react-router-dom';
+import {
+  HOME_PAGE,
+  SERVICES,
+  PRODUCTS,
+  BLOGS,
+  CONTACTS,
+  PROFILE,
+  // SIGNIN_PAGE,
+  // SIGNUP_PAGE,
+} from '../../utils/router.constant';
 
 import useStyles from './style';
 
@@ -23,6 +33,8 @@ const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 
+  const [isAuth, setIsAuth] = useState(true);
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -31,7 +43,9 @@ const Header = () => {
     history.push(pageURL);
     setAnchorEl(null);
   };
-  const logOutClick = () => {};
+  const logOutClick = () => {
+    setIsAuth(false);
+  };
 
   return (
     <div className={classes.root}>
@@ -81,33 +95,35 @@ const Header = () => {
                     <MenuItem onClick={() => handleMenuClick('/cart')}>
                       Cart
                     </MenuItem>
-                    <MenuItem
-                      classes={{ root: 'logoutMobile' }}
-                      className={classes.logoutMobile}
-                      onClick={() => logOutClick()}
-                    >
-                      Logout
-                    </MenuItem>
+                    {isAuth ? (
+                      <MenuItem
+                        classes={{ root: 'logoutMobile' }}
+                        className={classes.logoutMobile}
+                        onClick={() => logOutClick()}
+                      >
+                        Logout
+                      </MenuItem>
+                    ) : null}
                   </Menu>
                 </>
               ) : (
                 <div>
-                  <Link className={classes.options} to="/services">
+                  <Link className={classes.options} to={SERVICES}>
                     Services
                   </Link>
-                  <Link className={classes.options} to="/products">
+                  <Link className={classes.options} to={PRODUCTS}>
                     Products
                   </Link>
-                  <Link className={classes.options} to="/blogs">
+                  <Link className={classes.options} to={BLOGS}>
                     Blogs
                   </Link>
-                  <Link className={classes.options} to="/contact">
+                  <Link className={classes.options} to={CONTACTS}>
                     Contact
                   </Link>
                 </div>
               )}
             </div>
-            <Link className={classes.title} to="/">
+            <Link className={classes.title} to={HOME_PAGE}>
               Beauty
             </Link>
 
@@ -130,7 +146,7 @@ const Header = () => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="secondary"
-                onClick={() => handleMenuClick('/profile')}
+                onClick={() => handleMenuClick(PROFILE)}
               >
                 <AccountCircle />
               </IconButton>

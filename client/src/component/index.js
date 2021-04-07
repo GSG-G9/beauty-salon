@@ -5,6 +5,7 @@ import InputTime from './InputTime';
 import ButtonComponent from './Button';
 import Loading from './Loading';
 import Header from './header';
+import Footer from './footer';
 
 export {
   InputDate,
@@ -14,4 +15,5 @@ export {
   ServiceCard,
   InputField,
   Header,
+  Footer,
 };

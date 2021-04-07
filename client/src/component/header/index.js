@@ -1,5 +1,4 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,12 +11,12 @@ import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import useStyles from './style';
 
-const Header = (props) => {
-  const { history } = props;
+const Header = () => {
+  const history = useHistory();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -151,10 +150,6 @@ const Header = (props) => {
       </AppBar>
     </div>
   );
-};
-
-Header.propTypes = {
-  history: PropTypes.shape.isRequired,
 };
 
 export default Header;

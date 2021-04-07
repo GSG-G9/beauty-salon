@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline ': {
       borderColor: theme.palette.primary.main,
     },
+    '& .MuiFormLabel-root': {
+      color: '#cfab7a',
+    },
   },
 }));
 

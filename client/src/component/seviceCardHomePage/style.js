@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     height: 200,
     width: 200,
+    borderRadius: '50%',
   },
   media: {
     height: '100%',

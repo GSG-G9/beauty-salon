@@ -37,17 +37,23 @@ const SelectInput = ({ label, textHelper, menu }) => {
 };
 
 SelectInput.propTypes = {
-  label: string.isRequired,
+  label: string,
   textHelper: string,
   menu: arrayOf(
     shape({
-      name: string.isRequired,
-      val: string.isRequired,
+      name: string,
+      val: string,
     })
-  ).isRequired,
+  ),
 };
 SelectInput.defaultProps = {
   textHelper: '',
+  label: 'label',
+  menu: [
+    { name: 'name1', val: 'val1' },
+    { name: 'name2', val: 'val2' },
+    { name: 'name3', val: 'val3' },
+  ],
 };
 
 export default SelectInput;

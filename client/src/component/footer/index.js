@@ -11,11 +11,9 @@ const Footer = () => {
       <div className={classes.imgContainer}>
         <img alt="girl" src={logo} className={classes.img} />
       </div>
-
       <Typography className={classes.typo}>
-        @2021 All Rights Reserved
+        @{new Date().getFullYear()} All Rights Reserved
       </Typography>
-
       <Grid className={classes.iconsGrid} container>
         <Twitter className={classes.MuiSvgIconRoot} />
 

@@ -42,9 +42,6 @@ const theme = createMuiTheme({
     MuiTextField: {
       variant: 'filled',
     },
-    MuiSelect: {
-      disableRipple: true,
-    },
   },
 });
 

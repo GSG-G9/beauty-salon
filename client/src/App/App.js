@@ -30,6 +30,7 @@ import {
   Signup,
   NotFound,
 } from '../pages';
+import { SelectInput } from '../component';
 
 const App = () => (
   <ThemeProvider theme={theme}>

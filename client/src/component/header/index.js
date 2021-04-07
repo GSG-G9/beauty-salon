@@ -78,7 +78,7 @@ const Header = () => {
                     <MenuItem onClick={() => handleMenuClick('/contact')}>
                       Contact
                     </MenuItem>
-                    <MenuItem onClick={() => handleMenuClick('/Cart')}>
+                    <MenuItem onClick={() => handleMenuClick('/cart')}>
                       Cart
                     </MenuItem>
                     <MenuItem

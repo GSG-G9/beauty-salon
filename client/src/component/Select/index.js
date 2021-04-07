@@ -4,7 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import PropTypes from 'prop-types';
+import { string, shape, arrayOf } from 'prop-types';
 
 import useStyles from './style';
 
@@ -37,14 +37,15 @@ const SelectInput = ({ label, textHelper, menu }) => {
 };
 
 SelectInput.propTypes = {
-  label: PropTypes.string.isRequired,
-  textHelper: PropTypes.string.isRequired,
-  menu: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      val: PropTypes.string.isRequired,
+  label: string.isRequired,
+  textHelper: string,
+  menu: arrayOf(
+    shape({
+      name: string.isRequired,
+      val: string.isRequired,
     })
   ).isRequired,
 };
+SelectInput.defaultProps = ' ';
 
 export default SelectInput;

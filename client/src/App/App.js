@@ -29,10 +29,12 @@ import {
   Signup,
   NotFound,
 } from '../pages';
+import SelectInput from '../component/Select';
 
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
+    <SelectInput />
     <Router>
       <Switch>
         <Route exact path={HOME_PAGE}>

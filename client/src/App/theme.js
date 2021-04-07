@@ -9,6 +9,9 @@ const theme = createMuiTheme({
     secondary: {
       main: '#FFFFFF',
     },
+    background: {
+      default: '#000000',
+    },
   },
   typography: {
     fontFamily: 'Kiwi Maru',
@@ -38,6 +41,9 @@ const theme = createMuiTheme({
     },
     MuiTextField: {
       variant: 'filled',
+    },
+    MuiSelect: {
+      disableRipple: true,
     },
   },
 });

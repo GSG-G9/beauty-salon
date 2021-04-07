@@ -6,6 +6,7 @@ import ButtonComponent from './Button';
 import Loading from './Loading';
 import Footer from './footer';
 import ServiceCardForHomePage from './seviceCardHomePage';
+import SelectInput from './Select';
 
 export {
   InputDate,
@@ -16,4 +17,5 @@ export {
   InputField,
   Footer,
   ServiceCardForHomePage,
+  SelectInput,
 };

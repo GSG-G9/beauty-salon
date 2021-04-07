@@ -19,10 +19,10 @@ INSERT INTO products(title,brand,price,quantity,description,image) VALUES
 ('Powder','Dior',70,9,'An artistry essential used to set makeup, control oil, and smooth the texture of the skin, all while creating a soft-focus finish','https://cdn.discordapp.com/attachments/778557600017940501/825468934178340934/0607845014218.png');
 
 INSERT INTO services(name,category,description,image) VALUES
-('JUNIOR WOMENS HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
+('JUNIOR WOMEN HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
 ('Childreen HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
 ('Mens HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
-('Master WOMENS HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
+('Master WOMEN HAIRCUT','Hair cuts','haircut will begin with a complete consultation for a personalized cut','https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg'),
 ('Classic Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/710362c84343.jpg'),
 ('Dazzle Dry Vegan Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/710362c84343.jpg'),
 ('Gel Manicure','nails','nail lacquer invites you to flaunt a most sophisticated holiday manicure','https://www.almarasimsalon.com/ressources/images/d4a4860763ef.jpg'),

@@ -10,11 +10,11 @@ describe('test getServices query and /api/v1/services route', () => {
   afterAll(() => connection.end());
 
   test(`getServices query, expected the third service to be object with name 
-    value equal Master WOMENS HAIRCUT`, async () => {
+    value equal Master WOMEN HAIRCUT`, async () => {
     const { rows } = await getServices();
     return expect(rows[3]).toEqual({
       id: 4,
-      name: 'Master WOMENS HAIRCUT',
+      name: 'Master WOMEN HAIRCUT',
       category: 'Hair cuts',
       description: 'haircut will begin with a complete consultation for a personalized cut',
       image: 'https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg',
@@ -37,7 +37,7 @@ describe('test getServices query and /api/v1/services route', () => {
       data:
        [{
          id: 1,
-         name: 'JUNIOR WOMENS HAIRCUT',
+         name: 'JUNIOR WOMEN HAIRCUT',
          category: 'Hair cuts',
          description:
             'haircut will begin with a complete consultation for a personalized cut',
@@ -64,7 +64,7 @@ describe('test getServices query and /api/v1/services route', () => {
        },
        {
          id: 4,
-         name: 'Master WOMENS HAIRCUT',
+         name: 'Master WOMEN HAIRCUT',
          category: 'Hair cuts',
          description:
             'haircut will begin with a complete consultation for a personalized cut',

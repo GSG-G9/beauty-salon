@@ -7,6 +7,7 @@ import Loading from './Loading';
 import Header from './header';
 import Footer from './footer';
 import ServiceCardForHomePage from './seviceCardHomePage';
+import SelectInput from './Select';
 
 export {
   InputDate,
@@ -18,4 +19,5 @@ export {
   Header,
   Footer,
   ServiceCardForHomePage,
+  SelectInput,
 };

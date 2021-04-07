@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 import theme from './theme';
+
 import {
   HOME_PAGE,
   BLOGS,
@@ -30,6 +33,7 @@ import {
 
 const App = () => (
   <ThemeProvider theme={theme}>
+    <CssBaseline />
     <Router>
       <Switch>
         <Route exact path={HOME_PAGE}>

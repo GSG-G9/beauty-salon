@@ -35,13 +35,13 @@ const useStyles = makeStyles((theme) => ({
   },
   headerLeftSide: {
     [theme.breakpoints.up('sm')]: {
-      width: '15em',
+      width: '22em',
     },
     justifyContent: 'space-between',
   },
   headerRightSide: {
     [theme.breakpoints.up('sm')]: {
-      width: '15em',
+      width: '22em',
     },
   },
   options: {
@@ -55,6 +55,15 @@ const useStyles = makeStyles((theme) => ({
   },
   menuPaper: {
     backgroundColor: '#0e1717',
+  },
+  signup: {
+    marginLeft: '1em',
+    color: '#fff',
+    '&:hover': {
+      color: 'f8f8ff',
+      transform: 'scale(1.1)',
+      boxShadow: '#888888',
+    },
   },
   logout: {
     marginLeft: '1em',

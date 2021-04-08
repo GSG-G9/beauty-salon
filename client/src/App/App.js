@@ -31,13 +31,10 @@ import {
   NotFound,
 } from '../pages';
 
-import { Header } from '../component';
-
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
     <Router>
-      <Header />
       <Switch>
         <Route exact path={HOME_PAGE}>
           <Home />

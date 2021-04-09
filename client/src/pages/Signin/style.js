@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     fontSize: '1.2rem',
-    color: '#fff',
   },
   container: {
     display: 'flex',

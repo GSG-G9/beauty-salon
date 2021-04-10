@@ -7,6 +7,7 @@ import Loading from './Loading';
 import Footer from './footer';
 import ServiceCardForHomePage from './seviceCardHomePage';
 import SelectInput from './Select';
+import BlogsCard from './BlogCard';
 
 export {
   InputDate,
@@ -18,4 +19,5 @@ export {
   Footer,
   ServiceCardForHomePage,
   SelectInput,
+  BlogsCard,
 };

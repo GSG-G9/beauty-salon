@@ -42,15 +42,28 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '1rem',
+    marginTop: '2rem',
   },
   services: {
     display: 'flex',
+    justifyContent: 'space-around',
     flexDirection: 'row',
     marginTop: '2rem',
+    width: '75%',
+    padding: '4rem 0rem',
+    borderBottom: `1px solid ${theme.palette.primary.main}`,
   },
-  service: {
-    paddingRight: '1rem',
+  blogsSec: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+
+    marginTop: '2rem',
+    marginBottom: '4rem',
+  },
+  moreBlogsBtn: {
+    display: 'flex',
+    width: '10%',
   },
 }));
 

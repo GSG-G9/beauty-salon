@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Avatar from '@material-ui/core/Avatar';
 import axios from 'axios';
+import { Alert } from '@material-ui/lab';
 import { SIGNIN_PAGE } from '../../utils/router.constant';
 import { InputField } from '../../component';
 import useStyles from './style';
@@ -16,7 +17,7 @@ import {
   lastNameSchema,
   emailSchema,
   passwordSchema,
-  // confirmPasswordSchema,
+  confirmPasswordSchema,
 } from '../../utils';
 
 const Signup = () => {
@@ -27,45 +28,62 @@ const Signup = () => {
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [confirmPassword, setConfirmPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const [firstNameError, setFirstNameError] = useState(false);
   const [lastNameError, setLastNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  // const [confirmPasswordError, setConfirmPasswordError] = useState(false);
+  const [confirmPasswordError, setConfirmPasswordError] = useState(false);
+  const [passwordsMismatchError, setPasswordsMismatchError] = useState(false);
 
   const [, setLoading] = useState(false);
-  const [, setError] = useState('');
+  const [Error, setError] = useState('');
 
+  const clear = () => {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+    setError(null);
+  };
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       setLoading(true);
-      // if (password !== confirmPassword) {
-      //   return setConfirmPasswordError('Please input your the same password!');
-      // }
-      // || !confirmPassword
-      if (!email || !password) {
-        return setLoading(false);
+      if (password !== confirmPassword) {
+        return setPasswordsMismatchError(true);
       }
-
+      if (!firstName) {
+        return setFirstNameError(true);
+      }
+      if (!lastName) {
+        return setLastNameError(true);
+      }
+      if (!email) {
+        return setEmailError(true);
+      }
+      if (!password) {
+        return setPasswordError(true);
+      }
+      if (!confirmPassword) {
+        return setConfirmPasswordError(true);
+      }
       await axios.post('/api/v1/signup', {
         firstName,
         lastName,
         email,
         password,
-        // confirmPassword,
       });
+      clear();
       setLoading(false);
-      setError('');
       return history.push('/signin');
     } catch (err) {
-      setLoading(false);
-      return setError(err.response.data.message || 'Something went wrong !! ');
+      setError(err.response ? err.response.data.message : err.errors[0]);
+      return setLoading(false);
     }
   };
-
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -84,7 +102,6 @@ const Signup = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <InputField
-                  required
                   fullWidth
                   id="firstName"
                   name="firstName"
@@ -104,7 +121,6 @@ const Signup = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <InputField
-                  required
                   fullWidth
                   id="lastName"
                   name="lastName"
@@ -124,7 +140,6 @@ const Signup = () => {
               </Grid>
               <Grid item xs={12}>
                 <InputField
-                  required
                   fullWidth
                   id="email"
                   name="email"
@@ -147,7 +162,6 @@ const Signup = () => {
               </Grid>
               <Grid item xs={12}>
                 <InputField
-                  required
                   fullWidth
                   id="password"
                   name="password"
@@ -168,9 +182,8 @@ const Signup = () => {
                   }
                 />
               </Grid>
-              {/* <Grid item xs={12}>
+              <Grid item xs={12}>
                 <InputField
-                  required
                   fullWidth
                   id="confirmPassword"
                   type="password"
@@ -180,17 +193,21 @@ const Signup = () => {
                     'confirmPassword',
                     confirmPasswordSchema,
                     setConfirmPassword,
-                    setConfirmPasswordError
+                    setConfirmPasswordError,
+                    setPasswordsMismatchError
                   )}
-                  error={confirmPasswordError}
+                  error={confirmPasswordError || passwordsMismatchError}
                   helperText={
-                    confirmPasswordError
+                    passwordsMismatchError
+                      ? 'Passwords must match!'
+                      : confirmPasswordError
                       ? 'Please Enter A valid Password which must contain 6 characters'
                       : null
                   }
                 />
-              </Grid> */}
+              </Grid>
             </Grid>
+            {Error && <Alert severity="error">{Error}</Alert>}
             <Button
               type="submit"
               fullWidth
@@ -201,6 +218,7 @@ const Signup = () => {
             >
               Sign Up
             </Button>
+            {/* {loading ? <Loading size={13} /> : ''} */}
             <Grid container justify="flex-start">
               <Grid item>
                 <Link to={SIGNIN_PAGE} className={classes.link}>

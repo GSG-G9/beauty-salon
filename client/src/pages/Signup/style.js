@@ -32,12 +32,6 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
     fontSize: '1.2rem',
   },
-  // container: {
-  //   display: 'flex',
-  //   justifyContent: 'space-around',
-  //   width: '100%',
-  //   marginTop: 50,
-  // },
   iconLock: {
     display: 'flex',
     alignItems: 'center',

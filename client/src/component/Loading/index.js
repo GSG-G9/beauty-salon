@@ -5,11 +5,11 @@ import { CircularProgress, Typography } from '@material-ui/core';
 import { number, string } from 'prop-types';
 import useStyles from './style';
 
-const Loading = ({ size, message }) => {
+const Loading = ({ size, message, ...rest }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <CircularProgress size={size} thickness={4} />
+      <CircularProgress size={size} thickness={4} {...rest} />
       {message && (
         <Typography className={classes.message}>{message}</Typography>
       )}

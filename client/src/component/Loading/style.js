@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '95vh',
   },
   message: {
     color: theme.palette.secondary.main,

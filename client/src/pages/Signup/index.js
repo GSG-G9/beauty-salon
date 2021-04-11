@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { useHistory, Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -9,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import axios from 'axios';
 import { Alert } from '@material-ui/lab';
 import { SIGNIN_PAGE } from '../../utils/router.constant';
-import { InputField } from '../../component';
+import { InputField, Loading } from '../../component';
 import useStyles from './style';
 import {
   updateAndValidateInput,
@@ -24,8 +23,8 @@ const Signup = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -37,7 +36,7 @@ const Signup = () => {
   const [confirmPasswordError, setConfirmPasswordError] = useState(false);
   const [passwordsMismatchError, setPasswordsMismatchError] = useState(false);
 
-  const [, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [Error, setError] = useState('');
 
   const clear = () => {
@@ -78,7 +77,7 @@ const Signup = () => {
       });
       clear();
       setLoading(false);
-      return history.push('/signin');
+      return history.push('/');
     } catch (err) {
       setError(err.response ? err.response.data.message : err.errors[0]);
       return setLoading(false);
@@ -86,7 +85,6 @@ const Signup = () => {
   };
   return (
     <Grid container component="main" className={classes.root}>
-      <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5}>
         <div className={classes.paper}>
@@ -218,7 +216,7 @@ const Signup = () => {
             >
               Sign Up
             </Button>
-            {/* {loading ? <Loading size={13} /> : ''} */}
+            {loading && <Loading size={40} color="secondary" />}
             <Grid container justify="flex-start">
               <Grid item>
                 <Link to={SIGNIN_PAGE} className={classes.link}>

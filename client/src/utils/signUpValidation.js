@@ -13,9 +13,5 @@ export const passwordSchema = yup.object({
   password: yup.string().min(6).required(),
 });
 export const confirmPasswordSchema = yup.object({
-  confirmPassword: yup
-    .string()
-    .min(6)
-    .required()
-    .oneOf([yup.ref('password'), null], 'passwords must match'),
+  confirmPassword: yup.string().min(6).required(),
 });

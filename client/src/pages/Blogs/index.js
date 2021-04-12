@@ -1,4 +1,5 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
 
-const Blogs = () => <div>Hi from Blogs</div>;
+const Blogs = () => <Typography>Hi from Blogs</Typography>;
 export default Blogs;

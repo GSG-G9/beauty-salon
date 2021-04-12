@@ -5,7 +5,8 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    backgroundImage:
+      'url(https://yesalon.com/wp-content/uploads/2019/03/gallery-14.jpg)',
     backgroundRepeat: 'no-repeat',
     backgroundColor: theme.palette.primary.type,
     backgroundSize: 'cover',
@@ -29,12 +30,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
     fontSize: '1.2rem',
   },
-  container: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    width: '100%',
-    marginTop: 50,
-  },
+
   iconLock: {
     display: 'flex',
     alignItems: 'center',

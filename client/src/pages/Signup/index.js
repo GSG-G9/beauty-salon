@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
 import { useHistory, Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -8,7 +7,7 @@ import Avatar from '@material-ui/core/Avatar';
 import axios from 'axios';
 import { Alert } from '@material-ui/lab';
 import { SIGNIN_PAGE } from '../../utils/router.constant';
-import { InputField, Loading } from '../../component';
+import { InputField, ButtonComponent, Loading } from '../../component';
 import useStyles from './style';
 import {
   updateAndValidateInput,
@@ -37,7 +36,7 @@ const Signup = () => {
   const [passwordsMismatchError, setPasswordsMismatchError] = useState(false);
 
   const [loading, setLoading] = useState(false);
-  const [Error, setError] = useState('');
+  const [error, setError] = useState('');
 
   const clear = () => {
     setFirstName('');
@@ -45,29 +44,35 @@ const Signup = () => {
     setEmail('');
     setPassword('');
     setConfirmPassword('');
-    setError(null);
+    setError('');
   };
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       setLoading(true);
       if (password !== confirmPassword) {
-        return setPasswordsMismatchError(true);
+        setPasswordsMismatchError(true);
+        return setLoading(false);
       }
       if (!firstName) {
-        return setFirstNameError(true);
+        setFirstNameError(true);
+        return setLoading(false);
       }
       if (!lastName) {
-        return setLastNameError(true);
+        setLastNameError(true);
+        return setLoading(false);
       }
       if (!email) {
-        return setEmailError(true);
+        setEmailError(true);
+        return setLoading(false);
       }
       if (!password) {
-        return setPasswordError(true);
+        setPasswordError(true);
+        return setLoading(false);
       }
       if (!confirmPassword) {
-        return setConfirmPasswordError(true);
+        setConfirmPasswordError(true);
+        return setLoading(false);
       }
       await axios.post('/api/v1/signup', {
         firstName,
@@ -205,8 +210,8 @@ const Signup = () => {
                 />
               </Grid>
             </Grid>
-            {Error && <Alert severity="error">{Error}</Alert>}
-            <Button
+            {error && <Alert severity="error">{error}</Alert>}
+            <ButtonComponent
               type="submit"
               fullWidth
               variant="contained"
@@ -215,7 +220,7 @@ const Signup = () => {
               onClick={handleSubmit}
             >
               Sign Up
-            </Button>
+            </ButtonComponent>
             {loading && <Loading size={40} color="primary" />}
             <Grid container justify="flex-start">
               <Grid item>

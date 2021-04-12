@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiFormLabel-root': {
       color: '#cfab7a',
     },
+    '& .MuiOutlinedInput-input:-webkit-autofill': {
+      boxShadow: ' 0 0 0 100px black inset',
+    },
   },
 }));
 

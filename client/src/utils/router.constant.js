@@ -10,3 +10,4 @@ export const PRODUCTS = '/products';
 export const CART = '/cart';
 export const DASHBOARD = '/dashboard';
 export const DASHBOARD_APPOINTMENT = '/appointment';
+export const NOT_FOUND = '/404';

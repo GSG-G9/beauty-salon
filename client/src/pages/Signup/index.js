@@ -216,7 +216,7 @@ const Signup = () => {
             >
               Sign Up
             </Button>
-            {loading && <Loading size={40} color="secondary" />}
+            {loading && <Loading size={40} color="primary" />}
             <Grid container justify="flex-start">
               <Grid item>
                 <Link to={SIGNIN_PAGE} className={classes.link}>

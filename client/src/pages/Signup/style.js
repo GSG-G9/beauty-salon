@@ -5,14 +5,13 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    backgroundImage:
+      'url(https://images-ext-1.discordapp.net/external/zYn2idcWuDzf2-rLxlY36o0wk6ypb7izLNsmYnTUYnw/%3Fixlib%3Drb-1.2.1%26ixid%3DMXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D1500%26q%3D80/https/images.unsplash.com/photo-1581674210501-c760093514e8?width=681&height=454)',
     backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'light'
-        ? theme.palette.grey[50]
-        : theme.palette.grey[900],
+    backgroundColor: theme.palette.primary.type,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    opacity: 0.66,
   },
   paper: {
     margin: theme.spacing(8, 4),

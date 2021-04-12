@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import UserProvider from '../utils/userProvider';
+import { UserProvider } from '../utils';
 
 import theme from './theme';
 

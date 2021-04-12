@@ -12,6 +12,7 @@ import {
   ServiceCardForHomePage,
   BlogsCard,
   Footer,
+  Header,
 } from '../../component';
 
 import { BLOGS, BOOK } from '../../utils/router.constant';
@@ -34,15 +35,15 @@ const Home = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(blogs);
 
   return (
     <div className={classes.root}>
+      <Header />
       <div className={classes.firstSec}>
         <div className={classes.intro}>
           <Typography color="primary" variant="h4" className={classes.text}>
-            Endless looks. We are committed to create the perfect style for each
-            and every one of our clients.
+            Endless looks. We are committed to create the perfect style for our
+            clients.
           </Typography>
           <Typography variant="h6" className={classes.text2}>
             Best brands of products. we will deliver products to your house,

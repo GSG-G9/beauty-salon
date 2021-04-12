@@ -13,9 +13,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '2rem',
   },
   image: {
-    width: 200,
+    width: '100%',
     height: 'auto',
-    // marginRight: '2rem',
+    marginRight: '2rem',
   },
   right: {
     display: 'flex',

@@ -2,10 +2,10 @@ import React, { useState, createContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-export const userContext = createContext();
+const userContext = createContext();
 
 function UserProvider({ children }) {
-  const [role, setRole] = useState(null);
+  const [role, setRole] = useState('guest');
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function UserProvider({ children }) {
     return () => source.cancel('operation canceled');
   }, []);
   return (
-    <userContext.Provider value={[role, userData]}>
+    <userContext.Provider value={[role, userData, setRole]}>
       {children}
     </userContext.Provider>
   );
@@ -42,4 +42,4 @@ UserProvider.propTypes = {
   children: node.isRequired,
 };
 
-export default UserProvider;
+export { userContext, UserProvider };

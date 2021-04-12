@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 
 import Typography from '@material-ui/core/Typography';
@@ -11,21 +11,23 @@ import {
   Footer,
 } from '../../component';
 
+import { BLOGS, BOOK } from '../../utils/router.constant';
+
 import useStyles from './style';
 
 const Home = () => {
   const classes = useStyles();
-  // const history = useHistory();
-  const [blog, setBlogs] = useState([]);
+  const history = useHistory();
+  const [blogs, setBlogs] = useState([]);
 
-  const fetchBlog = async () => {
+  const fetchData = async () => {
     const { data } = await Axios.get('api/v1/blog');
-    setBlogs(data.data[0]);
+    setBlogs(data.data);
   };
-
   useEffect(() => {
-    fetchBlog();
+    fetchData();
   }, []);
+  console.log(blogs);
 
   return (
     <div className={classes.root}>
@@ -43,6 +45,7 @@ const Home = () => {
             variant="outlined"
             color="primary"
             className={classes.button}
+            onClick={() => history.push(BOOK)}
           >
             BookNow
           </ButtonComponent>
@@ -51,7 +54,7 @@ const Home = () => {
             color="contained"
             className={`${classes.button} ${classes.buyNowBtn}`}
           >
-            Buy Product
+            BuyProduct
           </Button>
         </div>
       </div>
@@ -60,15 +63,38 @@ const Home = () => {
           Our Services
         </Typography>
         <div className={classes.services}>
-          <ServiceCardForHomePage />
-          <ServiceCardForHomePage />
-          <ServiceCardForHomePage />
-          <ServiceCardForHomePage />
+          <ServiceCardForHomePage
+            serviceName="Hair"
+            imageSrc="https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg"
+          />
+          <ServiceCardForHomePage
+            serviceName="Nails"
+            imageSrc="https://www.almarasimsalon.com/ressources/images/710362c84343.jpg"
+          />
+          <ServiceCardForHomePage
+            serviceName="Skin"
+            imageSrc="https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013"
+          />
+          <ServiceCardForHomePage
+            serviceName="Makeup"
+            imageSrc="https://www.almarasimsalon.com/ressources/images/5bb5a556bb25.jpg"
+          />
         </div>
       </div>
       <div className={classes.blogsSec}>
-        <BlogsCard />
-        <Button className={classes.moreBlogsBtn}>More Blogs</Button>
+        {blogs.map((blog) => (
+          <BlogsCard
+            title={blog.name}
+            desc={blog.description}
+            image={blog.image}
+          />
+        ))}
+        <Button
+          className={classes.moreBlogsBtn}
+          onClick={() => history.push(BLOGS)}
+        >
+          MoreBlogs
+        </Button>
       </div>
       <Footer />
     </div>

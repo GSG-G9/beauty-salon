@@ -6,6 +6,9 @@ const useStyles = makeStyles((theme) => ({
     height: 200,
     width: 200,
     borderRadius: '50%',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
   },
   media: {
     height: '100%',

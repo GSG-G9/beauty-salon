@@ -6,6 +6,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'justify-content',
   },
   firstSec: {
+    '&::before': {
+      backgroundImage: `url(${landingBackground})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '100% 100%',
+      height: '100vh',
+      opacity: '0.5',
+    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -19,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
-    width: '50%',
+    width: '40rem',
     marginBottom: '2rem',
     paddingRight: '5rem',
   },
@@ -39,10 +46,11 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
   },
   servicesSec: {
+    height: '80vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '2rem',
+    marginTop: '5rem',
   },
   services: {
     display: 'flex',
@@ -50,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     marginTop: '2rem',
     width: '75%',
-    padding: '4rem 0rem',
+    paddingTop: '5rem',
+    paddingBottom: '8rem',
     borderBottom: `1px solid ${theme.palette.primary.main}`,
   },
   blogsSec: {

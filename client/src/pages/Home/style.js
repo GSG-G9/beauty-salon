@@ -6,13 +6,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'justify-content',
   },
   firstSec: {
-    '&::before': {
-      backgroundImage: `url(${landingBackground})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '100% 100%',
-      height: '100vh',
-      opacity: '0.5',
-    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -23,21 +16,29 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   intro: {
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingRight: '5vw',
+    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
     width: '40rem',
     marginBottom: '2rem',
-    paddingRight: '5rem',
+    paddingRight: '5vw',
   },
   text: {
     marginBottom: '1rem',
+    fontSize: '2.4vw',
   },
   text2: {
     marginBottom: '2.5rem',
+    fontSize: '1.5vw',
   },
   button: {
     width: '25%',
+    fontSize: '1vw',
     marginBottom: '0.7rem',
     alignSelf: 'center',
   },
@@ -46,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
   },
   servicesSec: {
-    height: '80vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -54,10 +54,12 @@ const useStyles = makeStyles((theme) => ({
   },
   services: {
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'space-around',
     flexDirection: 'row',
     marginTop: '2rem',
     width: '75%',
+    height: '100%',
     paddingTop: '5rem',
     paddingBottom: '8rem',
     borderBottom: `1px solid ${theme.palette.primary.main}`,
@@ -72,7 +74,9 @@ const useStyles = makeStyles((theme) => ({
   },
   moreBlogsBtn: {
     display: 'flex',
-    width: '10%',
+    width: '25%',
+    fontSize: '2vw',
+    marginTop: '2rem',
   },
 }));
 

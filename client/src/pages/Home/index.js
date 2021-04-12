@@ -4,6 +4,9 @@ import Axios from 'axios';
 
 import Typography from '@material-ui/core/Typography';
 import { Button } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
+
 import {
   ButtonComponent,
   ServiceCardForHomePage,
@@ -18,6 +21,10 @@ import useStyles from './style';
 const Home = () => {
   const classes = useStyles();
   const history = useHistory();
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+
   const [blogs, setBlogs] = useState([]);
 
   const fetchData = async () => {
@@ -59,7 +66,11 @@ const Home = () => {
         </div>
       </div>
       <div className={classes.servicesSec}>
-        <Typography variant="h4" color="primary">
+        <Typography
+          className={classes.servicesTitle}
+          variant="h4"
+          color="primary"
+        >
           Our Services
         </Typography>
         <div className={classes.services}>
@@ -85,7 +96,11 @@ const Home = () => {
         {blogs.map((blog) => (
           <BlogsCard
             title={blog.name}
-            desc={blog.description}
+            desc={
+              !isMobile
+                ? blog.description
+                : blog.description.split('').slice(0, 150).join('')
+            }
             image={blog.image}
           />
         ))}

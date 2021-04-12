@@ -115,7 +115,7 @@ const Signin = () => {
             >
               sign in
             </ButtonComponent>
-            {isLoading && <Loading color="secondary" />}
+            {isLoading && <Loading color="primary" size={30} />}
             <Grid container>
               <Grid item>
                 <Typography color="primary">

@@ -1,7 +1,9 @@
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  input: {
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 150,
     '& .MuiOutlinedInput-notchedOutline': {
       border: `1px solid ${theme.palette.primary.main}`,
     },
@@ -9,11 +11,14 @@ const useStyles = makeStyles((theme) => ({
       borderColor: theme.palette.primary.main,
     },
     '& .MuiFormLabel-root': {
-      color: '#cfab7a',
+      color: theme.palette.primary.main,
     },
-    '& .MuiOutlinedInput-input:-webkit-autofill': {
-      boxShadow: ' 0 0 0 100px black inset',
+    '& .MuiSelect-icon': {
+      color: theme.palette.primary.main,
     },
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
   },
 }));
 

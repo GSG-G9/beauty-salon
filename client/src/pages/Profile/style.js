@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+  avatar: {
+    width: '5em',
+    height: '5em',
+  },
   userData: {
     fontColor: theme.palette.secondary.main,
     marginTop: 60,

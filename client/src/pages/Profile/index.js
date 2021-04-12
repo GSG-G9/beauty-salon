@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Paper } from '@material-ui/core';
+import { Typography, Paper, Avatar, Grid } from '@material-ui/core';
 import axios from 'axios';
 import useStyles from './style';
 
@@ -25,9 +25,13 @@ const UserInfo = () => {
 
   return (
     <Paper className={classes.userData}>
+      <Typography variant="h5">User Information</Typography>
+      <Grid>
+        <Avatar className={classes.avatar} />
+      </Grid>
       <div className={classes.userDataField}>
         <Typography className={classes.userDataFieldLabel}>
-          Username:{' '}
+          Username:
         </Typography>
         <Typography className={classes.userDataFieldValue}>
           {userData.first_name} {userData.last_name}
@@ -46,9 +50,7 @@ const UserInfo = () => {
         </Typography>
       </div>
       <div className={classes.userDataField}>
-        <Typography className={classes.userDataFieldLabel}>
-          Address:{' '}
-        </Typography>
+        <Typography className={classes.userDataFieldLabel}>Address:</Typography>
         <Typography className={classes.userDataFieldValue}>
           {userData.address ? userData.address : '--'}
         </Typography>

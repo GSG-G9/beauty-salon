@@ -39,6 +39,13 @@ const Signin = () => {
     try {
       e.preventDefault();
       setIsLoading(true);
+
+      if (!email) {
+        setEmailError(false);
+      }
+      if (!password) {
+        setPasswordError(false);
+      }
       const user = { email, password };
       await Axios.post('/api/v1/signin', user);
       clear();
@@ -102,7 +109,7 @@ const Signin = () => {
               )}
               error={passwordError}
               helperText={
-                passwordError && 'Password must be at least 8 characters'
+                passwordError && 'Password must be at least 6 characters'
               }
             />
             {error && <Alert severity="error">{error}</Alert>}

@@ -9,6 +9,9 @@ const theme = createMuiTheme({
     secondary: {
       main: '#FFFFFF',
     },
+    background: {
+      default: '#000000',
+    },
   },
   typography: {
     fontFamily: 'Kiwi Maru',

@@ -59,7 +59,6 @@ const App = () => (
           <UserRoute path={BOOK} component={Book} />
           <AdminRoute path={DASHBOARD} component={Dashboard} />
           <AdminRoute path={DASHBOARD_APPOINTMENT} component={Appointment} />
-
           <Route path={NOT_FOUND}>
             <NotFound />
           </Route>

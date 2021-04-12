@@ -43,12 +43,3 @@ UserProvider.propTypes = {
 };
 
 export default UserProvider;
-
-// if(role==='admin'){
-//   return <adminRoute></adminRoute>
-// }else if(role==="user"){
-//   return <userRoute></userRoute>
-// }
-// else{
-//   <publicRoute></publicRoute>
-// }

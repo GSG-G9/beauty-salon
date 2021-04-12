@@ -5,7 +5,7 @@ import axios from 'axios';
 export const userContext = createContext();
 
 function UserProvider({ children }) {
-  const [isAuth, setIsAuth] = useState(null);
+  const [role, setRole] = useState(null);
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
@@ -21,16 +21,16 @@ function UserProvider({ children }) {
         });
 
         setUserData(data);
-        return setIsAuth(true);
+        return data.role === 'admin' ? setRole('admin') : setRole('user');
       } catch (err) {
-        return setIsAuth(false);
+        return setRole('guest');
       }
     })();
 
     return () => source.cancel('operation canceled');
   }, []);
   return (
-    <userContext.Provider value={[isAuth, userData]}>
+    <userContext.Provider value={[role, userData]}>
       {children}
     </userContext.Provider>
   );
@@ -43,3 +43,12 @@ UserProvider.propTypes = {
 };
 
 export default UserProvider;
+
+// if(role==='admin'){
+//   return <adminRoute></adminRoute>
+// }else if(role==="user"){
+//   return <userRoute></userRoute>
+// }
+// else{
+//   <publicRoute></publicRoute>
+// }

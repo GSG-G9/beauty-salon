@@ -8,3 +8,4 @@ export const BOOK = '/book';
 export const SERVICES = '/services';
 export const DASHBOARD = '/dashboard';
 export const DASHBOARD_APPOINTMENT = '/appointment';
+export const NOT_FOUND = '/404';

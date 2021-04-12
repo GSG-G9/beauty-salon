@@ -15,6 +15,7 @@ import {
   emailSchema,
   passwordSchema,
 } from '../../utils';
+
 import useStyles from './style';
 
 const Signin = () => {
@@ -115,7 +116,7 @@ const Signin = () => {
             >
               sign in
             </ButtonComponent>
-            {isLoading && <Loading color="primary" size={30} />}
+            {isLoading && <Loading color="primary" size={40} />}
             <Grid container>
               <Grid item>
                 <Typography color="primary">

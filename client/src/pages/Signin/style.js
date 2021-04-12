@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.type,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    opacity: 0.5,
+    opacity: 0.66,
   },
   paper: {
     margin: theme.spacing(4, 4),

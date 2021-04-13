@@ -5,10 +5,19 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '90%',
-    margin: '1rem 0',
+    justifyContent: 'center',
+    // width: '90%',
+    marginTop: '1rem',
+    marginBottom: '3rem',
   },
-  blog: {},
+  title: {
+    // alignSelf: 'flex-start',
+    width: '80%',
+    marginLeft: '3rem',
+    marginTop: '2rem',
+    paddingBottom: '1rem',
+    borderBottom: '1px solid #fff',
+  },
 }));
 
 export default useStyles;

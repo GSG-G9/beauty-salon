@@ -3,6 +3,7 @@ import Axios from 'axios';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 import { BlogsCard, Header, Footer } from '../../component';
 import useStyles from './style';
@@ -26,6 +27,9 @@ const Blogs = () => {
     <>
       <Header />
       <div className={classes.root}>
+        <Typography variant="h5" className={classes.title}>
+          Our Beauty Salon Blog
+        </Typography>
         {blogs.map((blog) => (
           <BlogsCard
             className={classes.blog}
@@ -35,7 +39,7 @@ const Blogs = () => {
             desc={
               !isMobile
                 ? `${blog.description.split(' ').slice(0, 50).join(' ')} . . .`
-                : blog.description.split('').slice(0, 150).join('')
+                : `${blog.description.split(' ').slice(0, 30).join(' ')} . . .`
             }
           />
         ))}

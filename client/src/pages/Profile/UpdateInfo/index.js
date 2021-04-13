@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
-
-import { PropTypes } from 'prop-types';
-import Axios from 'axios';
-
+import PropTypes from 'prop-types';
+import axios from 'axios';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Alert from '@material-ui/lab/Alert';
 
-import { InputField, ButtonComponent } from '../../../component';
+import { InputField, ButtonComponent, Loading } from '../../../component';
 
 import useStyles from './style';
 
 function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
-  const classes = useStyles();
-  const [username, setUsername] = useState();
-  const [mobile, setMobile] = useState();
-  const [address, setAddress] = useState();
-  //   const [isLoading, setIsLoading] = useState(false);
+  const classes = useStyles('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [address, setAddress] = useState('');
+  const [loading, setLoading] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
-  const [errorMsg, setErrorMsg] = useState();
+  const [error, setError] = useState('');
 
   const handleClickDialog = () => {
     setOpenDialog(true);
@@ -29,16 +28,17 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
     setOpenDialog(false);
   };
   const clear = () => {
-    setUsername();
-    setMobile();
-    setAddress();
+    setFirstName('');
+    setLastName('');
+    setMobile('');
+    setAddress('');
   };
   const handleChange = ({ target }) => {
     const { value, name } = target;
     switch (name) {
-      case 'username':
-        setUsername(value);
-        break;
+      // case 'username':
+      //   setUsername(value);
+      //   break;
       case 'mobile':
         setMobile(value);
         break;
@@ -50,29 +50,27 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
   };
   const handleSubmit = async () => {
     try {
-      setErrorMsg(null);
+      setError('');
       setOpenDialog(true);
       handleCloseAlert();
-      //   setIsLoading(true);
-      const userData = { username, mobile, address };
-      //   await validationSchema.validate(user, { abortEarly: false });
+      setLoading(true);
+      const userData = { firstName, lastName, mobile, address };
       setUpdateUser(false);
-      await Axios.patch('/api/v1/profile', userData);
+      await axios.patch('/api/v1/profile', userData);
       clear();
-      //   setIsLoading(false);
+      setLoading(false);
       setUpdateUser(true);
       setOpenDialog(false);
       handleClickAlert();
     } catch (err) {
-      //   setIsLoading(false);
-      setErrorMsg(err.response ? err.response.data.message : err.errors[0]);
+      setLoading(false);
+      setError(err.response ? err.response.data.message : err.errors[0]);
     }
   };
   return (
     <div>
       <ButtonComponent
         variant="contained"
-        color="secondary"
         className={classes.editBtn}
         onClick={handleClickDialog}
       >
@@ -85,17 +83,28 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
       >
         <DialogTitle>Update information</DialogTitle>
         <DialogContent>
-          {/* <InputField
+          <InputField
             autoFocus
             margin="dense"
             id="name"
-            name="username"
-            label="username"
+            name="firstName"
+            label="firstName"
             type="text"
             fullWidth
-            value={username}
+            value={firstName}
             onChange={handleChange}
-          /> */}
+          />
+          <InputField
+            autoFocus
+            margin="dense"
+            id="name"
+            name="lastName"
+            label="lastName"
+            type="text"
+            fullWidth
+            value={lastName}
+            onChange={handleChange}
+          />
           <InputField
             autoFocus
             margin="dense"
@@ -120,41 +129,33 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
           />
         </DialogContent>
         <DialogActions>
-          <ButtonComponent
-            onClick={handleCloseDialog}
-            color="secondary"
-            variant="outlined"
-          >
+          <ButtonComponent onClick={handleCloseDialog} variant="outlined">
             Cancel
           </ButtonComponent>
 
-          <ButtonComponent
-            onClick={handleSubmit}
-            color="primary"
-            variant="contained"
-          >
-            {/* {isLoading ? <Loading color="secondary" /> : 'Save'} */}
+          <ButtonComponent onClick={handleSubmit} variant="contained">
+            {loading && <Loading />}
+            Edit
           </ButtonComponent>
 
-          {errorMsg && (
-            <Alert className={classes.alert} severity="error">
-              {errorMsg}
-            </Alert>
-          )}
+          {error && <Alert severity="error">{error}</Alert>}
         </DialogActions>
       </Dialog>
     </div>
   );
 }
 
+const { func, string, number } = PropTypes;
+
 UpdateUser.propTypes = {
-  setUpdateUser: PropTypes.func.isRequired,
-  handleClickAlert: PropTypes.func.isRequired,
-  handleCloseAlert: PropTypes.func.isRequired,
+  setUpdateUser: func.isRequired,
+  handleClickAlert: func.isRequired,
+  handleCloseAlert: func.isRequired,
   userData: PropTypes.shape({
-    username: PropTypes.string,
-    mobile: PropTypes.number,
-    address: PropTypes.string,
+    firstName: string,
+    lastName: string,
+    mobile: number,
+    address: string,
   }).isRequired,
 };
 

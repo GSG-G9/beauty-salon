@@ -5,12 +5,23 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginTop: '2rem',
+    marginTop: '3rem',
     width: '75%',
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
+    },
   },
-
+  left: {
+    width: '100%',
+    marginRight: '2rem',
+  },
   image: {
-    width: '10em',
+    [theme.breakpoints.down('sm')]: {
+      width: '250px',
+      height: 'auto',
+    },
+
+    width: '300px',
     height: 'auto',
     marginRight: '2rem',
   },
@@ -26,7 +37,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2%',
   },
   readMore: {
-    width: '20%',
+    width: '1.5',
+    fontSize: '1rem',
     color: theme.palette.primary.main,
     '&:hover': {
       transform: 'scale(1.1)',

@@ -19,7 +19,7 @@ function BlogsCard({ title, image, desc }) {
         <Typography className={classes.title} variant="h5" color="primary">
           {title}
         </Typography>
-        <Typography className={classes.desc} variant="body2">
+        <Typography className={classes.desc} variant="body1">
           {desc}
         </Typography>
         <Link className={classes.readMore} to="/blogs">

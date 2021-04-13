@@ -37,83 +37,88 @@ const Home = () => {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <>
       <Header />
-      <div className={classes.firstSec}>
-        <div className={classes.intro}>
-          <Typography color="primary" variant="h4" className={classes.text}>
-            Endless looks. We are committed to create the perfect style for our
-            clients.
-          </Typography>
-          <Typography variant="h6" className={classes.text2}>
-            Best brands of products. we will deliver products to your house,
-            Shopping is much easier now!!
-          </Typography>
-          <ButtonComponent
-            variant="outlined"
+      <div className={classes.root}>
+        <div className={classes.firstSec}>
+          <div className={classes.intro}>
+            <Typography color="primary" variant="h4" className={classes.text}>
+              Endless looks. We are committed to create the perfect style for
+              our clients.
+            </Typography>
+            <Typography variant="h6" className={classes.text2}>
+              Best brands of products. we will deliver products to your house,
+              Shopping is much easier now!!
+            </Typography>
+            <ButtonComponent
+              variant="outlined"
+              color="primary"
+              className={classes.button}
+              onClick={() => history.push(BOOK)}
+            >
+              BookNow
+            </ButtonComponent>
+            <Button
+              variant="outlined"
+              color="contained"
+              className={`${classes.button} ${classes.buyNowBtn}`}
+            >
+              BuyProduct
+            </Button>
+          </div>
+        </div>
+        <div className={classes.servicesSec}>
+          <Typography
+            className={classes.servicesTitle}
+            variant="h4"
             color="primary"
-            className={classes.button}
-            onClick={() => history.push(BOOK)}
           >
-            BookNow
-          </ButtonComponent>
+            Our Services
+          </Typography>
+          <div className={classes.services}>
+            <ServiceCardForHomePage
+              serviceName="Hair"
+              imageSrc="https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg"
+            />
+            <ServiceCardForHomePage
+              serviceName="Nails"
+              imageSrc="https://www.almarasimsalon.com/ressources/images/710362c84343.jpg"
+            />
+            <ServiceCardForHomePage
+              serviceName="Skin"
+              imageSrc="https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013"
+            />
+            <ServiceCardForHomePage
+              serviceName="Makeup"
+              imageSrc="https://www.almarasimsalon.com/ressources/images/5bb5a556bb25.jpg"
+            />
+          </div>
+        </div>
+        <div className={classes.blogsSec}>
+          {blogs.map((blog) => (
+            <BlogsCard
+              title={blog.name}
+              desc={
+                !isMobile
+                  ? `${blog.description
+                      .split(' ')
+                      .slice(0, 50)
+                      .join(' ')} . . .`
+                  : blog.description.split('').slice(0, 150).join('')
+              }
+              image={blog.image}
+            />
+          ))}
           <Button
-            variant="outlined"
-            color="contained"
-            className={`${classes.button} ${classes.buyNowBtn}`}
+            className={classes.moreBlogsBtn}
+            onClick={() => history.push(BLOGS)}
           >
-            BuyProduct
+            MoreBlogs
           </Button>
         </div>
+        <Footer />
       </div>
-      <div className={classes.servicesSec}>
-        <Typography
-          className={classes.servicesTitle}
-          variant="h4"
-          color="primary"
-        >
-          Our Services
-        </Typography>
-        <div className={classes.services}>
-          <ServiceCardForHomePage
-            serviceName="Hair"
-            imageSrc="https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg"
-          />
-          <ServiceCardForHomePage
-            serviceName="Nails"
-            imageSrc="https://www.almarasimsalon.com/ressources/images/710362c84343.jpg"
-          />
-          <ServiceCardForHomePage
-            serviceName="Skin"
-            imageSrc="https://media.istockphoto.com/photos/happy-girl-applying-facial-cleanser-mask-young-woman-having-skin-care-picture-id1218410013"
-          />
-          <ServiceCardForHomePage
-            serviceName="Makeup"
-            imageSrc="https://www.almarasimsalon.com/ressources/images/5bb5a556bb25.jpg"
-          />
-        </div>
-      </div>
-      <div className={classes.blogsSec}>
-        {blogs.map((blog) => (
-          <BlogsCard
-            title={blog.name}
-            desc={
-              !isMobile
-                ? blog.description
-                : blog.description.split('').slice(0, 150).join('')
-            }
-            image={blog.image}
-          />
-        ))}
-        <Button
-          className={classes.moreBlogsBtn}
-          onClick={() => history.push(BLOGS)}
-        >
-          MoreBlogs
-        </Button>
-      </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 

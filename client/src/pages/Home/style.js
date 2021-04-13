@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
   intro: {
     [theme.breakpoints.down('md')]: {
-      justifyContent: 'flex-end',
-      alignItems: 'flex-end',
-      width: '80%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '90%',
       paddingRight: '0vw',
     },
     display: 'flex',
@@ -38,23 +38,16 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '5vw',
   },
   text: {
-    [theme.breakpoints.down('md')]: {
-      // fontSize: '4vw',
-    },
     marginBottom: '1rem',
-    // fontSize: '2.4vw',
-    textShadow: '3px 3px 5px #000',
+    textShadow: '0px 0px 5px #000',
   },
   text2: {
-    [theme.breakpoints.down('md')]: {
-      // fontSize: '3vw',
-    },
+    [theme.breakpoints.down('md')]: {},
+    textShadow: '0px 0px 5px #000',
     marginBottom: '2.5rem',
-    // fontSize: '1.5vw',
   },
   button: {
     width: '8rem',
-    fontSize: '1rem',
     marginBottom: '0.7rem',
     alignSelf: 'center',
   },
@@ -66,20 +59,26 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '5rem',
+    marginTop: '1rem',
   },
   services: {
+    [theme.breakpoints.down('md')]: {
+      alignItems: 'space-around',
+      height: '120%',
+    },
     display: 'flex',
     flexWrap: 'wrap',
+    gap: '1rem',
     justifyContent: 'space-around',
     flexDirection: 'row',
     marginTop: '2rem',
     width: '75%',
     height: '100%',
-    paddingTop: '5rem',
-    paddingBottom: '8rem',
+    paddingTop: '3rem',
+    paddingBottom: '5rem',
     borderBottom: `1px solid ${theme.palette.primary.main}`,
   },
+
   blogsSec: {
     display: 'flex',
     flexDirection: 'column',
@@ -90,9 +89,9 @@ const useStyles = makeStyles((theme) => ({
   },
   moreBlogsBtn: {
     display: 'flex',
-    width: '25%',
-    fontSize: '2vw',
-    marginTop: '2rem',
+    width: '10rem',
+    // fontSize: '2vw',
+    marginTop: '3rem',
   },
 }));
 

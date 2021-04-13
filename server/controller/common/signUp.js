@@ -12,7 +12,7 @@ const signUp = async (req, res, next) => {
     const { rows: user } = await checkUserByEmail({ email });
 
     if (user[0]) {
-      next(boomify(409, 'user already exists '));
+      throw boomify(409, 'user already exists ');
     }
 
     const hashedPassword = await hash(password, 10);

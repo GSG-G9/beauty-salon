@@ -12,8 +12,8 @@ import { InputField, ButtonComponent, Loading } from '../../component';
 import { SIGNUP_PAGE, HOME_PAGE } from '../../utils/router.constant';
 import {
   updateAndValidateInput,
-  emailSchema,
-  passwordSchema,
+  emailSchemaValid,
+  passwordSchemaValid,
 } from '../../utils';
 
 import useStyles from './style';
@@ -84,7 +84,7 @@ const Signin = () => {
               autoFocus
               onChange={updateAndValidateInput(
                 'email',
-                emailSchema,
+                emailSchemaValid,
                 setEmail,
                 setEmailError
               )}
@@ -103,7 +103,7 @@ const Signin = () => {
               value={password}
               onChange={updateAndValidateInput(
                 'password',
-                passwordSchema,
+                passwordSchemaValid,
                 setPassword,
                 setPasswordError
               )}

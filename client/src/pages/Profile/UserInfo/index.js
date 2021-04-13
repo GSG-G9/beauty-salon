@@ -47,7 +47,7 @@ const UserInfo = () => {
     <div className={classes.root}>
       <Typography variant="h5">User Information</Typography>
       {loading ? (
-        <Loading className={classes.spin} />
+        <Loading />
       ) : (
         <>
           <Grid>

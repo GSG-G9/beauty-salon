@@ -5,6 +5,9 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 4, 3),
     width: '100%',
   },
+  title: {
+    margin: theme.spacing(6, 0, 0),
+  },
   container: {
     display: 'flex',
     justifyContent: 'flex-start',

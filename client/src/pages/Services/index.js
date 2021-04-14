@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import Alert from '@material-ui/lab/Alert';
 import Divider from '@material-ui/core/Divider';
 
-import { Loading, ServiceCard } from '../../component';
+import { Loading, ServiceCard, Header, Footer } from '../../component';
 import useStyles from './style';
 
 const Services = () => {
@@ -39,7 +39,14 @@ const Services = () => {
 
   return (
     <>
-      <Typography variant="h5" component="h3" align="center" color="primary">
+      <Header />
+      <Typography
+        variant="h5"
+        component="h3"
+        align="center"
+        color="primary"
+        className={classes.title}
+      >
         Our Services
       </Typography>
       <Container className={classes.root}>
@@ -139,6 +146,7 @@ const Services = () => {
 
         {error && <Alert severity="error">{error}</Alert>}
       </Container>
+      <Footer />
     </>
   );
 };

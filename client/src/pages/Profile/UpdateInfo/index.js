@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Alert from '@material-ui/lab/Alert';
 
 import { InputField, ButtonComponent, Loading } from '../../../component';
-
+import { updateUserValidation } from '../../../utils';
 import useStyles from './style';
 
 function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
@@ -36,9 +36,12 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
   const handleChange = ({ target }) => {
     const { value, name } = target;
     switch (name) {
-      // case 'username':
-      //   setUsername(value);
-      //   break;
+      case 'firstName':
+        setFirstName(value);
+        break;
+      case 'lastName':
+        setLastName(value);
+        break;
       case 'mobile':
         setMobile(value);
         break;
@@ -54,7 +57,8 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
       setOpenDialog(true);
       handleCloseAlert();
       setLoading(true);
-      const userData = { firstName, lastName, mobile, address };
+      const userData = { mobile, address };
+      await updateUserValidation.validate(userData, { abortEarly: false });
       setUpdateUser(false);
       await axios.patch('/api/v1/profile', userData);
       clear();
@@ -65,6 +69,7 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
     } catch (err) {
       setLoading(false);
       setError(err.response ? err.response.data.message : err.errors[0]);
+      console.log(err.response.data.message);
     }
   };
   return (
@@ -84,46 +89,34 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
         <DialogTitle>Update information</DialogTitle>
         <DialogContent>
           <InputField
-            autoFocus
-            margin="dense"
-            id="name"
+            fullWidth
+            id="firstName"
             name="firstName"
             label="firstName"
-            type="text"
-            fullWidth
             value={firstName}
             onChange={handleChange}
           />
           <InputField
-            autoFocus
-            margin="dense"
-            id="name"
+            fullWidth
+            id="lastName"
             name="lastName"
             label="lastName"
-            type="text"
-            fullWidth
             value={lastName}
             onChange={handleChange}
           />
           <InputField
-            autoFocus
-            margin="dense"
+            fullWidth
             id="address"
             name="address"
             label="address"
-            type="text"
-            fullWidth
             value={address}
             onChange={handleChange}
           />
           <InputField
-            autoFocus
-            margin="dense"
+            fullWidth
             id="mobile"
             name="mobile"
             label="mobile"
-            type="text"
-            fullWidth
             value={mobile}
             onChange={handleChange}
           />
@@ -132,12 +125,10 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
           <ButtonComponent onClick={handleCloseDialog} variant="outlined">
             Cancel
           </ButtonComponent>
-
           <ButtonComponent onClick={handleSubmit} variant="contained">
             {loading && <Loading />}
             Edit
           </ButtonComponent>
-
           {error && <Alert severity="error">{error}</Alert>}
         </DialogActions>
       </Dialog>

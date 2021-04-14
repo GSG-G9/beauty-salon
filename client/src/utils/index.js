@@ -1,5 +1,6 @@
 import { userContext, UserProvider } from './userProvider';
 import updateAndValidateInput from './checkValidationPureFunction';
+import updateUserValidation from './updateUserValidation';
 import {
   firstNameSchema,
   lastNameSchema,
@@ -17,4 +18,5 @@ export {
   confirmPasswordSchema,
   userContext,
   UserProvider,
+  updateUserValidation,
 };

@@ -10,5 +10,4 @@ const updateAndValidateInput = (
   const isValidResult = await schema.isValid({ [schemaKey]: value });
   setIsValid(!isValidResult);
 };
-
 export default updateAndValidateInput;

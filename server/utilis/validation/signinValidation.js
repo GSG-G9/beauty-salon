@@ -7,7 +7,7 @@ const signinValidation = async (req, res, next) => {
     email: Joi.string().email().required(),
     password: Joi.string().min(6).required()
       .messages({
-        'string.min': 'password should be at least 8 characters',
+        'string.min': 'password should be at least 6 characters',
         'any.required': 'password is a required field',
       }),
   });

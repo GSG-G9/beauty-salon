@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   root: {
-    borderBottom: '1px solid #CFAB7A',
     width: 240,
     textAlign: 'center',
     display: 'flex',

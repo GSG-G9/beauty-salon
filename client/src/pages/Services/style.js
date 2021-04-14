@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
     justifyContent: 'flex-start',
     margin: theme.spacing(4, 0, 6),
   },
@@ -17,12 +20,19 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
     width: '50%',
     margin: theme.spacing(3, 40, 3),
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(3, 5, 3),
+      width: '30%',
+    },
   },
   typo: {
     margin: theme.spacing(3, 6, 3),
   },
   alert: {
     width: '50%',
+    [theme.breakpoints.down('sm')]: {
+      width: '95%',
+    },
   },
 }));
 

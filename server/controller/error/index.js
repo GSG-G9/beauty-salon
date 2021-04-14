@@ -7,7 +7,7 @@ const clientError = (req, res) => {
 
 // eslint-disable-next-line no-unused-vars
 const serverError = (err, req, res, next) => {
-  if (process.env === 'development') {
+  if (process.env.NODE_ENV === 'development') {
     // eslint-disable-next-line no-console
     console.log(err.message);
   }

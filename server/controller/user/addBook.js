@@ -10,7 +10,6 @@ const addNewBook = async (req, res, next) => {
     const {
       userId,
       serviceId,
-      stylistId,
       appointmentDate,
       appointmentTime,
     } = req.body;
@@ -19,7 +18,6 @@ const addNewBook = async (req, res, next) => {
       await addBook({
         userId,
         serviceId,
-        stylistId,
         appointmentDate,
         appointmentTime,
       });
@@ -27,8 +25,9 @@ const addNewBook = async (req, res, next) => {
         status: 201,
         message: 'appointment has been added successfully',
       });
+    } else {
+      next(boomify(400, 'chosen time in not available'));
     }
-    next(boomify(400, 'chosen time in not available'));
   } catch (err) {
     if (err.name === 'ValidationError') {
       next(boomify(400, err.details[0].message));

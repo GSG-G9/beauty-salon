@@ -1,24 +1,54 @@
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
-import lost from '../../assets/images/lost4.jpg';
+import lost from '../../assets/images/black.jpg';
 
-const useStyles = makeStyles(() => ({
-  root: {
+const useStyles = makeStyles((theme) => ({
+  main: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-  },
-  box1: {
-    display: 'flex',
+    // minHeight: '100vh',
     justifyContent: 'center',
-    width: '100%',
-    height: '450px',
+  },
+  root: {
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column-reverse',
+      minHeight: '87.3vh',
+      justifyContent: 'center',
+    },
+    minHeight: '82.8vh',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
     backgroundImage: `url(${lost})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
   },
+  left: {
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center',
+      width: '90%',
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  },
+  right404: {
+    fontSize: '1200%',
+  },
   text1: {
-    color: '#000',
+    fontWeight: 'bold',
+    marginBottom: '1rem',
+  },
+  text2: {
+    // color: '#C0C0C0',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '1rem',
+    },
+  },
+  btn: {
+    marginTop: '2rem',
+    width: '15rem',
   },
 }));
 

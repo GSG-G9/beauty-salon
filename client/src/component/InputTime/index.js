@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PropTypes } from 'prop-types';
 import 'date-fns';
 
@@ -8,35 +8,26 @@ import {
   KeyboardTimePicker,
 } from '@material-ui/pickers';
 
-const InputTime = ({ label }) => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-
-  const handleDateChange = (date) => {
-    // eslint-disable-next-line no-unused-vars
-    const timePicker = date.toString().substr(16, 5);
-    setSelectedDate(date);
-  };
-
-  return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <KeyboardTimePicker
-        margin="normal"
-        id="time-picker"
-        label={label}
-        value={selectedDate}
-        onChange={handleDateChange}
-        KeyboardButtonProps={{
-          'aria-label': 'change time',
-        }}
-      />
-    </MuiPickersUtilsProvider>
-  );
-};
-
-const { string } = PropTypes;
+const InputTime = ({ label, onChange, selectedTime }) => (
+  <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    <KeyboardTimePicker
+      margin="normal"
+      id="time-picker"
+      label={label}
+      value={selectedTime}
+      onChange={onChange}
+      KeyboardButtonProps={{
+        'aria-label': 'change time',
+      }}
+    />
+  </MuiPickersUtilsProvider>
+);
+const { string, func } = PropTypes;
 
 InputTime.propTypes = {
   label: string,
+  onChange: func.isRequired,
+  selectedTime: string.isRequired,
 };
 
 InputTime.defaultProps = {

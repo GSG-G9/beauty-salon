@@ -3,13 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   card: {
     height: 400,
+    display: 'flex',
   },
   root: {
     borderBottom: '1px solid #CFAB7A',
     width: 240,
     textAlign: 'center',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column ',
     justifyContent: 'flex-end',
   },
   image: {

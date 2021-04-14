@@ -39,71 +39,103 @@ const Services = () => {
 
   return (
     <>
-      <Typography
-        variant="subtitle1"
-        component="h3"
-        align="center"
-        color="primary"
-      >
+      <Typography variant="h5" component="h3" align="center" color="primary">
         Our Services
       </Typography>
-      <Container className={classes.container}>
-        <Typography variant="subtitle1" component="h3" color="primary">
+      <Container className={classes.root}>
+        <Typography
+          variant="h6"
+          component="h3"
+          color="primary"
+          className={classes.typo}
+        >
           Hair Cut
         </Typography>
-        {services ? (
-          services.map((service) => {
-            const category = service.category === 'Hair cuts';
-            return (
-              category && <ServiceCard service={service} key={service.id} />
-            );
-          })
-        ) : (
-          <Alert severity="info"> No Hair Cuts services available now </Alert>
-        )}
+        <Container className={classes.container}>
+          {services ? (
+            services.map((service) => {
+              const category = service.category === 'Hair cuts';
+              return (
+                category && <ServiceCard service={service} key={service.id} />
+              );
+            })
+          ) : (
+            <Alert severity="info" className={classes.alert}>
+              No Hair Cuts services available now
+            </Alert>
+          )}
+        </Container>
         <Divider component="hr" variant="middle" className={classes.divider} />
-        <Typography variant="subtitle1" component="h3" color="primary">
+        <Typography
+          variant="h6"
+          component="h3"
+          color="primary"
+          className={classes.typo}
+        >
           Nails
         </Typography>
-        {services ? (
-          services.map((service) => {
-            const category = service.category === 'nails';
-            return (
-              category && <ServiceCard service={service} key={service.id} />
-            );
-          })
-        ) : (
-          <Alert severity="info"> No Nails services available now </Alert>
-        )}
+        <Container className={classes.container}>
+          {services ? (
+            services.map((service) => {
+              const category = service.category === 'nails';
+              return (
+                category && <ServiceCard service={service} key={service.id} />
+              );
+            })
+          ) : (
+            <Alert severity="info" className={classes.alert}>
+              No Nails services available now
+            </Alert>
+          )}
+        </Container>
         <Divider component="hr" variant="middle" className={classes.divider} />
-        <Typography variant="subtitle1" component="h3" color="primary">
+        <Typography
+          variant="h6"
+          component="h3"
+          color="primary"
+          className={classes.typo}
+        >
           Skin Care
         </Typography>
-        {services ? (
-          services.map((service) => {
-            const category = service.category === 'Skin care';
-            return (
-              category && <ServiceCard service={service} key={service.id} />
-            );
-          })
-        ) : (
-          <Alert severity="info"> No Skin Care services available now </Alert>
-        )}
+        <Container className={classes.container}>
+          {services ? (
+            services.map((service) => {
+              const category = service.category === 'Skin care';
+              return (
+                category && <ServiceCard service={service} key={service.id} />
+              );
+            })
+          ) : (
+            <Alert severity="info" className={classes.alert}>
+              No Skin Care services available now
+            </Alert>
+          )}
+        </Container>
         <Divider component="hr" variant="middle" className={classes.divider} />
-        <Typography variant="subtitle1" component="h3" color="primary">
+
+        <Typography
+          variant="h6"
+          component="h2"
+          color="primary"
+          className={classes.typo}
+        >
           Make up
         </Typography>
-        {loading && <Loading size={40} />}
-        {services ? (
-          services.map((service) => {
-            const category = service.category === 'Make up';
-            return (
-              category && <ServiceCard service={service} key={service.id} />
-            );
-          })
-        ) : (
-          <Alert severity="info"> No Make up services available now </Alert>
-        )}
+        <Container className={classes.container}>
+          {loading && <Loading size={40} />}
+          {services ? (
+            services.map((service) => {
+              const category = service.category === 'Make up';
+              return (
+                category && <ServiceCard service={service} key={service.id} />
+              );
+            })
+          ) : (
+            <Alert severity="info" className={classes.alert}>
+              No Make up services available now
+            </Alert>
+          )}
+        </Container>
 
         {error && <Alert severity="error">{error}</Alert>}
       </Container>

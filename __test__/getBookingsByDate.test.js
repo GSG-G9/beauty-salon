@@ -12,7 +12,7 @@ describe('getBookingsByDate Tests', () => {
   test('getBookingsByDate query', async () => {
     const expected = [
       {
-        service: 'Ultimate Diamond Facial Lift, Firm, Anti-aging',
+        service: 'Ultimate Diamond',
         stylist: 'jacob',
         appointment_date: '2021-03-30',
         appointment_time: '10:00',
@@ -28,7 +28,7 @@ describe('getBookingsByDate Tests', () => {
       message: 'success',
       data: [
         {
-          service: 'Dazzle Dry Vegan Manicure',
+          service: 'Dazzle Dry Vegan',
           stylist: 'jacob',
           appointment_date: '2021-03-29',
           appointment_time: '11:00',

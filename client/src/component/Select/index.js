@@ -4,17 +4,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { string, shape, arrayOf } from 'prop-types';
+import { string, shape, arrayOf, func } from 'prop-types';
 
 import useStyles from './style';
 
-const SelectInput = ({ label, textHelper, menu }) => {
+const SelectInput = ({ label, textHelper, menu, handleChange, value }) => {
   const classes = useStyles();
-  const [value, setValue] = React.useState('');
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
 
   return (
     <div>
@@ -45,6 +40,8 @@ SelectInput.propTypes = {
       val: string,
     })
   ),
+  handleChange: func.isRequired,
+  value: string.isRequired,
 };
 SelectInput.defaultProps = {
   textHelper: '',

@@ -6,7 +6,6 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
-// import { date } from 'joi';
 
 const InputDate = ({ label, onChange, selectedDate }) => (
   <MuiPickersUtilsProvider utils={DateFnsUtils}>

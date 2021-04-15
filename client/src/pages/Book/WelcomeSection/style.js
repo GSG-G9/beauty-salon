@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: '3vh',
     '&::before': {
       content: '""',
       width: '100%',

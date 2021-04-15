@@ -103,7 +103,10 @@ const Home = () => {
                       .split(' ')
                       .slice(0, 50)
                       .join(' ')} . . .`
-                  : blog.description.split('').slice(0, 150).join('')
+                  : `${blog.description
+                      .split('')
+                      .slice(0, 150)
+                      .join('')} . . . `
               }
               image={blog.image}
             />

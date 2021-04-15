@@ -9,6 +9,7 @@ import Services from './Services';
 import Signin from './Signin';
 import Signup from './Signup';
 import NotFound from './NotFound';
+import ComingSoon from './ComingSoon';
 
 export {
   Blogs,
@@ -22,4 +23,5 @@ export {
   Signin,
   Signup,
   NotFound,
+  ComingSoon,
 };

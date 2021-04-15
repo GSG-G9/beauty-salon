@@ -3,19 +3,19 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    height: 750,
-    border: '1px solid #c7c7c7',
-    borderRadius: '5px',
+    border: `1px solid ${theme.palette.primary.main}`,
+    borderRadius: '2%',
     '& h2': {
       fontSize: '2.2em',
-      padding: '2em 1em',
       fontWeight: 'bold',
       color: theme.palette.primary.main,
     },
   },
-  avatar: {
-    width: '5em',
-    height: '5em',
+  title: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '5%',
+    color: theme.palette.primary.main,
   },
   userData: {
     fontColor: theme.palette.secondary.main,
@@ -28,11 +28,13 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     paddingBlock: '0.5em',
     paddingLeft: '3em',
-    borderBottom: '1px solid #c7c7c7',
+    paddingBottom: '1.5em',
+    borderBottom: `1px solid ${theme.palette.primary.main}`,
     justifyContent: 'center',
+    color: theme.palette.primary.main,
   },
   userDataFieldLabel: {
-    width: '15%',
+    width: '17%',
   },
   userDataFieldValue: {
     width: '50%',

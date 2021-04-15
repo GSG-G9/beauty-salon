@@ -7,6 +7,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundImage: `url(${lost})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   },
   root: {
     [theme.breakpoints.down('sm')]: {
@@ -15,28 +19,31 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'center',
     },
     minHeight: '82.8vh',
+    width: '90%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundImage: `url(${lost})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
   },
   left: {
     [theme.breakpoints.down('sm')]: {
       alignItems: 'center',
-      width: '80%',
+      width: '90%',
+      marginTop: '2rem',
+      marginRight: 0,
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
+    width: '65%',
+    marginRight: '2rem',
   },
   right404: {
     [theme.breakpoints.down('sm')]: {
-      marginBottom: '1rem',
+      fontSize: '330%',
+      fontWeight: 'bold',
     },
-    fontSize: '1200%',
+    fontSize: '600%',
   },
   text1: {
     fontWeight: 'bold',

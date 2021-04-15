@@ -34,16 +34,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   headerLeftSide: {
-    [theme.breakpoints.up('sm')]: {
-      width: '22em',
-    },
     justifyContent: 'space-between',
   },
-  headerRightSide: {
-    [theme.breakpoints.up('sm')]: {
-      width: '22em',
-    },
-  },
+
   options: {
     padding: '1em',
     color: '#fff',

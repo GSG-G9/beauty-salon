@@ -1,48 +1,55 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import DeleteIcon from '@material-ui/icons/Delete';
-// import Alert from '@material-ui/lab/Alert';
 
 import useStyles from './style';
 import { ButtonComponent } from '../../../../component';
-// { reservations, handelDelete }
-const TableComponent = () => {
+
+const TableComponent = ({ reservations, handelDelete }) => {
   const classes = useStyles();
   return (
-    <Table>
-      <TableBody>
-        {/* {reservations.length ? (
-          reservations.map((reservation) => ( */}
+    <Table className={classes.table}>
+      <TableHead>
         <TableRow>
-          <TableCell component="th" scope="row">
-            Service Name
-          </TableCell>
-          <TableCell align="right"> Stylists Name </TableCell>
-          <TableCell align="right"> Appointment Date </TableCell>
-          <TableCell align="right"> Appointment Time </TableCell>
-          <TableCell align="right">
-            <ButtonComponent
-            // onClick={() => {
-            //   handelDelete(reservation.id);
-            // }}
-            >
-              <DeleteIcon className={classes.deleteBtn} />
-            </ButtonComponent>
-          </TableCell>
+          <TableCell>Service Name</TableCell>
+          <TableCell align="left">Stylists Name</TableCell>
+          <TableCell align="left">Date</TableCell>
+          <TableCell align="left">Time</TableCell>
+          <TableCell align="left" />
         </TableRow>
-        {/* )) ) : (<Alert severity="info">no reservations added yet </Alert>
-        )} */}
+      </TableHead>
+      <TableBody>
+        {reservations.map((reservation) => (
+          <TableRow key={reservation.id}>
+            <TableCell component="th" scope="row">
+              {reservation.service_name}
+            </TableCell>
+            <TableCell align="left"> {reservation.stylist_name} </TableCell>
+            <TableCell align="left">{reservation.appointment_date}</TableCell>
+            <TableCell align="left">{reservation.appointment_time}</TableCell>
+            <TableCell align="left">
+              <ButtonComponent
+                onClick={() => {
+                  handelDelete(reservation.id);
+                }}
+              >
+                <DeleteIcon className={classes.deleteBtn} />
+              </ButtonComponent>
+            </TableCell>
+          </TableRow>
+        ))}
       </TableBody>
     </Table>
   );
 };
-// TableComponent.propTypes = {
-//   reservation: PropTypes.instanceOf(Array).isRequired,
-//   handelDelete: PropTypes.func.isRequired,
-// };
+TableComponent.propTypes = {
+  reservations: PropTypes.instanceOf(Array).isRequired,
+  handelDelete: PropTypes.func.isRequired,
+};
 export default TableComponent;

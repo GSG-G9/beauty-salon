@@ -11,13 +11,15 @@ function BlogsCard({ title, image, desc }) {
     'https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg';
   return (
     <Card className={classes.root}>
-      <img className={classes.image} src={image || fakeImage} alt="service" />
+      <div className={classes.left}>
+        <img className={classes.image} src={image || fakeImage} alt="service" />
+      </div>
 
       <div className={classes.right}>
         <Typography className={classes.title} variant="h5" color="primary">
           {title}
         </Typography>
-        <Typography className={classes.desc} variant="body2">
+        <Typography className={classes.desc} variant="body1">
           {desc}
         </Typography>
         <Link className={classes.readMore} to="/blogs">

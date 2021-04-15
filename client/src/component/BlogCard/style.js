@@ -13,17 +13,10 @@ const useStyles = makeStyles((theme) => ({
   },
   left: {
     width: '100%',
-    marginRight: '2rem',
   },
   image: {
-    [theme.breakpoints.down('sm')]: {
-      width: '250px',
-      height: 'auto',
-    },
-
-    width: '300px',
+    width: '250px',
     height: 'auto',
-    marginRight: '2rem',
   },
   right: {
     display: 'flex',
@@ -37,12 +30,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2%',
   },
   readMore: {
-    width: '1.5',
+    width: '6rem',
     fontSize: '1rem',
     color: theme.palette.primary.main,
-    '&:hover': {
-      transform: 'scale(1.1)',
-    },
   },
 }));
 

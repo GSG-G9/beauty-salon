@@ -11,6 +11,7 @@ import map from '../../assets/images/map.png';
 const Contacts = () => {
   const [username, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState(0);
 
   const handelChange = ({ target: { value, name } }) => {
     switch (name) {
@@ -20,7 +21,9 @@ const Contacts = () => {
       case 'email':
         setEmail(value);
         break;
-
+      case 'phone':
+        setPhone(value);
+        break;
       default:
         break;
     }
@@ -40,9 +43,9 @@ const Contacts = () => {
         <img src={map} alt="map" />
         <Typography>Contact us</Typography>
         <form>
-          <InputField label="Name *" />
-          <InputField label="Phone *" />
-          <InputField label="EMail *" />
+          <InputField label="Name *" value={username} onChange={handelChange} />
+          <InputField label="Phone *" value={phone} onChange={handelChange} />
+          <InputField label="Email *" value={email} onChange={handelChange} />
           <ButtonComponent>Submit</ButtonComponent>
           <TextareaAutosize rowsMax={4} defaultValue="Message *" />
         </form>

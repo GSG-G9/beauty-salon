@@ -1,16 +1,20 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
   tabs: {
     maxWidth: '100%',
     display: 'flex',
+    '& .PrivateTabIndicator-colorSecondary-21': {
+      backgroundColor: theme.palette.primary.main,
+    },
   },
   userAvatar: {
     width: '100%',
     display: 'flex',
+    color: theme.palette.primary.main,
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -24,16 +28,18 @@ const useStyles = makeStyles(() => ({
   avatar: {
     width: '3em',
     height: '3em',
+    backgroundColor: theme.palette.primary.main,
   },
   tab: {
     textAlign: 'left',
     display: 'flex',
     textTransform: 'none',
     minHeight: '2em',
-    borderBottom: '1px solid #f5f5f5',
+    paddingBottom: '1.5em',
+    borderBottom: `1px solid ${theme.palette.primary.main}`,
     '& span': {
       display: 'inline',
-      color: '#f5f5f5',
+      color: theme.palette.primary.main,
       fontSize: '1em',
       padding: '0em 1.2em',
       '& svg': {
@@ -59,6 +65,7 @@ const useStyles = makeStyles(() => ({
   },
   sideBarContainer: {
     width: 400,
+    margin: theme.spacing(7, 0, 0, 0),
   },
 }));
 

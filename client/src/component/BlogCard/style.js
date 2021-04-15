@@ -34,12 +34,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2%',
   },
   readMore: {
-    width: '1.5',
+    width: '6rem',
     fontSize: '1rem',
     color: theme.palette.primary.main,
-    '&:hover': {
-      transform: 'scale(1.1)',
-    },
   },
 }));
 

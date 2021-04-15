@@ -57,8 +57,8 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
       setOpenDialog(true);
       handleCloseAlert();
       setLoading(true);
-      const userData = { mobile, address };
-      await updateUserValidation.validate(userData, { abortEarly: false });
+      const userData = { firstName, lastName, address, mobile };
+      await updateUserValidation.isValid(userData, { abortEarly: false });
       setUpdateUser(false);
       await axios.patch('/api/v1/profile', userData);
       clear();
@@ -69,7 +69,6 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
     } catch (err) {
       setLoading(false);
       setError(err.response ? err.response.data.message : err.errors[0]);
-      console.log(err.response.data.message);
     }
   };
   return (
@@ -95,7 +94,9 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
             label="firstName"
             value={firstName}
             onChange={handleChange}
+            className={classes.input}
           />
+
           <InputField
             fullWidth
             id="lastName"
@@ -103,7 +104,9 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
             label="lastName"
             value={lastName}
             onChange={handleChange}
+            className={classes.input}
           />
+
           <InputField
             fullWidth
             id="address"
@@ -111,6 +114,7 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
             label="address"
             value={address}
             onChange={handleChange}
+            className={classes.input}
           />
           <InputField
             fullWidth
@@ -119,6 +123,7 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
             label="mobile"
             value={mobile}
             onChange={handleChange}
+            className={classes.input}
           />
         </DialogContent>
         <DialogActions>

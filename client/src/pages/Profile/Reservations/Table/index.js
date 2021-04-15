@@ -18,7 +18,9 @@ const TableComponent = ({ reservations, handelDelete }) => {
       <TableHead>
         <TableRow>
           <TableCell>Service Name</TableCell>
-          <TableCell align="left">Stylists Name</TableCell>
+          <TableCell align="left" className={classes.hidden}>
+            Stylists Name
+          </TableCell>
           <TableCell align="left">Date</TableCell>
           <TableCell align="left">Time</TableCell>
           <TableCell align="left" />
@@ -30,7 +32,9 @@ const TableComponent = ({ reservations, handelDelete }) => {
             <TableCell component="th" scope="row">
               {reservation.service_name}
             </TableCell>
-            <TableCell align="left"> {reservation.stylist_name} </TableCell>
+            <TableCell align="left" className={classes.hidden}>
+              {reservation.stylist_name}
+            </TableCell>
             <TableCell align="left">{reservation.appointment_date}</TableCell>
             <TableCell align="left">{reservation.appointment_time}</TableCell>
             <TableCell align="left">

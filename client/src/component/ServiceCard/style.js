@@ -6,13 +6,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   root: {
-    width: 500,
+    width: 240,
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column ',
     justifyContent: 'flex-end',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.between('sm', 'md')]: {
       flexDirection: 'row',
+      width: 700,
     },
   },
   image: {

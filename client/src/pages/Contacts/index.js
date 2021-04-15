@@ -8,6 +8,8 @@ import {
   TextareaAutosize,
 } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Alert from '@material-ui/lab/Alert';
 
 import {
@@ -22,6 +24,9 @@ import map from '../../assets/images/map.png';
 import useStyles from './style';
 
 const Contacts = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+
   const [username, setName] = useState('');
   const [email, setEmail] = useState('');
   const [mobile, setMobile] = useState('');
@@ -123,6 +128,16 @@ const Contacts = () => {
               margin="dense"
             />
             {loading && <Loading size={40} color="primary" />}
+            {isMobile && (
+              <TextareaAutosize
+                rowsMin={5}
+                value={message}
+                name="message"
+                placeholder="Message *"
+                onChange={handelChange}
+                className={classes.message}
+              />
+            )}
             <ButtonComponent onClick={handleSubmit} className={classes.button}>
               Submit
             </ButtonComponent>
@@ -132,14 +147,18 @@ const Contacts = () => {
               </Alert>
             </Snackbar>
           </Container>
-          <TextareaAutosize
-            rowsMin={9}
-            value={message}
-            name="message"
-            placeholder="Message *"
-            onChange={handelChange}
-            className={classes.message}
-          />
+          {isMobile ? (
+            ''
+          ) : (
+            <TextareaAutosize
+              rowsMin={9}
+              value={message}
+              name="message"
+              placeholder="Message *"
+              onChange={handelChange}
+              className={classes.message}
+            />
+          )}
         </form>
         {error && (
           <Alert severity="error" className={classes.alert}>

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
       height: 'auto',
     },
 
-    width: '300px',
+    width: '250px',
     height: 'auto',
     marginRight: '2rem',
   },
@@ -35,14 +35,6 @@ const useStyles = makeStyles((theme) => ({
   },
   desc: {
     marginBottom: '2%',
-  },
-  readMore: {
-    width: '1.5',
-    fontSize: '1rem',
-    color: theme.palette.primary.main,
-    '&:hover': {
-      transform: 'scale(1.1)',
-    },
   },
 }));
 

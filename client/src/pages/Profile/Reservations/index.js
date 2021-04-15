@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
-import Alert from '@material-ui/lab/Alert';
-import Snackbar from '@material-ui/core/Snackbar';
 import { Loading } from '../../../component';
 import Table from './Table';
 import useStyles from './style';
@@ -12,15 +10,8 @@ const Reservations = () => {
 
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const [error, setError] = useState('');
-
-  const handleClose = (reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setOpen(false);
-  };
 
   useEffect(() => {
     const { CancelToken } = axios;
@@ -28,21 +19,27 @@ const Reservations = () => {
     (async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get('/api/v1/booking');
+        const {
+          data: { data },
+        } = await axios.get('/api/v1/booking');
         setLoading(false);
         setReservations(data);
+        if (data.length === 0) {
+          setError(`You don't have any appointments!`);
+        }
       } catch (err) {
         setError(err.message);
         setLoading(false);
       }
     })();
     return () => source.cancel('Operation canceled');
-  }, []);
+  }, [refresh]);
 
   const handleDelete = async (id) => {
     try {
+      setRefresh(false);
       await axios.delete(`/api/v1/booking/${id}`);
-      setOpen(true);
+      setRefresh(true);
     } catch (err) {
       setError(err);
     }
@@ -51,16 +48,8 @@ const Reservations = () => {
     <div className={classes.root}>
       <Typography variant="h2">Reservations</Typography>
       {loading && <Loading />}
-      {error ? (
-        <Alert severity="error">{error}</Alert>
-      ) : (
-        <Table reservations={reservations} handelDeleteHouse={handleDelete} />
-      )}
-      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          Deleted successfully
-        </Alert>
-      </Snackbar>
+      <Table reservations={reservations} handelDelete={handleDelete} />
+      {error && <h3>{error}</h3>}
     </div>
   );
 };

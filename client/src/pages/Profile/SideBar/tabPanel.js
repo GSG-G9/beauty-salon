@@ -16,9 +16,9 @@ function TabPanel({ children, value, index, ...other }) {
   );
 }
 
-const { func, number } = PropTypes;
+const { node, number } = PropTypes;
 TabPanel.propTypes = {
-  children: func.isRequired,
+  children: node.isRequired,
   index: number.isRequired,
   value: number.isRequired,
 };

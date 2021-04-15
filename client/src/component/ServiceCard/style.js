@@ -6,11 +6,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   root: {
-    width: 240,
+    width: 500,
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column ',
     justifyContent: 'flex-end',
+    [theme.breakpoints.up('sm')]: {
+      flexDirection: 'row',
+    },
   },
   image: {
     height: 220,
@@ -25,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     color: theme.palette.primary.main,
     alignSelf: 'flex-end',
+    [theme.breakpoints.up('sm')]: {
+      width: 100,
+    },
   },
 }));
 export default useStyles;

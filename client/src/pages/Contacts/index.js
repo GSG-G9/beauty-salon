@@ -19,6 +19,7 @@ import {
 } from '../../component';
 import { contactValidationSchema } from '../../utils';
 import map from '../../assets/images/map.png';
+import useStyles from './style';
 
 const Contacts = () => {
   const [username, setName] = useState('');
@@ -28,7 +29,7 @@ const Contacts = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
-
+  const classes = useStyles();
   const handleClose = (reason) => {
     if (reason === 'clickaway') {
       return;
@@ -85,52 +86,66 @@ const Contacts = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container className={classes.root}>
         <Typography> The Beauty - Gaza Beauty</Typography>
-        <Divider />
+        <Divider component="hr" variant="middle" className={classes.divider} />
         <Typography>
           Villa 1043, Al Wasl Road, Umm Suqeim 2, Near J3 Mall, palestine Gaza
           mobile: 04 333 7772
         </Typography>
-        <Divider />
-        <img src={map} alt="map" />
-        <Typography>Contact us</Typography>
-        <form>
-          <InputField
-            label="Name *"
-            value={username}
-            onChange={handelChange}
-            name="username"
-          />
-          <InputField
-            label="mobile *"
-            name="mobile"
-            value={mobile}
-            onChange={handelChange}
-          />
-          <InputField
-            label="Email *"
-            name="email"
-            type="email"
-            value={email}
-            onChange={handelChange}
-          />
-          {loading && <Loading size={40} color="primary" />}
-          <ButtonComponent onClick={handleSubmit}>Submit</ButtonComponent>
+        <Divider component="hr" variant="middle" className={classes.divider} />
+        <img src={map} alt="map" className={classes.img} />
+        <Typography className={classes.title} component="h3" variant="h5">
+          Contact us
+        </Typography>
+        <form className={classes.form}>
+          <Container className={classes.container}>
+            <InputField
+              label="Name *"
+              value={username}
+              onChange={handelChange}
+              name="username"
+              margin="dense"
+            />
+            <InputField
+              label="mobile *"
+              name="mobile"
+              value={mobile}
+              onChange={handelChange}
+              margin="dense"
+            />
+            <InputField
+              label="Email *"
+              name="email"
+              type="email"
+              value={email}
+              onChange={handelChange}
+              margin="dense"
+            />
+            {loading && <Loading size={40} color="primary" />}
+            <ButtonComponent onClick={handleSubmit} className={classes.button}>
+              Submit
+            </ButtonComponent>
+            <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+              <Alert onClose={handleClose} severity="success">
+                Message sent successfully
+              </Alert>
+            </Snackbar>
+          </Container>
           <TextareaAutosize
-            rowsMax={4}
+            rowsMin={9}
             value={message}
             name="message"
             placeholder="Message *"
             onChange={handelChange}
+            className={classes.message}
           />
-          <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-            <Alert onClose={handleClose} severity="success">
-              Message sent successfully
-            </Alert>
-          </Snackbar>
         </form>
-        {error && <Alert severity="error">{error}</Alert>}
+        {error && (
+          <Alert severity="error" className={classes.alert}>
+            {error}
+          </Alert>
+        )}
       </Container>
       <Footer />
     </>

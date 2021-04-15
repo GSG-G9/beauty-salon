@@ -49,7 +49,6 @@ describe('Test addBook and checkAvailability queries and addBook route', () => {
   const successBookingData = {
     userId: 4,
     serviceId: 2,
-    stylistId: 2,
     appointmentDate: '2030-03-28',
     appointmentTime: '12:00',
   };
@@ -88,7 +87,6 @@ describe('Test addBook and checkAvailability queries and addBook route', () => {
     const failedBookingData = {
       userId: 4,
       serviceId: 2,
-      stylistId: 2,
       appointmentDate: '2021-03-30',
       appointmentTime: '10:00',
     };

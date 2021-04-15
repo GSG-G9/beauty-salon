@@ -6,12 +6,10 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    // width: '90%',
     marginTop: '1rem',
     marginBottom: '3rem',
   },
   title: {
-    // alignSelf: 'flex-start',
     width: '80%',
     marginLeft: '3rem',
     marginTop: '2rem',

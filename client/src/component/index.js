@@ -9,6 +9,7 @@ import Footer from './footer';
 import ServiceCardForHomePage from './seviceCardHomePage';
 import SelectInput from './Select';
 import BlogsCard from './BlogCard';
+import BlogsCardForBlogs from './BlogCardForBlogs';
 
 export {
   InputDate,
@@ -22,4 +23,5 @@ export {
   ServiceCardForHomePage,
   SelectInput,
   BlogsCard,
+  BlogsCardForBlogs,
 };

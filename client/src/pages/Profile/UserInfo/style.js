@@ -10,12 +10,22 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 'bold',
       color: theme.palette.primary.main,
     },
+    '@media (max-device-width: 600px)': {
+      width: '18rem',
+      '& h2': {
+        fontSize: '1.5em',
+      },
+    },
   },
   title: {
     display: 'flex',
     justifyContent: 'center',
     marginTop: '5%',
+
     color: theme.palette.primary.main,
+    '@media (max-device-width: 600px)': {
+      marginTop: '8%',
+    },
   },
   userData: {
     fontColor: theme.palette.secondary.main,
@@ -32,9 +42,15 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: `1px solid ${theme.palette.primary.main}`,
     justifyContent: 'center',
     color: theme.palette.primary.main,
+    '@media (max-device-width: 600px)': {
+      paddingLeft: 0,
+    },
   },
   userDataFieldLabel: {
     width: '17%',
+    '@media (max-device-width: 600px)': {
+      width: '45%',
+    },
   },
   userDataFieldValue: {
     width: '50%',

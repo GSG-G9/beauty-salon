@@ -126,6 +126,7 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
             className={classes.input}
           />
         </DialogContent>
+        {error && <Alert severity="error">{error}</Alert>}
         <DialogActions>
           <ButtonComponent onClick={handleCloseDialog} variant="outlined">
             Cancel
@@ -134,7 +135,6 @@ function UpdateUser({ setUpdateUser, handleClickAlert, handleCloseAlert }) {
             {loading && <Loading />}
             Edit
           </ButtonComponent>
-          {error && <Alert severity="error">{error}</Alert>}
         </DialogActions>
       </Dialog>
     </div>

@@ -4,6 +4,7 @@ const useStyles = makeStyles(() => ({
   root: {
     width: '85%',
     padding: '3em',
+    height: '700px',
   },
 }));
 

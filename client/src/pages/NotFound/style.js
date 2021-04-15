@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '1rem',
   },
   text2: {
-    // color: '#C0C0C0',
     [theme.breakpoints.down('sm')]: {
       marginBottom: '1rem',
     },

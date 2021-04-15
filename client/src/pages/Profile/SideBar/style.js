@@ -7,8 +7,11 @@ const useStyles = makeStyles((theme) => ({
   tabs: {
     maxWidth: '100%',
     display: 'flex',
-    '& .PrivateTabIndicator-colorSecondary-21': {
+    '& .PrivateTabIndicator-colorSecondary-22': {
       backgroundColor: theme.palette.primary.main,
+    },
+    '& .PrivateTabIndicator-vertical-23': {
+      left: 0,
     },
   },
   userAvatar: {

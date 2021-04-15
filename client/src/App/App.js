@@ -19,6 +19,8 @@ import {
   DASHBOARD,
   DASHBOARD_APPOINTMENT,
   NOT_FOUND,
+  PRODUCTS,
+  CART,
 } from '../utils/router.constant';
 
 import {
@@ -33,6 +35,7 @@ import {
   Signin,
   Signup,
   NotFound,
+  ComingSoon,
 } from '../pages';
 
 const App = () => (
@@ -53,10 +56,14 @@ const App = () => (
           <Route path={SERVICES}>
             <Services />
           </Route>
+          <Route path={PRODUCTS}>
+            <ComingSoon />
+          </Route>
           <GuestRoute path={SIGNIN_PAGE} component={Signin} />
           <GuestRoute path={SIGNUP_PAGE} component={Signup} />
           <UserRoute path={PROFILE} component={Profile} />
           <UserRoute path={BOOK} component={Book} />
+          <UserRoute path={CART} component={ComingSoon} />
           <AdminRoute path={DASHBOARD} component={Dashboard} />
           <AdminRoute path={DASHBOARD_APPOINTMENT} component={Appointment} />
           <Route path={NOT_FOUND}>

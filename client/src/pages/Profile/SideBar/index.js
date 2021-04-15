@@ -28,6 +28,28 @@ const SideBar = () => {
 
   return (
     <div className={classes.root}>
+      <div className={classes.topBar}>
+        <Tabs
+          centered
+          value={value}
+          onChange={handleChange}
+          className={classes.tabs}
+        >
+          <Tab
+            label="BIO"
+            icon={<PersonPinIcon />}
+            className={classes.tab}
+            {...a11yProps(0)}
+          />
+          <Tab
+            label="Reservations"
+            icon={<LibraryBooksOutlinedIcon />}
+            className={classes.tab}
+            {...a11yProps(1)}
+          />
+        </Tabs>
+      </div>
+
       <div className={classes.sideBarContainer}>
         <div className={classes.userAvatar}>
           <Avatar className={classes.avatar} />

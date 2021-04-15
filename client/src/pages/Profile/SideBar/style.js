@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    '@media (max-device-width:  599px)': {
+      flexDirection: 'column',
+    },
   },
   tabs: {
     maxWidth: '100%',
@@ -69,6 +72,15 @@ const useStyles = makeStyles((theme) => ({
   sideBarContainer: {
     width: 400,
     margin: theme.spacing(7, 0, 0, 0),
+    '@media (max-device-width:  599px)': {
+      display: 'none',
+    },
+  },
+  topBar: {
+    display: 'none',
+    '@media (max-device-width:  599px)': {
+      display: 'block',
+    },
   },
 }));
 

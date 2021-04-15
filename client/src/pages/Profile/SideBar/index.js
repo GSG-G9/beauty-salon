@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Tabs, Typography, Tab, Avatar } from '@material-ui/core';
 import LibraryBooksOutlinedIcon from '@material-ui/icons/LibraryBooksOutlined';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
-
+import { Loading } from '../../../component';
 import TabPanel from './tabPanel';
 import UserInfo from '../UserInfo';
 import Reservations from '../Reservations';
@@ -20,6 +20,7 @@ function a11yProps(index) {
 const SideBar = () => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
+  const [userName, setUserName] = useState('');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -30,7 +31,7 @@ const SideBar = () => {
       <div className={classes.sideBarContainer}>
         <div className={classes.userAvatar}>
           <Avatar className={classes.avatar} />
-          <Typography variant="h3">Khamis</Typography>
+          <Typography variant="h3">{userName || <Loading />}</Typography>
         </div>
         <Tabs
           orientation="vertical"
@@ -55,7 +56,7 @@ const SideBar = () => {
         </Tabs>
       </div>
       <TabPanel value={value} index={0} className={classes.mainContent}>
-        <UserInfo />
+        <UserInfo getUserName={setUserName} />
       </TabPanel>
       <TabPanel value={value} index={1} className={classes.mainContent}>
         <Reservations />

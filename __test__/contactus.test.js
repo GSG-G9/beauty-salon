@@ -14,7 +14,7 @@ describe('Test routes', () => {
     const {
       body: { status, message },
     } = await request(app).post('/api/v1/contact-us').send({
-      name: 'iman',
+      username: 'iman',
       message: 'hi, i want to reserve in you salon',
       mobile: '1235455',
       email: 'iman@gmail.com',

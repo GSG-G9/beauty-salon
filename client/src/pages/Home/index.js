@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 
 import Typography from '@material-ui/core/Typography';
-import { Button } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 
@@ -58,13 +57,12 @@ const Home = () => {
             >
               BookNow
             </ButtonComponent>
-            <Button
-              variant="outlined"
-              color="contained"
+            <ButtonComponent
+              variant="contained"
               className={`${classes.button} ${classes.buyNowBtn}`}
             >
               BuyProduct
-            </Button>
+            </ButtonComponent>
           </div>
         </div>
         <div className={classes.servicesSec}>
@@ -97,6 +95,7 @@ const Home = () => {
         <div className={classes.blogsSec}>
           {blogs.map((blog) => (
             <BlogsCard
+              key={blog.id}
               title={blog.name}
               desc={
                 !isMobile
@@ -109,12 +108,12 @@ const Home = () => {
               image={blog.image}
             />
           ))}
-          <Button
+          <ButtonComponent
             className={classes.moreBlogsBtn}
             onClick={() => history.push(BLOGS)}
           >
             MoreBlogs
-          </Button>
+          </ButtonComponent>
         </div>
         <Footer />
       </div>

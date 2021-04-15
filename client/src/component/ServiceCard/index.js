@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { shape, string } from 'prop-types';
 import Card from '@material-ui/core/Card';
@@ -8,9 +8,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { CardActions, Container } from '@material-ui/core';
 import useStyles from './style';
-import { BOOK } from '../../utils/router.constant';
+import { BOOK, SIGNUP_PAGE } from '../../utils/router.constant';
+import { userContext } from '../../utils';
 
 const ServiceCard = ({ service }) => {
+  const [role] = useContext(userContext);
   const { image, name, description } = service;
   const classes = useStyles();
   const fakeImage =
@@ -35,9 +37,15 @@ const ServiceCard = ({ service }) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Link to={`${BOOK}`} className={classes.link}>
-              Book Now !
-            </Link>
+            {role === 'user' ? (
+              <Link to={BOOK} className={classes.link}>
+                Book Now !
+              </Link>
+            ) : (
+              <Link to={SIGNUP_PAGE} className={classes.link}>
+                Book Now !
+              </Link>
+            )}
           </CardActions>
         </CardActionArea>
       </Card>

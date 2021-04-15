@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     height: 220,
     width: 240,
     opacity: 0.6,
+    objectFit: 'cover',
   },
   link: {
     backgroundColor: '#131212',

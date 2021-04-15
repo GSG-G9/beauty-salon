@@ -8,6 +8,7 @@ import {
   passwordSchema,
   confirmPasswordSchema,
 } from './signUpValidation';
+import contactValidationSchema from './contactValidation';
 
 export {
   updateAndValidateInput,
@@ -20,4 +21,5 @@ export {
   confirmPasswordSchema,
   userContext,
   UserProvider,
+  contactValidationSchema,
 };

@@ -73,8 +73,8 @@ CREATE TABLE blogs (
 CREATE TABLE contacts (
   "id" SERIAL PRIMARY KEY,
   "user_id" INT REFERENCES users(id),
-  "name" VARCHAR(100) NOT NULL,
-  "mobile" int,
+  "username" VARCHAR(100) NOT NULL,
+  "mobile" TEXT,
   "message" TEXT,
   "created_at" timestamp DEFAULT CURRENT_TIMESTAMP,
   "email" VARCHAR

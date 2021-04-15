@@ -4,11 +4,11 @@ const { contactusValidation, boomify } = require('../../utilis');
 const contactusHandler = async (req, res, next) => {
   try {
     const {
-      name, email, message, mobile,
+      username, email, message, mobile,
     } = req.body;
     await contactusValidation.validateAsync(req.body);
 
-    await postMessage(name, email, message, mobile);
+    await postMessage(username, email, message, mobile);
 
     res.json({
       status: 200,

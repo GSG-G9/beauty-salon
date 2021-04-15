@@ -32,12 +32,6 @@ const ComingSoon = () => {
               The page you are looking for is not ready yet, We will make it
               available very soon
             </Typography>
-            {/* {!isMobile && (
-              <Typography className={classes.text3} variant="h6">
-                Let us take you home
-              </Typography>
-            )} */}
-
             <ButtonComponent
               color="secondary"
               className={classes.btn}

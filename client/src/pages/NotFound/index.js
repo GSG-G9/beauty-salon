@@ -17,9 +17,12 @@ const NotFound = () => {
       <Header />
       <div className={classes.root}>
         <div className={classes.left}>
-          <Typography color="primary" variant="h4" className={classes.text1}>
-            Oops! Looks like you lost?
-          </Typography>
+          {!isMobile && (
+            <Typography color="primary" variant="h4" className={classes.text1}>
+              Oops! Looks like you lost?
+            </Typography>
+          )}
+
           <Typography className={classes.text2} variant="h6">
             The page you are looking for is now beyond our reach.
           </Typography>

@@ -27,13 +27,16 @@ const useStyles = makeStyles((theme) => ({
   left: {
     [theme.breakpoints.down('sm')]: {
       alignItems: 'center',
-      width: '90%',
+      width: '80%',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
   },
   right404: {
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '1rem',
+    },
     fontSize: '1200%',
   },
   text1: {

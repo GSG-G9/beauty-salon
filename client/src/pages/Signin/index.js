@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Axios from 'axios';
 
@@ -16,12 +16,15 @@ import {
   passwordSchemaValid,
 } from '../../utils';
 
+import { userContext } from '../../utils/userProvider';
+
 import useStyles from './style';
 
 const Signin = () => {
   const classes = useStyles();
   const history = useHistory();
 
+  const [, setRole, userData] = useContext(userContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState(false);
@@ -48,6 +51,7 @@ const Signin = () => {
       }
       const user = { email, password };
       await Axios.post('/api/v1/signin', user);
+      setRole(userData.role);
       clear();
       setIsLoading(false);
       history.push(HOME_PAGE);

@@ -7,7 +7,6 @@ import { userContext } from '../../utils/userProvider';
 
 const UserRoute = ({ component: Component, ...rest }) => {
   const [role] = useContext(userContext);
-  // const [isLoading, setIsLoading] = useState(true);
   return (
     <Route {...rest}>
       {role ? (

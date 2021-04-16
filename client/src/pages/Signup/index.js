@@ -24,7 +24,7 @@ const Signup = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  const [, setRole] = useContext(userContext);
+  const [, setRole, userData] = useContext(userContext);
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -84,7 +84,7 @@ const Signup = () => {
         email,
         password,
       });
-      setRole('user');
+      setRole(userData.role);
       clear();
       setLoading(false);
       return history.push('/');

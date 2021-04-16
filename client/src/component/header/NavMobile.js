@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 
 import Axios from 'axios';
 
+import Alert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
@@ -17,9 +19,18 @@ function NavMobile() {
   const classes = useStyles();
   const history = useHistory();
   const [role, setRole] = useContext(userContext);
-  const [, setError] = useState();
+  const [error, setError] = useState();
+  const [openSnack, setOpenSnack] = useState(false);
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenSnack(false);
+  };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -33,6 +44,7 @@ function NavMobile() {
     try {
       await Axios.post('api/v1/logout');
       setRole('guest');
+      setOpenSnack(true);
     } catch (err) {
       setError(
         err.response ? err.response.data.message : 'Internal Server Error'
@@ -86,6 +98,11 @@ function NavMobile() {
           </MenuItem>
         )}
       </Menu>
+      <Snackbar open={openSnack} autoHideDuration={8000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={error ? 'error' : 'success'}>
+          {error || 'LogOut Successfully!'}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

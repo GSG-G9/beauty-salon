@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 
 import Axios from 'axios';
 
+import Alert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -32,14 +34,23 @@ const Header = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 
   const [role, setRole] = useContext(userContext);
-  const [, setError] = useState();
+  const [error, setError] = useState();
+  const [open, setOpen] = useState(false);
+
   const handleMenuClick = (pageURL) => {
     history.push(pageURL);
+  };
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
   };
   const logOutClick = async () => {
     try {
       await Axios.post('api/v1/logout');
       setRole('guest');
+      setOpen(true);
     } catch (err) {
       setError(
         err.response ? err.response.data.message : 'Internal Server Error'
@@ -149,6 +160,11 @@ const Header = () => {
                 ))}
             </div>
           </div>
+          <Snackbar open={open} autoHideDuration={8000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity={error ? 'error' : 'success'}>
+              {error || 'LogOut Successfully!'}
+            </Alert>
+          </Snackbar>
         </Toolbar>
       </AppBar>
     </div>

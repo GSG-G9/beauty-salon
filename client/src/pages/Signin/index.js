@@ -24,7 +24,7 @@ const Signin = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  const [, setRole] = useContext(userContext);
+  const [, setRole, userData] = useContext(userContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState(false);
@@ -51,7 +51,7 @@ const Signin = () => {
       }
       const user = { email, password };
       await Axios.post('/api/v1/signin', user);
-      setRole('user');
+      setRole(userData.role);
       clear();
       setIsLoading(false);
       history.push(HOME_PAGE);

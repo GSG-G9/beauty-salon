@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+
+import Axios from 'axios';
 
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -7,12 +9,15 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 import { useHistory } from 'react-router-dom';
 
+import { userContext } from '../../utils/userProvider';
+
 import useStyles from './style';
 
 function NavMobile() {
   const classes = useStyles();
   const history = useHistory();
-  const [isAuth, setIsAuth] = useState(true);
+  const [role, setRole] = useContext(userContext);
+  const [, setError] = useState();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -24,8 +29,15 @@ function NavMobile() {
     history.push(pageURL);
     setAnchorEl(null);
   };
-  const logOutClick = () => {
-    setIsAuth(false);
+  const logOutClick = async () => {
+    try {
+      await Axios.post('api/v1/logout');
+      setRole('guest');
+    } catch (err) {
+      setError(
+        err.response ? err.response.data.message : 'Internal Server Error'
+      );
+    }
   };
 
   return (
@@ -64,7 +76,7 @@ function NavMobile() {
         <MenuItem onClick={() => handleMenuClick('/blogs')}>Blogs</MenuItem>
         <MenuItem onClick={() => handleMenuClick('/contact')}>Contact</MenuItem>
         <MenuItem onClick={() => handleMenuClick('/cart')}>Cart</MenuItem>
-        {isAuth && (
+        {role !== 'guest' && (
           <MenuItem
             classes={{ root: 'logoutMobile' }}
             className={classes.logoutMobile}

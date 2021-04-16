@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import Axios from 'axios';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,6 +20,8 @@ import {
   PROFILE,
 } from '../../utils/router.constant';
 
+import { userContext } from '../../utils/userProvider';
+
 import NavMobile from './NavMobile';
 import useStyles from './style';
 
@@ -27,13 +31,20 @@ const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 
-  const [isAuth, setIsAuth] = useState(true);
-
+  const [role, setRole] = useContext(userContext);
+  const [, setError] = useState();
   const handleMenuClick = (pageURL) => {
     history.push(pageURL);
   };
-  const logOutClick = () => {
-    setIsAuth(false);
+  const logOutClick = async () => {
+    try {
+      await Axios.post('api/v1/logout');
+      setRole('guest');
+    } catch (err) {
+      setError(
+        err.response ? err.response.data.message : 'Internal Server Error'
+      );
+    }
   };
 
   return (
@@ -67,7 +78,24 @@ const Header = () => {
 
             <div className={classes.headerRightSide}>
               {!isMobile &&
-                (isAuth ? (
+                (role === 'guest' ? (
+                  <>
+                    <Button
+                      className={classes.logout}
+                      variant="outlined"
+                      onClick={() => handleMenuClick('/signin')}
+                    >
+                      Log In
+                    </Button>
+                    <Button
+                      className={classes.signup}
+                      variant="contained"
+                      onClick={() => handleMenuClick('/signup')}
+                    >
+                      Sign Up
+                    </Button>
+                  </>
+                ) : (
                   <>
                     <IconButton
                       className={classes.icons}
@@ -97,26 +125,9 @@ const Header = () => {
                       Logout
                     </Button>
                   </>
-                ) : (
-                  <>
-                    <Button
-                      className={classes.logout}
-                      variant="outlined"
-                      onClick={() => handleMenuClick('/signin')}
-                    >
-                      Log In
-                    </Button>
-                    <Button
-                      className={classes.signup}
-                      variant="contained"
-                      onClick={() => handleMenuClick('/signup')}
-                    >
-                      Sign Up
-                    </Button>
-                  </>
                 ))}
               {isMobile &&
-                (!isAuth ? (
+                (role === 'guest' ? (
                   <Button
                     className={classes.logout}
                     variant="outlined"

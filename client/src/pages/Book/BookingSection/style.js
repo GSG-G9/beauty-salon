@@ -1,29 +1,29 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   bookingSectionContainer: {
-    width: '40%',
-    // backgroundColor: 'green',
-    justifyContent: 'space-between',
+    width: '33%',
+    justifyContent: 'center',
     alignItems: 'center',
-    margin: 'auto',
-    marginBottom: '6vh',
+    alignContent: 'center',
+    border: `1.5px solid ${theme.palette.secondary.main}`,
+    borderRadius: '4.5px',
+    marginBottom: '14.3vh',
   },
-  dateTimeContainer: {
-    // backgroundColor: 'blue',
-    width: '55%',
-  },
-  selectInputsContainer: {
-    // backgroundColor: 'yellow',
-    width: '43%',
-    // flexDirection: 'column',
-  },
-  sendBtn: {
-    width: '9%',
-    letterSpacing: 1.5,
+  submitBtn: {
+    width: 150,
+    letterSpacing: 3,
     display: 'block',
-    margin: 'auto',
-    marginBottom: '2.8vh',
+    height: 56,
+    marginLeft: '0.43em',
+  },
+  errorMessage: {
+    backgroundColor: 'red',
+    margin: '1em',
+  },
+  successfulMessage: {
+    backgroundColor: 'green',
+    margin: '1em',
   },
 }));
 

@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display: 'flex',
+    gap: '1.5rem',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },

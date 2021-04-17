@@ -3,19 +3,24 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   card: {
     height: 400,
+    display: 'flex',
   },
   root: {
-    borderBottom: '1px solid #CFAB7A',
     width: 240,
     textAlign: 'center',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column ',
     justifyContent: 'flex-end',
+    [theme.breakpoints.between('sm', 'md')]: {
+      flexDirection: 'row',
+      width: 700,
+    },
   },
   image: {
     height: 220,
     width: 240,
     opacity: 0.6,
+    objectFit: 'cover',
   },
   link: {
     backgroundColor: '#131212',
@@ -24,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     color: theme.palette.primary.main,
     alignSelf: 'flex-end',
+    [theme.breakpoints.up('sm')]: {
+      width: 100,
+    },
   },
 }));
 export default useStyles;

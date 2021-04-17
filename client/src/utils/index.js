@@ -1,4 +1,5 @@
 import updateAndValidateInput from './checkValidationPureFunction';
+import updateUserValidation from './updateUserValidation';
 import { emailSchemaValid, passwordSchemaValid } from './signinValidation';
 import { userContext, UserProvider } from './userProvider';
 import {
@@ -22,4 +23,5 @@ export {
   userContext,
   UserProvider,
   contactValidationSchema,
+  updateUserValidation,
 };

@@ -24,11 +24,13 @@ const updateUserController = async (req, res, next) => {
       data: rows[0],
     });
   } catch (err) {
-    next(
-      err.name === 'ValidationError'
-        ? boomify(400, err.details[0].message)
-        : err,
-    );
+    if (err.name === 'ValidationError') {
+      next(boomify(400, err.details[0].message));
+    } else if (err.routine === 'pg_strtoint32') {
+      next(boomify(400, 'please enter a valid phone number like 0591234567'));
+    } else {
+      next(err);
+    }
   }
 };
 

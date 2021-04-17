@@ -1,4 +1,12 @@
 import React from 'react';
+import { Footer, Header } from '../../component';
+import WelcomeSection from './WelcomeSection';
 
-const Book = () => <div>Hi from Book</div>;
+const Book = () => (
+  <>
+    <Header />
+    <WelcomeSection />
+    <Footer />
+  </>
+);
 export default Book;

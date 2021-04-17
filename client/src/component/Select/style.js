@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 150,
+    minWidth: 270,
     '& .MuiOutlinedInput-notchedOutline': {
       border: `1px solid ${theme.palette.primary.main}`,
     },

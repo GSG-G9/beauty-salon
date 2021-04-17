@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
+import Axios from 'axios';
+
+import Alert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
@@ -7,14 +11,26 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 import { useHistory } from 'react-router-dom';
 
+import { userContext } from '../../utils/userProvider';
+
 import useStyles from './style';
 
 function NavMobile() {
   const classes = useStyles();
   const history = useHistory();
-  const [isAuth, setIsAuth] = useState(true);
+  const [role, setRole] = useContext(userContext);
+  const [error, setError] = useState();
+  const [openSnack, setOpenSnack] = useState(false);
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenSnack(false);
+  };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -24,8 +40,16 @@ function NavMobile() {
     history.push(pageURL);
     setAnchorEl(null);
   };
-  const logOutClick = () => {
-    setIsAuth(false);
+  const logOutClick = async () => {
+    try {
+      await Axios.post('api/v1/logout');
+      setRole('guest');
+      setOpenSnack(true);
+    } catch (err) {
+      setError(
+        err.response ? err.response.data.message : 'Internal Server Error'
+      );
+    }
   };
 
   return (
@@ -64,7 +88,7 @@ function NavMobile() {
         <MenuItem onClick={() => handleMenuClick('/blogs')}>Blogs</MenuItem>
         <MenuItem onClick={() => handleMenuClick('/contact')}>Contact</MenuItem>
         <MenuItem onClick={() => handleMenuClick('/cart')}>Cart</MenuItem>
-        {isAuth && (
+        {role !== 'guest' && (
           <MenuItem
             classes={{ root: 'logoutMobile' }}
             className={classes.logoutMobile}
@@ -74,6 +98,11 @@ function NavMobile() {
           </MenuItem>
         )}
       </Menu>
+      <Snackbar open={openSnack} autoHideDuration={8000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={error ? 'error' : 'success'}>
+          {error || 'LogOut Successfully!'}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

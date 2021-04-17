@@ -24,6 +24,7 @@ describe('GET api/v1/bookings', () => {
       {
         appointment_date: '2021-03-29',
         appointment_time: '12:00',
+        id: 3,
         service_name: 'Classic Manicure',
         stylist_name: 'jacob',
       },

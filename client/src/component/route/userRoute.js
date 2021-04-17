@@ -7,10 +7,15 @@ import { userContext } from '../../utils/userProvider';
 
 const UserRoute = ({ component: Component, ...rest }) => {
   const [role] = useContext(userContext);
-
   return (
     <Route {...rest}>
-      {role === 'user' ? <Component /> : <Redirect to="/404" />}
+      {role ? (
+        role === 'user' ? (
+          <Component />
+        ) : (
+          <Redirect to="/signin" />
+        )
+      ) : null}
     </Route>
   );
 };

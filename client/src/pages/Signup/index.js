@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -18,9 +18,13 @@ import {
   confirmPasswordSchema,
 } from '../../utils';
 
+import { userContext } from '../../utils/userProvider';
+
 const Signup = () => {
   const classes = useStyles();
   const history = useHistory();
+
+  const [, setRole, userData] = useContext(userContext);
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -80,6 +84,7 @@ const Signup = () => {
         email,
         password,
       });
+      setRole(userData.role);
       clear();
       setLoading(false);
       return history.push('/');

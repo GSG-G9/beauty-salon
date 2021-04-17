@@ -30,7 +30,7 @@ function UserProvider({ children }) {
     return () => source.cancel('operation canceled');
   }, []);
   return (
-    <userContext.Provider value={[role, userData, setRole]}>
+    <userContext.Provider value={[role, setRole, userData]}>
       {children}
     </userContext.Provider>
   );

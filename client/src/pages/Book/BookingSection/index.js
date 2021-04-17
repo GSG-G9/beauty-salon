@@ -9,26 +9,25 @@ const BookingSection = () => {
   const classes = useStyles();
 
   const [selectedServiceId, setSelectedServiceId] = useState('');
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedTime, setSelectedTime] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(
+    new Date().toISOString().substr(0, 10)
+  );
+  const [selectedTime, setSelectedTime] = useState('');
   const [convertedDate, setConvertedDate] = useState(new Date());
-  const [catagoryValue, setCatagoryValue] = useState('');
+  const [categoryValue, setCategoryValue] = useState('');
   const [services, setServices] = useState([]);
   const [freeTimes, setFreeTimes] = useState([]);
-  const [role, userData] = useContext(userContext);
+  const [, , userData] = useContext(userContext);
   const [chosenTimeErrorMsg, setChosenTimeErrorMsg] = useState('');
   const [isClicked, setIsClicked] = useState(false);
   const [bookingMessage, setBookingMessage] = useState('');
-  const [catagoryErrorMsg, setCatagoryErrorMsg] = useState('');
+  const [categoryErrorMsg, setCategoryErrorMsg] = useState('');
   const [serviceErrorMsg, setServiceErrorMsg] = useState('');
   const [emptyTimeFieldErrorMsg, setEmptyTimeFieldErrorMsg] = useState('');
 
   const userId = userData.id;
-  // eslint-disable-next-line no-console
-  console.log(role);
-
   const handleChange = (event) => {
-    setCatagoryValue(event.target.value);
+    setCategoryValue(event.target.value);
   };
 
   const handleServiceChange = (event) => {
@@ -37,6 +36,7 @@ const BookingSection = () => {
 
   const handleDateChange = (date) => {
     const datePicker = date.toISOString().substr(0, 10);
+    setChosenTimeErrorMsg('');
     setSelectedDate(datePicker);
     setConvertedDate(date);
   };
@@ -45,15 +45,15 @@ const BookingSection = () => {
     setSelectedTime(e.target.value);
   };
   const handelSentData = () => {
-    if (!catagoryValue) {
-      setCatagoryErrorMsg('please select catagory');
+    if (!categoryValue) {
+      setCategoryErrorMsg('please select category');
     } else if (!selectedServiceId) {
       setServiceErrorMsg('please select service');
     } else if (!selectedTime) {
       setEmptyTimeFieldErrorMsg('please select time');
     } else {
       setIsClicked(true);
-      setCatagoryErrorMsg('');
+      setCategoryErrorMsg('');
       setServiceErrorMsg('');
       setEmptyTimeFieldErrorMsg('');
     }
@@ -70,18 +70,17 @@ const BookingSection = () => {
         } = await axios.get('/api/v1/services', {
           CancelToken: source.token,
         });
-        const servicesFilteredByCatagory = data
-          .filter((el) => el.category === catagoryValue)
+        const servicesFilteredByCategory = data
+          .filter((el) => el.category === categoryValue)
           .map(({ name, id }) => ({ name, val: id.toString() }));
 
-        setServices(servicesFilteredByCatagory);
+        setServices(servicesFilteredByCategory);
       } catch (err) {
-        // eslint-disable-next-line no-console
-        console.log(err);
+        setServiceErrorMsg(err);
       }
     })();
     return () => source.cancel();
-  }, [catagoryValue]);
+  }, [categoryValue]);
 
   useEffect(() => {
     const { CancelToken } = axios;
@@ -142,7 +141,6 @@ const BookingSection = () => {
         const freeTimesInCertainDate = newArr.filter(
           (el) => newArr.indexOf(el) === newArr.lastIndexOf(el)
         );
-
         setFreeTimes(
           freeTimesInCertainDate.map((el) => ({
             name: el,
@@ -150,16 +148,17 @@ const BookingSection = () => {
           }))
         );
       } catch (err) {
-        // eslint-disable-next-line no-console
-        console.log(err);
+        setChosenTimeErrorMsg('something went wrong, try again');
       }
     })();
     return () => source.cancel();
-  }, [selectedDate]);
+  }, [freeTimes.length, selectedDate]);
 
   return (
     <Grid container className={classes.bookingSectionContainer}>
-      <InputDate onChange={handleDateChange} selectedDate={selectedDate} />
+      <div className={classes.inputDate}>
+        <InputDate onChange={handleDateChange} selectedDate={selectedDate} />
+      </div>
       {freeTimes && (
         <SelectInput
           handleChange={handleTimeChange}
@@ -169,15 +168,15 @@ const BookingSection = () => {
         />
       )}
       {emptyTimeFieldErrorMsg && (
-        <Typography className={classes.errorMessage}>
+        <Typography className={classes.errorMessage} color="secondary">
           {emptyTimeFieldErrorMsg}
         </Typography>
       )}
 
       <SelectInput
         handleChange={handleChange}
-        value={catagoryValue}
-        label="Select Catagory"
+        value={categoryValue}
+        label="Select Category"
         menu={[
           { name: 'Hair', val: 'Hair cuts' },
           { name: 'Makeup', val: 'Make up' },
@@ -185,9 +184,9 @@ const BookingSection = () => {
           { name: 'Skin Care', val: 'Skin care' },
         ]}
       />
-      {catagoryErrorMsg && (
+      {categoryErrorMsg && (
         <Typography className={classes.errorMessage}>
-          {catagoryErrorMsg}
+          {categoryErrorMsg}
         </Typography>
       )}
       {services && (
@@ -203,8 +202,11 @@ const BookingSection = () => {
           {serviceErrorMsg}
         </Typography>
       )}
-
-      <Button className={classes.submitBtn} onClick={handelSentData}>
+      <Button
+        className={classes.submitBtn}
+        variant="contained"
+        onClick={handelSentData}
+      >
         SEND
       </Button>
       {bookingMessage && (

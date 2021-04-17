@@ -2,7 +2,7 @@ import { Grid, Typography } from '@material-ui/core';
 import useStyles from './style';
 import BookingSection from '../BookingSection';
 
-const WeclomeSection = () => {
+const WelcomeSection = () => {
   const classes = useStyles();
 
   return (
@@ -28,4 +28,4 @@ const WeclomeSection = () => {
   );
 };
 
-export default WeclomeSection;
+export default WelcomeSection;

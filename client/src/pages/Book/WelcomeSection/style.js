@@ -5,7 +5,7 @@ const useStyles = makeStyles(() => ({
   wrapper: {
     backgroundImage: `url("${logo}")`,
     backgroundSize: 'cover',
-    height: '100vh',
+    minHeight: 'calc(100vh - 69px - 49px)',
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
@@ -24,7 +24,8 @@ const useStyles = makeStyles(() => ({
     },
   },
   welcomeContainer: {
-    width: '45%',
+    display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
   },
   typo: {

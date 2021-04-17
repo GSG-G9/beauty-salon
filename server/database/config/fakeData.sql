@@ -73,7 +73,7 @@ INSERT INTO blogs(name,description,image) VALUES
 ('Things You Didn’t Know About Facial Redness','When it comes to your complexion, seeing red is not always a good thing—especially if you have sensitive skin that reacts from the slightest triggers. While facial redness is one of the most common skin issues to deal with, the whys and hows behind it are often a mystery. So here are some facts about redness to keep in mind the next time your skin is looking flushed.','https://cdn.discordapp.com/attachments/778557600017940501/825478723259072562/2Q.png'),
 ('Face Cleansers That Work Great on Dry Skin','Of course, dry skin is not a winter-only issue. In fact, dry skin is considered a skin type, and can be caused by genetics, conditions like eczema or psoriasis or simply because “some [people] make less oil to hydrate and seal the skin,” explains Dr. Papri Sarkar, a board-certified dermatologist in Boston. Skin also becomes drier as we age. “Older patients have drier skin because they have an impaired skin barrier layer, produce less oil and have decreased supporting tissues in their skin,” Dr. Sarkar says.','https://cdn.discordapp.com/attachments/778557600017940501/825478504421785680/0220-Blog-Featured-FaceCleansers-V1.png');
 
-INSERT INTO contacts(user_id,name,message) VALUES 
+INSERT INTO contacts(user_id,username,message) VALUES 
 (1,'yasmeen','hello can i contact with the maneger'),
 (null,'huda','my wedding is last week can u help me :('),
 (3,'noor','do you have  eyeshaow from Dior or top face');

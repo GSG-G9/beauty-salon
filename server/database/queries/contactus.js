@@ -1,10 +1,10 @@
 const connection = require('../config/connection');
 
-const postMessage = (name, email, message, mobile) => {
+const postMessage = (username, email, message, mobile) => {
   connection.query({
     text:
-      'insert into contacts (name, email, message, mobile) VALUES ($1, $2, $3, $4)',
-    values: [name, email, message, mobile],
+      'insert into contacts (username, email, message, mobile) VALUES ($1, $2, $3, $4)',
+    values: [username, email, message, mobile],
   });
 };
 

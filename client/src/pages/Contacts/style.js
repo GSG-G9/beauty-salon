@@ -62,11 +62,13 @@ const useStyles = makeStyles((theme) => ({
     width: '30%',
     margin: theme.spacing(1, 10, 0, 0),
     alignSelf: 'flex-start',
-    border: `1px solid ${theme.palette.primary.main}`,
+    '& .MuiOutlinedInput-notchedOutline': {
+      border: `1px solid ${theme.palette.primary.main}`,
+    },
+    '& .MuiFormLabel-root': {
+      color: '#cfab7a',
+    },
     backgroundColor: '#000',
-    resize: 'none',
-    height: 400,
-    color: theme.palette.secondary.main,
     [theme.breakpoints.down('sm')]: {
       width: '100%',
     },

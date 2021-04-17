@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 
-import {
-  Divider,
-  Typography,
-  Container,
-  TextareaAutosize,
-} from '@material-ui/core';
+import { Divider, Typography, Container, TextField } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -129,12 +124,14 @@ const Contacts = () => {
             />
             {loading && <Loading size={40} color="primary" />}
             {isMobile && (
-              <TextareaAutosize
-                rowsMin={5}
+              <TextField
+                multiline
+                rows={3}
                 value={message}
                 name="message"
                 placeholder="Message *"
                 onChange={handelChange}
+                variant="outlined"
                 className={classes.message}
               />
             )}
@@ -150,13 +147,15 @@ const Contacts = () => {
           {isMobile ? (
             ''
           ) : (
-            <TextareaAutosize
-              rowsMin={9}
+            <TextField
               value={message}
+              multiline
+              rows={6}
               name="message"
-              placeholder="Message *"
+              label="Message *"
               onChange={handelChange}
               className={classes.message}
+              variant="outlined"
             />
           )}
         </form>

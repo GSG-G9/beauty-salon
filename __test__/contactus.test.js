@@ -16,7 +16,7 @@ describe('Test routes', () => {
     } = await request(app).post('/api/v1/contact-us').send({
       username: 'iman',
       message: 'hi, i want to reserve in you salon',
-      mobile: '1235455',
+      mobile: '123545555',
       email: 'iman@gmail.com',
     });
 
@@ -30,7 +30,7 @@ describe('Test routes', () => {
     } = await request(app).post('/api/v1/contact-us').send({
       name: 'iman',
       message: 33,
-      mobile: '1235455',
+      mobile: '123545555',
       email: 'iman@gmail.com',
     });
 

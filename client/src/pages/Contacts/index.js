@@ -77,7 +77,7 @@ const Contacts = () => {
       setError(
         err.response.data.message
           ? err.response.data.message
-          : 'Internal server error'
+          : 'something went wrong, please try again later'
       );
       setLoading(false);
     }

@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
       height: '3.8vh',
     },
     '@media (max-device-width:  599px)': {
-      height: '3.8vh',
+      height: '4.5vh',
     },
   },
   iconsGrid: {
@@ -25,14 +25,14 @@ const useStyles = makeStyles(() => ({
   },
   typo: {
     '@media (max-device-width: 600px)': {
-      fontSize: '0.57em',
+      fontSize: '0.75em',
     },
   },
   img: {
     width: 'auto',
     height: 33,
     '@media (max-device-width: 600px)': {
-      height: 23,
+      height: 27,
     },
   },
   MuiSvgIconRoot: {
@@ -41,7 +41,7 @@ const useStyles = makeStyles(() => ({
       width: '2.3em',
     },
     '@media (max-device-width: 600px)': {
-      width: '0.55em',
+      width: '0.9em',
       paddingRight: '0.33em',
     },
   },

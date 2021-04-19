@@ -14,7 +14,7 @@ import {
   Header,
 } from '../../component';
 
-import { BLOGS, BOOK } from '../../utils/router.constant';
+import { BLOGS, BOOK, PRODUCTS } from '../../utils/router.constant';
 
 import useStyles from './style';
 
@@ -60,6 +60,7 @@ const Home = () => {
             <ButtonComponent
               variant="contained"
               className={`${classes.button} ${classes.buyNowBtn}`}
+              onClick={() => history.push(PRODUCTS)}
             >
               BuyProduct
             </ButtonComponent>
@@ -96,6 +97,7 @@ const Home = () => {
           {blogs.map((blog) => (
             <BlogsCard
               key={blog.id}
+              id={blog.id}
               title={blog.name}
               desc={
                 !isMobile

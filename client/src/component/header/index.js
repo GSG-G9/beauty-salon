@@ -51,6 +51,7 @@ const Header = () => {
       await Axios.post('api/v1/logout');
       setRole('guest');
       setOpen(true);
+      history.push('/');
     } catch (err) {
       setError(
         err.response ? err.response.data.message : 'Internal Server Error'

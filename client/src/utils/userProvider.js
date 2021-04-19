@@ -5,7 +5,7 @@ import axios from 'axios';
 const userContext = createContext();
 
 function UserProvider({ children }) {
-  const [role, setRole] = useState('guest');
+  const [role, setRole] = useState('');
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function UserProvider({ children }) {
     })();
 
     return () => source.cancel('operation canceled');
-  }, []);
+  }, [role]);
   return (
     <userContext.Provider value={[role, setRole, userData]}>
       {children}

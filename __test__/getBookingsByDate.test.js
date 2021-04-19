@@ -13,7 +13,6 @@ describe('getBookingsByDate Tests', () => {
     const expected = [
       {
         service: 'Ultimate Diamond',
-        stylist: 'jacob',
         appointment_date: '2021-03-30',
         appointment_time: '10:00',
       },
@@ -29,13 +28,11 @@ describe('getBookingsByDate Tests', () => {
       data: [
         {
           service: 'Dazzle Dry Vegan',
-          stylist: 'jacob',
           appointment_date: '2021-03-29',
           appointment_time: '11:00',
         },
         {
           service: 'Classic Manicure',
-          stylist: 'jacob',
           appointment_date: '2021-03-29',
           appointment_time: '12:00',
         },

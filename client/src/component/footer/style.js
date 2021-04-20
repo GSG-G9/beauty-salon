@@ -22,10 +22,13 @@ const useStyles = makeStyles(() => ({
   },
   imgContainer: {
     width: '30%',
+    '@media (max-device-width: 600px)': {
+      width: '23%',
+    },
   },
   typo: {
     '@media (max-device-width: 600px)': {
-      fontSize: '0.75em',
+      fontSize: '0.77em',
     },
   },
   img: {
@@ -41,7 +44,7 @@ const useStyles = makeStyles(() => ({
       width: '2.3em',
     },
     '@media (max-device-width: 600px)': {
-      width: '0.9em',
+      width: '0.95em',
       paddingRight: '0.33em',
     },
   },

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     '& h3': {
-      fontSize: '2.2em',
+      fontSize: '1.8em',
       display: 'flex',
       justifyContent: 'center',
       marginTop: '15%',

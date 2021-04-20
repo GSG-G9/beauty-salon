@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   userDataFieldLabel: {
     width: '17%',
     '@media (max-device-width: 600px)': {
-      width: '45%',
+      width: '37%',
     },
   },
   userDataFieldValue: {

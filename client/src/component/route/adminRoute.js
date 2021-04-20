@@ -3,13 +3,23 @@ import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { userContext } from '../../utils/userProvider';
+import { HeaderForAdmin } from '../index';
 
 const AdminRoute = ({ component: Component, ...rest }) => {
   const [role] = useContext(userContext);
   return (
-    <Route {...rest}>
-      {role === 'admin' ? <Component /> : <Redirect to="/404" />}
-    </Route>
+    <>
+      <HeaderForAdmin />
+      <Route {...rest}>
+        {role ? (
+          role === 'admin' ? (
+            <Component />
+          ) : (
+            <Redirect to="/404" />
+          )
+        ) : null}
+      </Route>
+    </>
   );
 };
 

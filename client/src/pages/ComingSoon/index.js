@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import useStyles from './style';
 import { Footer, Header, ButtonComponent } from '../../component';
+import { userContext } from '../../utils/userProvider';
 
 const ComingSoon = () => {
   const classes = useStyles();
   const history = useHistory();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-
+  const [role] = useContext(userContext);
   return (
     <div>
-      <Header />
+      {role !== 'admin' && <Header />}
       <div className={classes.main}>
         <div className={classes.root}>
           <div className={classes.left}>
@@ -27,7 +28,6 @@ const ComingSoon = () => {
                 Oops! Page is not ready yet?
               </Typography>
             )}
-
             <Typography className={classes.text2} variant="h6">
               The page you are looking for is not ready yet, We will make it
               available very soon

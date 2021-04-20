@@ -41,11 +41,7 @@ const MapComponent = ({ mapInfo }) => {
     );
     return () => map.remove();
   }, [lat, long, zoom]);
-  return (
-    <div className={classes.container}>
-      <div ref={mapContainer} className={classes.mapContainer} />
-    </div>
-  );
+  return <div ref={mapContainer} className={classes.mapContainer} />;
 };
 MapComponent.propTypes = {
   mapInfo: PropTypes.shape({

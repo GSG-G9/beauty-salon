@@ -102,6 +102,7 @@ const Contacts = () => {
         <Typography className={classes.title} component="h3" variant="h5">
           Contact us
         </Typography>
+        {loading && <Loading size={40} color="primary" />}
         <form className={classes.form}>
           <Container className={classes.container}>
             <InputField
@@ -126,14 +127,13 @@ const Contacts = () => {
               onChange={handelChange}
               margin="dense"
             />
-            {loading && <Loading size={40} color="primary" />}
             {isMobile && (
               <TextField
                 multiline
                 rows={3}
                 value={message}
                 name="message"
-                placeholder="Message *"
+                label="Message *"
                 onChange={handelChange}
                 variant="outlined"
                 className={classes.message}

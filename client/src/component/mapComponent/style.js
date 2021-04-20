@@ -1,21 +1,17 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    position: 'relative',
+  mapContainer: {
     height: '70vh',
     width: '70vw',
     [theme.breakpoints.down('sm')]: {
       height: '40vh',
-      width: '100vw',
+      width: '90vw',
     },
-  },
-  mapContainer: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    left: 0,
-    bottom: 0,
+    [theme.breakpoints.between('sm', 'md')]: {
+      height: '40vh',
+      width: '90vw',
+    },
   },
   card: {
     borderRadius: '1rem',

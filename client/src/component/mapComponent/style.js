@@ -3,8 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   container: {
     position: 'relative',
-    height: '80vh',
-    width: '80vw',
+    height: '70vh',
+    width: '70vw',
+    [theme.breakpoints.down('sm')]: {
+      height: '30vh',
+      width: '100vw',
+    },
   },
   mapContainer: {
     position: 'absolute',

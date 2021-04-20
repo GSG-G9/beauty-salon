@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    width: '50%',
+    width: '40%',
     alignSelf: 'flex-start',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -62,8 +62,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   message: {
-    width: '30%',
-    margin: theme.spacing(1, 10, 0, 0),
+    width: '35%',
+    margin: theme.spacing(1, 20, 0, -10),
     alignSelf: 'flex-start',
     '& .MuiOutlinedInput-notchedOutline': {
       border: `1px solid ${theme.palette.primary.main}`,

@@ -87,7 +87,6 @@ function NavMobile() {
         </MenuItem>
         <MenuItem onClick={() => handleMenuClick('/blogs')}>Blogs</MenuItem>
         <MenuItem onClick={() => handleMenuClick('/contact')}>Contact</MenuItem>
-        <MenuItem onClick={() => handleMenuClick('/cart')}>Cart</MenuItem>
         {role !== 'guest' && (
           <MenuItem
             classes={{ root: 'logoutMobile' }}

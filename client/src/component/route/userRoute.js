@@ -9,13 +9,7 @@ const UserRoute = ({ component: Component, ...rest }) => {
   const [role] = useContext(userContext);
   return (
     <Route {...rest}>
-      {role ? (
-        role === 'user' ? (
-          <Component />
-        ) : (
-          <Redirect to="/signin" />
-        )
-      ) : null}
+      {role && (role === 'user' ? <Component /> : <Redirect to="/signin" />)}
     </Route>
   );
 };

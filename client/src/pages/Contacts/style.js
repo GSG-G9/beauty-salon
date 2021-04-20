@@ -74,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#000',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
+      margin: theme.spacing(1, 20, 0, 0),
     },
     [theme.breakpoints.between('sm', 'md')]: {
       width: '50%',

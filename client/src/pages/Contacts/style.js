@@ -21,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   map: {
-    height: 500,
-    margin: theme.spacing(0, 0, 0, 6),
+    height: 400,
+    margin: theme.spacing(0, 0, 0, 15),
     [theme.breakpoints.down('sm')]: {
-      height: 520,
+      height: 320,
+      margin: theme.spacing(0, 0, 0, 0),
     },
   },
   title: {

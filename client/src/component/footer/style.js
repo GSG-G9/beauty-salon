@@ -9,6 +9,7 @@ const useStyles = makeStyles(() => ({
     height: '6.3vh',
     borderTop: '0.5px solid #111010',
     color: 'white',
+    marginTop: 'auto',
     '@media (min-device-width: 600px) and (max-device-width: 1000px)': {
       height: '3.8vh',
     },

@@ -20,12 +20,11 @@ const useStyles = makeStyles((theme) => ({
       width: '15%',
     },
   },
-  img: {
-    height: 400,
-    objectFit: 'cover',
+  map: {
+    height: 500,
+    margin: theme.spacing(0, 0, 0, 6),
     [theme.breakpoints.down('sm')]: {
-      height: 200,
-      objectFit: 'cover',
+      height: 520,
     },
   },
   title: {

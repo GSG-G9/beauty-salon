@@ -15,8 +15,10 @@ import {
   Loading,
 } from '../../component';
 import { contactValidationSchema } from '../../utils';
-import map from '../../assets/images/map.png';
+// import map from '../../assets/images/map.png';
 import useStyles from './style';
+
+import Map from './map';
 
 const Contacts = () => {
   const theme = useTheme();
@@ -94,7 +96,9 @@ const Contacts = () => {
           mobile: 04 333 7772
         </Typography>
         <Divider component="hr" variant="middle" className={classes.divider} />
-        <img src={map} alt="map" className={classes.img} />
+        <Container className={classes.map}>
+          <Map />
+        </Container>
         <Typography className={classes.title} component="h3" variant="h5">
           Contact us
         </Typography>

@@ -15,7 +15,6 @@ import {
   Loading,
 } from '../../component';
 import { contactValidationSchema } from '../../utils';
-// import map from '../../assets/images/map.png';
 import useStyles from './style';
 
 import Map from './map';

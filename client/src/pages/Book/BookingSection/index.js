@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { Button, Grid, Typography } from '@material-ui/core';
+import Snackbar from '@material-ui/core/Snackbar';
+import Alert from '@material-ui/lab/Alert';
 import { InputDate, SelectInput } from '../../../component';
 import { userContext } from '../../../utils';
 import useStyles from './style';
 
 const BookingSection = () => {
   const classes = useStyles();
-
   const [selectedServiceId, setSelectedServiceId] = useState('');
   const [selectedDate, setSelectedDate] = useState(
     new Date().toISOString().substr(0, 10)
@@ -26,6 +27,7 @@ const BookingSection = () => {
   const [emptyTimeFieldErrorMsg, setEmptyTimeFieldErrorMsg] = useState('');
 
   const userId = userData.id;
+
   const handleChange = (event) => {
     setCategoryValue(event.target.value);
   };
@@ -44,6 +46,7 @@ const BookingSection = () => {
   const handleTimeChange = (e) => {
     setSelectedTime(e.target.value);
   };
+
   const handelSentData = () => {
     if (!categoryValue) {
       setCategoryErrorMsg('please select category');
@@ -128,6 +131,7 @@ const BookingSection = () => {
           CancelToken: source.token,
         });
         const busyTimes = data.map((el) => el.appointment_time);
+
         const workTimes = [
           '10:00',
           '11:00',
@@ -137,6 +141,7 @@ const BookingSection = () => {
           '15:00',
           '16:00',
         ];
+
         const newArr = busyTimes.concat(workTimes);
         const freeTimesInCertainDate = newArr.filter(
           (el) => newArr.indexOf(el) === newArr.lastIndexOf(el)
@@ -210,14 +215,14 @@ const BookingSection = () => {
         SEND
       </Button>
       {bookingMessage && (
-        <Typography className={classes.successfulMessage}>
-          {bookingMessage}
-        </Typography>
+        <Snackbar open autoHideDuration={8000}>
+          <Alert severity="success">{bookingMessage}</Alert>
+        </Snackbar>
       )}
       {chosenTimeErrorMsg && (
-        <Typography className={classes.errorMessage}>
-          {chosenTimeErrorMsg}
-        </Typography>
+        <Snackbar open autoHideDuration={8000}>
+          <Alert severity="error">{chosenTimeErrorMsg}</Alert>
+        </Snackbar>
       )}
     </Grid>
   );

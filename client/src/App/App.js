@@ -27,8 +27,6 @@ import {
   Blogs,
   Book,
   Contacts,
-  Dashboard,
-  Appointment,
   Home,
   Profile,
   Services,
@@ -64,12 +62,11 @@ const App = () => (
           <UserRoute path={PROFILE} component={Profile} />
           <UserRoute path={BOOK} component={Book} />
           <UserRoute path={CART} component={ComingSoon} />
-          <AdminRoute path={DASHBOARD} component={Dashboard} />
-          <AdminRoute path={DASHBOARD_APPOINTMENT} component={Appointment} />
+          <AdminRoute path={DASHBOARD} component={ComingSoon} />
+          <AdminRoute path={DASHBOARD_APPOINTMENT} component={ComingSoon} />
           <Route path={NOT_FOUND}>
             <NotFound />
           </Route>
-
           <Route>
             <NotFound />
           </Route>

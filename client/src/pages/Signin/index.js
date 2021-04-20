@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Alert from '@material-ui/lab/Alert';
 
 import { InputField, ButtonComponent, Loading } from '../../component';
-import { SIGNUP_PAGE, HOME_PAGE } from '../../utils/router.constant';
+import { SIGNUP_PAGE, HOME_PAGE, DASHBOARD } from '../../utils/router.constant';
 import {
   updateAndValidateInput,
   emailSchemaValid,
@@ -54,7 +54,11 @@ const Signin = () => {
       setRole(userData.role);
       clear();
       setIsLoading(false);
-      history.push(HOME_PAGE);
+      if (userData.role === 'admin') {
+        history.push(DASHBOARD);
+      } else {
+        history.push(HOME_PAGE);
+      }
     } catch (err) {
       setError(err.response ? err.response.data.message : err.errors[0]);
       setIsLoading(false);

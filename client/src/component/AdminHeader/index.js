@@ -59,19 +59,19 @@ const HeaderForAdmin = () => {
                 <NavMobile />
               ) : (
                 <div>
-                  <Link className={classes.options} to="/">
+                  <Link className={classes.options} to="/dashboard">
                     Services
                   </Link>
-                  <Link className={classes.options} to="/">
+                  <Link className={classes.options} to="/dashboard">
                     Products
                   </Link>
-                  <Link className={classes.options} to="/">
+                  <Link className={classes.options} to="/dashboard">
                     Blogs
                   </Link>
                 </div>
               )}
             </div>
-            <Link className={classes.title} to="/">
+            <Link className={classes.title} to="/dashboard">
               Beauty
             </Link>
 

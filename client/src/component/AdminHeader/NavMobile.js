@@ -80,9 +80,13 @@ function NavMobile() {
         open={open}
         onClose={() => setAnchorEl(null)}
       >
-        <MenuItem onClick={() => handleMenuClick('/')}>Services</MenuItem>
-        <MenuItem onClick={() => handleMenuClick('/')}>Products</MenuItem>
-        <MenuItem onClick={() => handleMenuClick('/')}>Blogs</MenuItem>
+        <MenuItem onClick={() => handleMenuClick('/dashboard')}>
+          Services
+        </MenuItem>
+        <MenuItem onClick={() => handleMenuClick('/dashboard')}>
+          Products
+        </MenuItem>
+        <MenuItem onClick={() => handleMenuClick('/dashboard')}>Blogs</MenuItem>
         <MenuItem
           classes={{ root: 'logoutMobile' }}
           className={classes.logoutMobile}

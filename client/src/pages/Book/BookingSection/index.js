@@ -24,6 +24,8 @@ const BookingSection = () => {
   const [bookingMessage, setBookingMessage] = useState('');
   const [categoryErrorMsg, setCategoryErrorMsg] = useState('');
   const [serviceErrorMsg, setServiceErrorMsg] = useState('');
+  const [invalidDateErrorMsg, setInvalidDateErrorMsg] = useState('');
+
   const [emptyTimeFieldErrorMsg, setEmptyTimeFieldErrorMsg] = useState('');
 
   const userId = userData.id;
@@ -37,10 +39,14 @@ const BookingSection = () => {
   };
 
   const handleDateChange = (date) => {
-    const datePicker = date.toISOString().substr(0, 10);
-    setChosenTimeErrorMsg('');
-    setSelectedDate(datePicker);
-    setConvertedDate(date);
+    if (date === 'Invalid Date') {
+      const datePicker = date.toISOString().substr(0, 10);
+      setChosenTimeErrorMsg('');
+      setSelectedDate(datePicker);
+      setConvertedDate(date);
+    } else {
+      setInvalidDateErrorMsg('please enter valid date!');
+    }
   };
 
   const handleTimeChange = (e) => {
@@ -216,12 +222,12 @@ const BookingSection = () => {
       </Button>
       {bookingMessage && (
         <Snackbar open autoHideDuration={8000}>
-          <Alert severity="success">{bookingMessage}</Alert>
+          <Alert severity="error">{chosenTimeErrorMsg}</Alert>
         </Snackbar>
       )}
-      {chosenTimeErrorMsg && (
+      {invalidDateErrorMsg && (
         <Snackbar open autoHideDuration={8000}>
-          <Alert severity="error">{chosenTimeErrorMsg}</Alert>
+          <Alert severity="error">{invalidDateErrorMsg}</Alert>
         </Snackbar>
       )}
     </Grid>

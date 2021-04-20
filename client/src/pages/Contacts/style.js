@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(4, 4, 6),
     [theme.breakpoints.down('sm')]: {
       textAlign: 'left',
+      width: '100vw',
+      overflowX: 'hidden',
+      margin: 0,
     },
   },
   divider: {

@@ -45,15 +45,15 @@ const BookingSection = () => {
   };
 
   const handleDateChange = (date) => {
-    // eslint-disable-next-line eqeqeq
-    if (date != 'Invalid Date') {
+    // eslint-disable-next-line
+    if (date != 'Invalid Date' && date) {
       const datePicker = date.toISOString().substr(0, 10);
       setChosenTimeErrorMsg('');
       setSelectedDate(datePicker);
       setConvertedDate(date);
     } else {
       setInvalidDateMessage('please enter valid date');
-      setOpenInvalidDateAlert('true');
+      setOpenInvalidDateAlert(true);
     }
   };
 

@@ -38,7 +38,9 @@ const MapComponent = ({ mapInfo }) => {
         trackUserLocation: true,
       })
     );
-    return () => map.remove();
+    return () => {
+      map.current.remove();
+    };
   }, [lat, long, zoom]);
   return <div ref={mapContainer} className={classes.mapContainer} />;
 };
@@ -49,11 +51,6 @@ MapComponent.propTypes = {
       long: PropTypes.number.isRequired,
       zoom: PropTypes.number.isRequired,
     }).isRequired,
-    info: PropTypes.arrayOf(
-      PropTypes.objectOf(
-        PropTypes.oneOfType([PropTypes.element, PropTypes.string])
-      )
-    ),
   }).isRequired,
 };
 

@@ -117,11 +117,9 @@ npm test
  - PostgreSQL.
 
 ## Stretch Goals :goal_net:
-* create products section for selling cosmetics
-* create an admin dashboard
-    * admin can view all user's reservations with details. 
-    * admin can view, edit, delete all users 
-* create chat that allows users to contact and negotiate
+* create products section for selling cosmetics.
+* create cart section.
+* create an admin dashboard.
 
 
 ## team

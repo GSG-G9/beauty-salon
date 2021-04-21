@@ -4,6 +4,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(3, 4, 3),
     width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      overflowX: 'hidden',
+      width: '100vw',
+      margin: 0,
+    },
   },
   title: {
     margin: theme.spacing(6, 0, 0),
@@ -15,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
     },
     justifyContent: 'flex-start',
-    margin: theme.spacing(4, 0, 6),
   },
   divider: {
     backgroundColor: theme.palette.primary.main,

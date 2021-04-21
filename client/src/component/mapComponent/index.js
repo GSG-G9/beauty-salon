@@ -11,8 +11,7 @@ import PropTypes from 'prop-types';
 import useStyles from './style';
 
 mapboxgl.workerClass = MapboxWorker;
-mapboxgl.accessToken =
-  'pk.eyJ1IjoieWFzbWVlbmF0dGEiLCJhIjoiY2tucHVnOTA4MDZndTJ2cGZjejFhdGs0YSJ9.06wIZFU04dzgto4NsMiZoA';
+mapboxgl.accessToken = process.env.REACT_APP_ACCESS_TOKEN;
 
 const MapComponent = ({ mapInfo }) => {
   const classes = useStyles();

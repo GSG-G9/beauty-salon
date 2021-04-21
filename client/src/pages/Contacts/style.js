@@ -23,19 +23,25 @@ const useStyles = makeStyles((theme) => ({
       width: '15%',
     },
   },
-  img: {
+  map: {
     height: 400,
-    objectFit: 'cover',
+    margin: theme.spacing(0, 0, 0, 15),
     [theme.breakpoints.down('sm')]: {
-      height: 200,
-      objectFit: 'cover',
+      height: 320,
+      margin: theme.spacing(0, 0, 0, -1),
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      margin: theme.spacing(0, 0, 0, 0),
     },
   },
   title: {
     alignSelf: 'flex-start',
-    margin: theme.spacing(9, 0, 0, 15),
+    margin: theme.spacing(8, 0, 0, 20),
     [theme.breakpoints.down('sm')]: {
       margin: theme.spacing(2, 1, 0),
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      margin: theme.spacing(0, 0, 0, 0),
     },
   },
   form: {
@@ -63,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   },
   message: {
     width: '35%',
-    margin: theme.spacing(1, 20, 0, -10),
+    margin: theme.spacing(1, 15, 0, -10),
     alignSelf: 'flex-start',
     '& .MuiOutlinedInput-notchedOutline': {
       border: `1px solid ${theme.palette.primary.main}`,

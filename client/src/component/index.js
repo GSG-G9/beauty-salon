@@ -10,6 +10,7 @@ import ServiceCardForHomePage from './seviceCardHomePage';
 import SelectInput from './Select';
 import BlogsCard from './BlogCard';
 import BlogsCardForBlogs from './BlogCardForBlogs';
+import MapComponent from './mapComponent';
 
 export {
   InputDate,
@@ -24,4 +25,5 @@ export {
   SelectInput,
   BlogsCard,
   BlogsCardForBlogs,
+  MapComponent,
 };

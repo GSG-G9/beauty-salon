@@ -326,7 +326,7 @@ const BookingSection = () => {
           autoHideDuration={3000}
           onClose={handleCloseInvalidDateAlert}
         >
-          <Alert severity="warning" onClose={handleCloseTimeErrAlert}>
+          <Alert severity="error" onClose={handleCloseInvalidDateAlert}>
             {invalidDateMessage}
           </Alert>
         </Snackbar>

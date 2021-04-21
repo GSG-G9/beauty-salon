@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import PropTypes from 'prop-types';
 import { Tabs, Typography, Tab, Avatar } from '@material-ui/core';
 import LibraryBooksOutlinedIcon from '@material-ui/icons/LibraryBooksOutlined';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
@@ -17,9 +17,9 @@ function a11yProps(index) {
   };
 }
 
-const SideBar = () => {
+const SideBar = ({ val }) => {
   const classes = useStyles();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(val || 0);
   const [userName, setUserName] = useState('');
 
   const handleChange = (event, newValue) => {
@@ -85,6 +85,11 @@ const SideBar = () => {
       </TabPanel>
     </div>
   );
+};
+const { number } = PropTypes;
+
+SideBar.propTypes = {
+  val: number.isRequired,
 };
 
 export default SideBar;

@@ -10,6 +10,7 @@ import Signin from './Signin';
 import Signup from './Signup';
 import NotFound from './NotFound';
 import ComingSoon from './ComingSoon';
+import Blog from './SpecificBlog';
 
 export {
   Blogs,
@@ -24,4 +25,5 @@ export {
   Signup,
   NotFound,
   ComingSoon,
+  Blog,
 };

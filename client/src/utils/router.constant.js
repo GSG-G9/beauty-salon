@@ -11,3 +11,4 @@ export const CART = '/cart';
 export const DASHBOARD = '/dashboard';
 export const DASHBOARD_APPOINTMENT = '/appointment';
 export const NOT_FOUND = '/404';
+export const BLOG = '/blogs:id';

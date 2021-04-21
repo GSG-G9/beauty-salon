@@ -42,13 +42,8 @@ As a user, I can see all available  reservation times to able to reserve, inside
 -   Clone the repository.
 -   Navigate to the cloned repo.
 ##### project setup
--  run npm ito install  all package dependencies & dev-dependencies.
- -  Create 
- ```
- .env
- ```
-
- file in the project root and add 
+-  run npm ito install  all package dependencies & dev-dependencies in root folder and client folder
+ -  in the root directory create `.env` file in the project root and add 
  
  ```
  DEV_DB_URL=postgres://team2:0000@localhost:5432/beautysalon
@@ -56,11 +51,11 @@ TEST_DB_URL=postgres://team2:0000@localhost:5432/beautysalon_test
 ```
  
 
-- Create  
+- In the client folder Create  
 ```
  .env 
  ```
- in client folder and add 
+ and add 
  -- you can get  your map access token by check [Mapbox access token](https://docs.mapbox.com/help/getting-started/access-tokens/)
 
 ```
@@ -135,13 +130,9 @@ npm test
 
 ## Stretch Goals :goal_net:
 * create products section for selling cosmetics
-* The users can complete the contract and rent the apartment
-* user can see the location of the house on the map and compare between two houses
-* user can see related houses according to a specific area on the map
 * create an admin dashboard
     * admin can view all user's reservations with details. 
-     * admin can view, edit, delete all users 
-    * admin can view, edit, delete all houses 
+    * admin can view, edit, delete all users 
 * create chat that allows users to contact and negotiate
 
 
@@ -153,8 +144,3 @@ npm test
 * Adham Haisami
 * Iman Sedky
 
-
-
-## Resources :mag:
-* https://cloudinary.com/documentation/developer_overview
-* https://material-ui.com/

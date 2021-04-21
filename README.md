@@ -19,12 +19,12 @@ Build a beauty salon application that helps customers reserve a date from our se
 
 ## User Stories :open_book:
 ***As a user :***
-* I can see all available reservation time.
-* I can reserve a date with specific day.
-* I can cancel a reservation.
-* I need to create my own profile
-* I can sign up into the app 
-* I can log in into the app
+- I can see all available reservation times.
+- I can reserve a date with a specific day.
+- I can cancel a reservation.
+- I need to create my profile
+- I can sign up into the app
+- I can log in to the app
 
 
 ## User Journey :airplane:
@@ -42,7 +42,7 @@ As a user, I can see all available  reservation times to able to reserve, inside
 -   Clone the repository.
 -   Navigate to the cloned repo.
 ##### project setup
--  run npm ito install  all package dependencies & dev-dependencies in root folder and client folder
+-  run npm to install all package dependencies & dev-dependencies in the root folder and client folder
  -  in the root directory create `.env` file in the project root and add 
  
  ```
@@ -51,16 +51,7 @@ TEST_DB_URL=postgres://team2:0000@localhost:5432/beautysalon_test
 ```
  
 
-- In the client folder Create  
-```
- .env 
- ```
- and add 
- -- you can get  your map access token by check [Mapbox access token](https://docs.mapbox.com/help/getting-started/access-tokens/)
-
-```
- REACT_APP_ACCESS_TOKEN= add_your_access_token  
-```
+- In the client folder Create `.env` and add ` REACT_APP_ACCESS_TOKEN= add_your_access_token` you can get your map access token by check [Mapbox access token](https://docs.mapbox.com/help/getting-started/access-tokens/)
 
 
 
@@ -68,7 +59,7 @@ TEST_DB_URL=postgres://team2:0000@localhost:5432/beautysalon_test
 1. If you have pgcli skip this step.
 
    - Install PostgreSQL database
-   - Along side with pgcli
+   - Alongside with pgcli
    - [instructions on how to install pgcli](https://www.pgcli.com/install)
 
 2. Open your terminal, run pgcli, navigate through the project to this path: ./server/database/config/build.sql

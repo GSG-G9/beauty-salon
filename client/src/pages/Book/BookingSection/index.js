@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import { Button, Grid, Typography } from '@material-ui/core';
 import { InputDate, SelectInput } from '../../../component';
 import { userContext } from '../../../utils';
@@ -209,15 +210,18 @@ const BookingSection = () => {
       >
         SEND
       </Button>
-      {bookingMessage && (
-        <Typography className={classes.successfulMessage}>
-          {bookingMessage}
-        </Typography>
-      )}
       {chosenTimeErrorMsg && (
         <Typography className={classes.errorMessage}>
           {chosenTimeErrorMsg}
         </Typography>
+      )}
+      {bookingMessage && (
+        <Redirect
+          to={{
+            pathname: '/profile',
+            state: { val: 1 },
+          }}
+        />
       )}
     </Grid>
   );

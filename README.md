@@ -31,14 +31,11 @@ Build a beauty salon application that helps customers reserve a date from our se
 
 As a user, I can see all available  reservation times to able to reserve, inside my profile I have my information and reservation details.
 
-<!-- ## Prototype :art:
-![prototype]() -->
 
 ## DATABASE Schema :
 ![dbimage](https://cdn.discordapp.com/attachments/822914974731993098/824323597014925352/unknown.png)
 
 ## Installation Guide :
-####  Installation guide :
 -   Clone the repository.
 -   Navigate to the cloned repo.
 ##### project setup

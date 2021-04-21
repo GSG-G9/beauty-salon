@@ -31,6 +31,8 @@ const BookingSection = () => {
   const [openServiceAlert, setOpenServiceAlert] = useState(false);
   const [emptyTimeFieldErrorMsg, setEmptyTimeFieldErrorMsg] = useState('');
   const [openEmptyTimeAlert, setOpenEmptyTimeAlert] = useState(false);
+  const [invalidDateMessage, setInvalidDateMessage] = useState('');
+  const [openInvalidDateAlert, setOpenInvalidDateAlert] = useState(false);
 
   const userId = userData.id;
 
@@ -43,10 +45,16 @@ const BookingSection = () => {
   };
 
   const handleDateChange = (date) => {
-    const datePicker = date.toISOString().substr(0, 10);
-    setChosenTimeErrorMsg('');
-    setSelectedDate(datePicker);
-    setConvertedDate(date);
+    // eslint-disable-next-line eqeqeq
+    if (date != 'Invalid Date') {
+      const datePicker = date.toISOString().substr(0, 10);
+      setChosenTimeErrorMsg('');
+      setSelectedDate(datePicker);
+      setConvertedDate(date);
+    } else {
+      setInvalidDateMessage('please enter valid date');
+      setOpenInvalidDateAlert('true');
+    }
   };
 
   const handleCloseEmptyTimeAlert = (event, reason) => {
@@ -56,6 +64,7 @@ const BookingSection = () => {
     }
     setOpenEmptyTimeAlert(false);
   };
+
   const handleCloseCategoryAlert = (event, reason) => {
     if (reason === 'clickaway') {
       // eslint-disable-next-line no-useless-return
@@ -85,7 +94,14 @@ const BookingSection = () => {
       // eslint-disable-next-line no-useless-return
       return;
     }
+    setOpenTimeAlert(false);
+  };
 
+  const handleCloseInvalidDateAlert = (event, reason) => {
+    if (reason === 'clickaway') {
+      // eslint-disable-next-line no-useless-return
+      return;
+    }
     setOpenTimeAlert(false);
   };
 
@@ -301,6 +317,17 @@ const BookingSection = () => {
         >
           <Alert severity="error" onClose={handleCloseTimeErrAlert}>
             {chosenTimeErrorMsg}
+          </Alert>
+        </Snackbar>
+      )}
+      {invalidDateMessage && (
+        <Snackbar
+          open={openInvalidDateAlert}
+          autoHideDuration={3000}
+          onClose={handleCloseInvalidDateAlert}
+        >
+          <Alert severity="warning" onClose={handleCloseTimeErrAlert}>
+            {invalidDateMessage}
           </Alert>
         </Snackbar>
       )}

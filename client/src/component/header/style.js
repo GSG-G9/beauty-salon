@@ -2,15 +2,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     [theme.breakpoints.up('sm')]: {
       marginTop: '5px',
     },
+    width: '90%',
   },
   header: {
-    [theme.breakpoints.up('sm')]: {
-      flexGrow: 1,
-    },
+    [theme.breakpoints.up('sm')]: {},
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -33,9 +31,6 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
   },
-  headerLeftSide: {
-    justifyContent: 'space-between',
-  },
 
   options: {
     padding: '1em',
@@ -50,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#0e1717',
   },
   signup: {
-    marginLeft: '1em',
     color: '#fff',
     '&:hover': {
       color: 'f8f8ff',
@@ -58,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: '#888888',
     },
   },
-  logout: {
+  rightBtn: {
     marginLeft: '1em',
   },
   logoutMobile: {

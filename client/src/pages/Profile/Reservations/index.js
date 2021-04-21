@@ -46,10 +46,10 @@ const Reservations = () => {
   };
   return (
     <div className={classes.root}>
-      <Typography variant="h2">Reservations</Typography>
+      <Typography variant="h5">Reservations</Typography>
       {loading && <Loading />}
       <Table reservations={reservations} handelDelete={handleDelete} />
-      {error && <h3>{error}</h3>}
+      {error && <h6>{error}</h6>}
     </div>
   );
 };

@@ -2,16 +2,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // flexGrow: 1,
     [theme.breakpoints.up('sm')]: {
       marginTop: '5px',
     },
     width: '90%',
   },
   header: {
-    [theme.breakpoints.up('sm')]: {
-      // flexGrow: 1,
-    },
+    [theme.breakpoints.up('sm')]: {},
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -19,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   title: {
-    // flexGrow: 1,
     display: 'block',
     fontSize: '2em',
     color: '#fff',
@@ -34,19 +30,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '130%',
       color: theme.palette.primary.main,
     },
-  },
-  headerLeftSide: {
-    // flexGrow: 1,
-    justifyContent: 'center',
-  },
-  headerRightSide: {
-    // flexGrow: 1,
-    // justifyContent: 'flex-end',
-    justifyContent: 'space-between',
-  },
-  RightSideElements: {
-    width: 'auto',
-    justifyContent: 'space-between',
   },
 
   options: {

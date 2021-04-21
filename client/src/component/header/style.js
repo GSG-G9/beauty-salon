@@ -2,14 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
     [theme.breakpoints.up('sm')]: {
       marginTop: '5px',
     },
+    width: '90%',
   },
   header: {
     [theme.breakpoints.up('sm')]: {
-      flexGrow: 1,
+      // flexGrow: 1,
     },
     display: 'flex',
     flexDirection: 'row',
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   title: {
+    // flexGrow: 1,
     display: 'block',
     fontSize: '2em',
     color: '#fff',
@@ -34,6 +36,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   headerLeftSide: {
+    // flexGrow: 1,
+    justifyContent: 'center',
+  },
+  headerRightSide: {
+    // flexGrow: 1,
+    // justifyContent: 'flex-end',
+    justifyContent: 'space-between',
+  },
+  RightSideElements: {
+    width: 'auto',
     justifyContent: 'space-between',
   },
 
@@ -50,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#0e1717',
   },
   signup: {
-    marginLeft: '1em',
     color: '#fff',
     '&:hover': {
       color: 'f8f8ff',
@@ -58,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: '#888888',
     },
   },
-  logout: {
+  rightBtn: {
     marginLeft: '1em',
   },
   logoutMobile: {

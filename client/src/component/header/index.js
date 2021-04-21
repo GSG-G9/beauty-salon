@@ -93,14 +93,14 @@ const Header = () => {
                 (role === 'guest' ? (
                   <>
                     <Button
-                      className={classes.logout}
+                      className={`${classes.logout} ${classes.rightBtn}`}
                       variant="outlined"
                       onClick={() => handleMenuClick('/signin')}
                     >
                       Log In
                     </Button>
                     <Button
-                      className={classes.signup}
+                      className={`${classes.signup} ${classes.rightBtn}`}
                       variant="contained"
                       onClick={() => handleMenuClick('/signup')}
                     >
@@ -130,7 +130,7 @@ const Header = () => {
                       <AccountCircle />
                     </IconButton>
                     <Button
-                      className={classes.logout}
+                      className={classes.rightBtn}
                       variant="outlined"
                       onClick={() => logOutClick()}
                     >

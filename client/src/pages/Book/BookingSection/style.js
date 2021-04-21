@@ -23,10 +23,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '1em',
     color: '#fff !important',
   },
-  successfulMessage: {
-    backgroundColor: 'green',
-    margin: '1em',
-  },
   inputDate: {
     width: '270px',
   },

@@ -34,12 +34,18 @@ const useStyles = makeStyles(() => ({
     textAlign: 'center',
   },
   heading: {
-    fontSize: '3em',
+    fontSize: '2em',
+    '@media (max-device-width: 600px)': {
+      fontSize: '1.55em',
+    },
   },
   caption: {
-    fontSize: '1.1em',
+    fontSize: '1em',
     paddingTop: '0.5em',
     paddingBottom: '2.3em',
+    '@media (max-device-width: 600px)': {
+      fontSize: '0.77em',
+    },
   },
 }));
 

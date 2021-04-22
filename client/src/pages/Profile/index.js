@@ -10,13 +10,13 @@ function Profile() {
   const classes = useStyles();
 
   return (
-    <>
+    <div className={classes.root}>
       <Header />
-      <Container maxWidth="lg" className={classes.root}>
+      <Container maxWidth="lg" className={classes.sideBar}>
         <SideBar />
       </Container>
       <Footer />
-    </>
+    </div>
   );
 }
 

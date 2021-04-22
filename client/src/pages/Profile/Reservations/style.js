@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '495px',
     border: `1px solid ${theme.palette.primary.main}`,
     borderRadius: '2%',
-    '& h2': {
-      fontSize: '2.2em',
+    '& h5': {
+      fontSize: '2em',
       display: 'flex',
       justifyContent: 'center',
       marginTop: '5%',
@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2em',
       },
     },
-    '& h3': {
-      fontSize: '2.2em',
+    '& h6': {
+      fontSize: '1.5em',
       display: 'flex',
       justifyContent: 'center',
       marginTop: '15%',

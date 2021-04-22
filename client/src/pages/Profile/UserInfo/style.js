@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
     '@media (max-device-width: 600px)': {
-      width: '18rem',
+      width: '21.5rem',
       '& h2': {
         fontSize: '1.5em',
       },
@@ -49,11 +49,14 @@ const useStyles = makeStyles((theme) => ({
   userDataFieldLabel: {
     width: '17%',
     '@media (max-device-width: 600px)': {
-      width: '45%',
+      width: '32%',
     },
   },
   userDataFieldValue: {
     width: '50%',
+    '@media (max-device-width: 600px)': {
+      fontSize: '0.77rem',
+    },
   },
   btnsBox: {
     marginBlock: '3em',

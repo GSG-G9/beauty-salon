@@ -4,6 +4,7 @@ const contactusHandler = require('./contactus');
 const signin = require('./signin');
 const signUp = require('./signUp');
 const getBookingsByDate = require('./getBookingsByDate');
+const getBlogByBlogId = require('./getBlogByBlogId');
 
 module.exports = {
   servicesHandler,
@@ -12,4 +13,5 @@ module.exports = {
   signin,
   getBookingsByDate,
   getAllBlogs,
+  getBlogByBlogId,
 };

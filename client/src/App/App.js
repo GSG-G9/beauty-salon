@@ -21,6 +21,7 @@ import {
   NOT_FOUND,
   PRODUCTS,
   CART,
+  BLOG,
 } from '../utils/router.constant';
 
 import {
@@ -36,6 +37,7 @@ import {
   Signup,
   NotFound,
   ComingSoon,
+  Blog,
 } from '../pages';
 
 const App = () => (
@@ -49,6 +51,9 @@ const App = () => (
           </Route>
           <Route path={BLOGS}>
             <Blogs />
+          </Route>
+          <Route path={BLOG}>
+            <Blog />
           </Route>
           <Route path={CONTACTS}>
             <Contacts />

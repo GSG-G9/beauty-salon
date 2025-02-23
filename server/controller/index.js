@@ -5,6 +5,7 @@ const {
   getBookingsByDate,
   getAllBlogs,
   contactusHandler,
+  getBlogByBlogId,
 } = require('./common');
 
 const {
@@ -34,4 +35,5 @@ module.exports = {
   deleteBookingController,
   contactusHandler,
   userData,
+  getBlogByBlogId,
 };

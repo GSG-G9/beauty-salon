@@ -1,4 +1,6 @@
-const { addBook, checkAvailability, getProfile } = require('./user');
+const {
+  addBook, checkAvailability, getProfile,
+} = require('./user');
 const getBlogs = require('./getBlogs');
 const postMessage = require('./contactus');
 const checkUserByEmail = require('./checkUserByEmail');
@@ -10,6 +12,7 @@ const getBookingsByUserId = require('./getBookingsByUserId');
 const deleteBookingByAdmin = require('./deleteBookingByAdmin');
 const getUserData = require('./getUserData');
 const deleteBooking = require('./deleteBook');
+const getOneBlog = require('./getBlogById');
 
 module.exports = {
   getServices,
@@ -26,4 +29,5 @@ module.exports = {
   checkAvailability,
   deleteBooking,
   getBlogs,
+  getOneBlog,
 };

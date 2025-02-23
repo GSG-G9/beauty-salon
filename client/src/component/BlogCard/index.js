@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-import { string } from 'prop-types';
+import { string, number } from 'prop-types';
 import useStyles from './style';
 
-function BlogsCard({ title, image, desc }) {
+function BlogsCard({ id, title, image, desc }) {
   const classes = useStyles();
   const fakeImage =
     'https://www.matrix.com/~/media/images/hair-color-gallery/hair-color-looks/highlights/brown-highlights/brown-highlights-1.jpg';
@@ -22,7 +22,7 @@ function BlogsCard({ title, image, desc }) {
         <Typography className={classes.desc} variant="body1">
           {desc}
         </Typography>
-        <Link className={classes.readMore} to="/blogs">
+        <Link className={classes.readMore} to={`/blogs/${id}`}>
           Read more
         </Link>
       </div>
@@ -31,6 +31,7 @@ function BlogsCard({ title, image, desc }) {
 }
 
 BlogsCard.propTypes = {
+  id: number.isRequired,
   image: string.isRequired,
   title: string,
   desc: string,
